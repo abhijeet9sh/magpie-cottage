@@ -84,58 +84,63 @@ export function HeroSection() {
         ))}
       </div>
 
-      <motion.div 
+      <div 
         className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-48 pb-32 flex flex-col items-center text-center"
-        style={{ opacity }}
       >
-        {/* Location tag */}
-        <motion.span 
-          className="uppercase tracking-[0.3em] text-sage text-xs font-body mb-8 block"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+        <motion.div 
+          className="w-full flex flex-col items-center"
+          style={{ opacity }}
         >
-          Lansdowne, Uttarakhand
-        </motion.span>
-        
-        {/* Split-text hero title */}
-        <motion.div
-          variants={splitTextContainer}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-wrap justify-center"
-          style={{ perspective: 600 }}
-        >
-          {titleWords.map((word, i) => (
-            <motion.span
-              key={word}
-              variants={splitTextWord}
-              className="inline-block mr-[0.3em]"
-              style={{ transformOrigin: "bottom" }}
-              custom={i}
-            >
-              <h1 
-                className={`font-display text-6xl md:text-8xl lg:text-[10rem] text-cream font-light tracking-tight leading-[0.9] ${
-                  i === 1 ? "italic font-extralight" : ""
-                }`}
-                style={{ display: "contents" }}
+          {/* Location tag */}
+          <motion.span 
+            className="uppercase tracking-[0.3em] text-sage text-xs font-body mb-8 block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Lansdowne, Uttarakhand
+          </motion.span>
+          
+          {/* Split-text hero title */}
+          <motion.div
+            variants={splitTextContainer}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-wrap justify-center"
+            style={{ perspective: 600 }}
+          >
+            {titleWords.map((word, i) => (
+              <motion.span
+                key={word}
+                variants={splitTextWord}
+                className="inline-block mr-[0.3em]"
+                style={{ transformOrigin: "bottom" }}
+                custom={i}
               >
-                {word}
-              </h1>
-            </motion.span>
-          ))}
+                <h1 
+                  className={`font-display text-6xl md:text-8xl lg:text-[10rem] text-cream font-light tracking-tight leading-[0.9] ${
+                    i === 1 ? "italic font-extralight" : ""
+                  }`}
+                  style={{ display: "contents" }}
+                >
+                  {word}
+                </h1>
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <h2 className="font-display text-2xl md:text-3xl text-cream font-light tracking-wide mt-8 md:mt-12 mb-8">
+            Your <span className="italic text-sage">jungle retreat</span>, six hours from Delhi.
+          </h2>
         </motion.div>
 
-        {/* Subtitle + Booking widget */}
+        {/* Booking widget - Kept solid (no scroll opacity) */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="w-full mt-8 md:mt-12 flex flex-col items-center"
+          className="w-full flex flex-col items-center"
         >
-          <h2 className="font-display text-2xl md:text-3xl text-cream font-light tracking-wide mb-8">
-            Your <span className="italic text-sage">jungle retreat</span>, six hours from Delhi.
-          </h2>
           <BookingWidget />
         </motion.div>
       </motion.div>
