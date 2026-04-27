@@ -125,9 +125,20 @@ export function Footer() {
             <span>·</span>
             <Link href="/refund" className="hover:text-cream transition-colors">Refund & Cancellation</Link>
           </div>
-          <p className="text-cream/40 text-xs font-body">
-            © {currentYear} Magpie Cottage. All rights reserved.
-          </p>
+          <div className="flex flex-col md:items-end gap-2 text-cream/40 text-xs font-body">
+            <p>© {currentYear} Magpie Cottage. All rights reserved.</p>
+            <p className="flex items-center gap-1">
+              Made with <span className="text-red-500 text-sm">♥</span> by{" "}
+              <a 
+                href="https://instagram.com/apr.explorier" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-cream transition-colors border-b border-cream/20 hover:border-cream/60 pb-0.5"
+              >
+                apr.studios
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
