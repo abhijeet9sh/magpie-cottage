@@ -35,9 +35,10 @@ export function HeroSection() {
   const titleWords = ["Magpie", "Cottage"];
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-forest">
+    <section className="relative w-full min-h-screen flex items-center justify-center bg-forest">
       {/* Fading Stack Slideshow with Ken Burns */}
-      <motion.div className="absolute inset-0 z-0 w-full h-[120%]" style={{ y }}>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div className="absolute inset-0 w-full h-[120%]" style={{ y }}>
         <div className="absolute inset-0">
           {heroSlides.map((slide, i) => (
             <motion.div
@@ -66,7 +67,8 @@ export function HeroSection() {
           ))}
         </div>
         <div className="absolute inset-0 bg-black/30" />
-      </motion.div>
+        </motion.div>
+      </div>
 
       {/* Slide indicators */}
       <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
