@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import { ChevronRight } from "lucide-react";
 import { DayPicker, DateRange } from "react-day-picker";
@@ -14,6 +15,16 @@ export function BookingWidget() {
   const [showGuests, setShowGuests] = useState(false);
   const [numberOfMonths, setNumberOfMonths] = useState(1);
   const [minDate, setMinDate] = useState<Date | undefined>(new Date());
+  const router = useRouter();
+
+  const handleBooking = () => {
+    const params = new URLSearchParams();
+    if (dateRange?.from) params.set("checkIn", format(dateRange.from, "yyyy-MM-dd"));
+    if (dateRange?.to) params.set("checkOut", format(dateRange.to, "yyyy-MM-dd"));
+    params.set("guests", guests.toString());
+    
+    router.push(`/book?${params.toString()}`);
+  };
   
   useEffect(() => {
     const handleResize = () => {
@@ -67,7 +78,10 @@ export function BookingWidget() {
         </button>
 
         {/* CTA Button */}
-        <button className="w-12 h-12 md:w-[52px] md:h-[52px] bg-[#334b35] text-white rounded-full flex items-center justify-center hover:bg-[#203625] hover:scale-105 transition-all duration-300 shadow-md ml-4 shrink-0">
+        <button 
+          onClick={handleBooking}
+          className="w-12 h-12 md:w-[52px] md:h-[52px] bg-[#334b35] text-white rounded-full flex items-center justify-center hover:bg-[#203625] hover:scale-105 transition-all duration-300 shadow-md ml-4 shrink-0"
+        >
           <ChevronRight size={22} strokeWidth={2} />
         </button>
       </div>
