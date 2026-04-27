@@ -2,7 +2,26 @@
 
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import Image from "next/image";
-import { Instagram, Copy, Play } from "lucide-react";
+import { Copy, Play } from "lucide-react";
+
+// Custom Instagram SVG since the project version of lucide-react is missing it
+const InstagramIcon = ({ size = 24, className = "" }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 const igPosts = [
   { src: "/images/gallery/exterior/img_2.jpg", type: "carousel" },
@@ -22,7 +41,7 @@ export function InstagramFeed() {
           {/* Left Column: Text Content */}
           <AnimatedSection animation="fadeUp" className="max-w-md lg:pr-8">
             <div className="flex items-center gap-2 text-sage uppercase tracking-widest text-xs font-body mb-6 font-semibold">
-              <Instagram size={16} />
+              <InstagramIcon size={16} />
               <span>Follow our journey</span>
             </div>
             
@@ -41,7 +60,7 @@ export function InstagramFeed() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#8C9B73] hover:bg-[#7a8761] text-white px-6 py-3 rounded-full font-body text-sm font-medium transition-colors shadow-sm"
             >
-              <Instagram size={18} />
+              <InstagramIcon size={18} />
               Follow @magpiecottage_
             </a>
             
