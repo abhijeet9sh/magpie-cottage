@@ -25,13 +25,15 @@ export default function LegacyPage() {
       {/* Custom Hero for moody look */}
       <section className="relative w-full min-h-[80vh] flex flex-col items-center justify-center overflow-hidden pt-20 pb-12">
         <div className="absolute inset-0 z-0 opacity-50">
-          <Image
-            src={ASSETS.hero}
-            alt="Ashok Kumar"
-            fill
-            className="object-cover"
-            priority
-          />
+          <div className="absolute inset-0 bg-black">
+            <Image
+              src={ASSETS.hero}
+              alt="Ashok Kumar"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a2123]/80 via-[#1a2123]/50 to-[#1a2123]" />
         </div>
         
@@ -61,8 +63,8 @@ export default function LegacyPage() {
         
         {/* Section: The Lineage */}
         <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-[3/4] md:aspect-square rounded-[2rem] overflow-hidden">
-            <Image src={ASSETS.lineage} alt="The Lineage" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="relative w-full rounded-[2rem] overflow-hidden">
+            <Image src={ASSETS.lineage} alt="The Lineage" width={800} height={1600} className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 className="font-display text-4xl md:text-5xl font-light mb-8 text-sage">The Lineage</h2>
@@ -105,8 +107,8 @@ export default function LegacyPage() {
               </p>
             </div>
           </div>
-          <div className="order-1 md:order-2 relative aspect-[3/4] rounded-[2rem] overflow-hidden">
-            <Image src={ASSETS.beginnings} alt="The Beginnings" fill className="object-cover sepia-[.5] hover:sepia-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="order-1 md:order-2 relative w-full rounded-[2rem] overflow-hidden">
+            <Image src={ASSETS.beginnings} alt="The Beginnings" width={800} height={1600} className="w-full h-auto sepia-[.5] hover:sepia-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </AnimatedSection>
 
@@ -127,16 +129,16 @@ export default function LegacyPage() {
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="relative w-full max-w-3xl aspect-[3/4] md:aspect-video rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-              <Image src={ASSETS.institutionalising1} alt="Wildlife Crime Work" fill className="object-cover" />
+            <div className="relative w-full max-w-3xl rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+              <Image src={ASSETS.institutionalising1} alt="Wildlife Crime Work" width={1200} height={1600} className="w-full h-auto" />
             </div>
           </div>
         </AnimatedSection>
 
         {/* Section: Champion for every living thing */}
         <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden">
-            <Image src={ASSETS.champion} alt="Champion for every living thing" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="relative w-full rounded-[2rem] overflow-hidden">
+            <Image src={ASSETS.champion} alt="Champion for every living thing" width={800} height={1600} className="w-full h-auto" sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 className="font-display text-4xl md:text-5xl font-light mb-8 text-sage leading-tight">
