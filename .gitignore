@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# agent-specific
+skills/
+.gemini/
+*.log
+api-test.js
+test-db.js
+test-enquiry.js
+database_improvements.sql
+schema.sql
+scrape_airbnb.py
+generate_gallery_data.py
+airbnb_photos.json
+gallery_data.json
+report.json
+build.log
