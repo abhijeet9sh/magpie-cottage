@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
-import { Calendar as CalendarIcon, Users } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { DayPicker, DateRange } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function BookingWidget() {
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
-  const [guests, setGuests] = useState(2);
+  const [guests, setGuests] = useState(1);
   const [showCalendar, setShowCalendar] = useState(false);
   const [showGuests, setShowGuests] = useState(false);
   const [numberOfMonths, setNumberOfMonths] = useState(1);
@@ -25,88 +25,94 @@ export function BookingWidget() {
   }, []);
 
   return (
-    <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-full p-2 md:p-3 mt-12 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 relative z-20 shadow-2xl shadow-black/20">
+    <div className="bg-[#f4f5f4] rounded-[2rem] md:rounded-full py-5 px-6 md:py-3 md:px-4 mt-8 md:mt-12 w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0 relative z-20 shadow-2xl shadow-black/20">
       
-      {/* Date Picker Button */}
-      <div className="relative w-full md:w-auto flex-1">
+      {/* Dates Section */}
+      <div className="flex w-full md:w-[60%] flex-col md:flex-row items-center justify-between gap-5 md:gap-0">
         <button 
           onClick={() => { setShowCalendar(!showCalendar); setShowGuests(false); }}
-          className="w-full flex items-center justify-between px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all duration-300 text-left min-h-[80px]"
+          className="flex flex-col items-start md:px-6 w-full md:w-auto flex-1 text-left group"
         >
-          <div className="flex items-center gap-3">
-            <CalendarIcon className="text-cream" size={24} />
-            <div className="flex flex-col">
-              <span className="text-[10px] text-cream/60 uppercase tracking-[0.2em]">Check In / Out</span>
-              <span className="text-cream font-medium text-sm md:text-base">
-                {dateRange?.from ? format(dateRange.from, "MMM dd, yyyy") : "Select Dates"}
-                {dateRange?.to ? ` - ${format(dateRange.to, "MMM dd, yyyy")}` : ""}
-              </span>
-            </div>
-          </div>
+          <span className="text-[10px] md:text-[11px] text-[#6b7280] font-semibold uppercase tracking-[0.08em] mb-1 group-hover:text-forest transition-colors">Check In</span>
+          <span className="text-[#374151] font-medium text-[15px] md:text-[16px]">
+            {dateRange?.from ? format(dateRange.from, "MMM dd, yyyy") : "Add dates"}
+          </span>
         </button>
 
-        <AnimatePresence>
-          {showCalendar && (
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="absolute top-full left-0 mt-4 p-4 bg-cream rounded-[2rem] shadow-2xl shadow-forest/10 text-forest z-50 overflow-hidden"
-            >
-              <DayPicker
-                mode="range"
-                selected={dateRange}
-                onSelect={(range) => {
-                  setDateRange(range || undefined);
-                  if (range?.from && range?.to) setShowCalendar(false);
-                }}
-                numberOfMonths={numberOfMonths}
-                disabled={minDate ? { before: minDate } : undefined}
-                className="font-body text-sm custom-calendar"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="w-full h-px md:w-px md:h-10 bg-stone-300/70 shrink-0"></div>
+
+        <button 
+          onClick={() => { setShowCalendar(!showCalendar); setShowGuests(false); }}
+          className="flex flex-col items-start md:px-6 w-full md:w-auto flex-1 text-left group"
+        >
+          <span className="text-[10px] md:text-[11px] text-[#6b7280] font-semibold uppercase tracking-[0.08em] mb-1 group-hover:text-forest transition-colors">Check Out</span>
+          <span className="text-[#374151] font-medium text-[15px] md:text-[16px]">
+            {dateRange?.to ? format(dateRange.to, "MMM dd, yyyy") : "Add dates"}
+          </span>
+        </button>
       </div>
 
-      {/* Guests Button */}
-      <div className="relative w-full md:w-auto flex-1">
+      <div className="w-full h-px md:w-px md:h-10 bg-stone-300/70 shrink-0"></div>
+
+      {/* Guests Section */}
+      <div className="relative w-full md:w-[40%] flex justify-between items-center md:pl-6 md:pr-2 group">
         <button 
           onClick={() => { setShowGuests(!showGuests); setShowCalendar(false); }}
-          className="w-full flex items-center justify-between px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all duration-300 text-left min-h-[80px]"
+          className="flex flex-col items-start text-left flex-1"
         >
-          <div className="flex items-center gap-3">
-            <Users className="text-cream" size={24} />
-            <div className="flex flex-col">
-              <span className="text-[10px] text-cream/60 uppercase tracking-[0.2em]">Guests</span>
-              <span className="text-cream font-medium text-sm md:text-base">{guests} Adults</span>
-            </div>
-          </div>
+          <span className="text-[10px] md:text-[11px] text-[#6b7280] font-semibold uppercase tracking-[0.08em] mb-1 group-hover:text-forest transition-colors">Guests</span>
+          <span className="text-[#374151] font-medium text-[15px] md:text-[16px]">
+            {guests} {guests === 1 ? "Guest" : "Guests"}
+          </span>
         </button>
 
-        <AnimatePresence>
-          {showGuests && (
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="absolute top-full left-0 w-full mt-4 p-6 bg-cream rounded-[2rem] shadow-2xl shadow-forest/10 text-forest z-50 flex items-center justify-between"
-            >
-              <span className="font-medium text-sm uppercase tracking-widest">Adults</span>
-              <div className="flex items-center gap-4">
-                <button onClick={() => setGuests(Math.max(1, guests - 1))} className="w-10 h-10 rounded-full border border-forest/20 flex items-center justify-center hover:bg-forest hover:text-cream transition-colors">-</button>
-                <span className="w-4 text-center font-medium">{guests}</span>
-                <button onClick={() => setGuests(Math.min(8, guests + 1))} className="w-10 h-10 rounded-full border border-forest/20 flex items-center justify-center hover:bg-forest hover:text-cream transition-colors">+</button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* CTA Button */}
+        <button className="w-12 h-12 md:w-[52px] md:h-[52px] bg-[#334b35] text-white rounded-full flex items-center justify-center hover:bg-[#203625] hover:scale-105 transition-all duration-300 shadow-md ml-4 shrink-0">
+          <ChevronRight size={22} strokeWidth={2} />
+        </button>
       </div>
 
-      {/* CTA */}
-      <button className="w-full md:w-auto px-10 py-4 bg-sage text-cream font-medium hover:bg-sage-dark hover:scale-105 transition-all duration-300 rounded-2xl whitespace-nowrap shadow-lg hover:shadow-xl uppercase tracking-wider text-sm min-h-[80px]">
-        Check Availability
-      </button>
+      {/* Popovers */}
+      <AnimatePresence>
+        {showCalendar && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="absolute top-[110%] left-0 mt-2 p-4 bg-white rounded-3xl shadow-2xl border border-stone-100 text-forest z-50 overflow-hidden w-full md:w-auto md:min-w-[600px] flex justify-center"
+          >
+            <DayPicker
+              mode="range"
+              selected={dateRange}
+              onSelect={(range) => {
+                setDateRange(range || undefined);
+                if (range?.from && range?.to) setShowCalendar(false);
+              }}
+              numberOfMonths={numberOfMonths}
+              disabled={minDate ? { before: minDate } : undefined}
+              className="font-body text-sm custom-calendar"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showGuests && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="absolute top-[110%] right-0 w-full md:w-80 mt-2 p-6 bg-white rounded-3xl shadow-2xl border border-stone-100 text-forest z-50 flex items-center justify-between"
+          >
+            <span className="font-medium text-sm uppercase tracking-widest">Adults</span>
+            <div className="flex items-center gap-4">
+              <button onClick={() => setGuests(Math.max(1, guests - 1))} className="w-10 h-10 rounded-full border border-forest/20 flex items-center justify-center hover:bg-forest hover:text-white transition-colors">-</button>
+              <span className="w-4 text-center font-medium">{guests}</span>
+              <button onClick={() => setGuests(Math.min(8, guests + 1))} className="w-10 h-10 rounded-full border border-forest/20 flex items-center justify-center hover:bg-forest hover:text-white transition-colors">+</button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
