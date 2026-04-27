@@ -36,8 +36,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2B3327;
-    --foreground: #F8F7F4;
+    --background: #FAF9F7;
+    --foreground: #252525;
   }
 }
 
@@ -59,11 +59,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #d4cfc4;
   border-radius: 4px;
-}
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-thumb {
-    background: #253d29;
-  }
 }
 
 /* === MARQUEE ANIMATION === */
@@ -109,7 +104,7 @@ body {
   transform: scale(1.05);
 }
 
-/* === CALENDAR STYLES FIX === */
+/* === CALENDAR / DAY-PICKER STYLES === */
 .custom-calendar .rdp-month {
   font-family: var(--font-body);
 }
@@ -121,3 +116,26 @@ body {
   background-color: #F0F2ED !important;
   color: #394735 !important;
 }
+
+/* Force calendar text to always be dark/readable */
+.rdp {
+  --rdp-accent-color: #394735 !important;
+  --rdp-background-color: #F0F2ED !important;
+  color: #252525 !important;
+}
+.rdp-day {
+  color: #252525 !important;
+}
+.rdp-day:disabled {
+  color: #c4c4c4 !important;
+}
+.rdp-head_cell {
+  color: #525252 !important;
+}
+.rdp-caption_label {
+  color: #252525 !important;
+}
+.rdp-nav_button {
+  color: #394735 !important;
+}
+
