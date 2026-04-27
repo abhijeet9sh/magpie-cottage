@@ -109,7 +109,7 @@ export default function TheCottage() {
               </div>
             </div>
             <p className="text-sm text-cream/60 mb-8 italic">Rates cover the entire 3-bedroom villa for up to 6 guests. Enquire for extended stays or packages.</p>
-            <Link href="/book" className="w-full text-center px-6 py-4 bg-sage text-forest rounded-xl font-medium hover:bg-sage-dark hover:text-white transition-colors">
+            <Link href="/book" className="w-full max-w-md mx-auto text-center px-6 py-4 bg-sage text-forest rounded-xl font-medium hover:bg-sage-dark hover:text-white transition-colors">
               Check Availability
             </Link>
           </div>

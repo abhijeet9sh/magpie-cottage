@@ -192,9 +192,9 @@ export function Navbar() {
               <Image
                 src="/logo.svg"
                 alt="Magpie Cottage"
-                width={36}
-                height={36}
-                className="transition-transform duration-300 group-hover:scale-105"
+                width={44}
+                height={44}
+                className="w-11 h-11 lg:w-9 lg:h-9 transition-transform duration-300 group-hover:scale-105"
               />
               <span className={`font-display text-base tracking-wide transition-colors duration-500 hidden sm:inline ${
                 isScrolled ? "text-forest" : "text-cream"
@@ -253,7 +253,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-forest/95 backdrop-blur-lg lg:hidden flex items-center justify-center"
+            className="fixed inset-0 z-40 bg-forest/98 backdrop-blur-2xl lg:hidden flex items-center justify-center"
           >
             <motion.div
               initial={{ opacity: 0 }}

@@ -108,7 +108,7 @@ export default function OurStory() {
             {values.map((value) => (
               <div 
                 key={value.title} 
-                className="bg-cream rounded-2xl p-8 md:p-10 border border-stone-200/50 hover:shadow-lg transition-shadow duration-500 group"
+                className="bg-cream rounded-2xl p-8 md:p-10 border border-stone-200/50 shadow-sm md:shadow-none hover:shadow-lg transition-shadow duration-500 group"
               >
                 <div className="w-14 h-14 rounded-full bg-sage-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                   <value.icon className="text-forest" size={28} strokeWidth={1.5} />

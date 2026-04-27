@@ -95,7 +95,7 @@ export default function Experiences() {
                     <span className="text-xs uppercase tracking-widest text-text-light font-body mb-3 block">Tips</span>
                     <div className="flex flex-wrap gap-2">
                       {exp.tips.map(tip => (
-                        <span key={tip} className="px-3 py-1 bg-sage-light text-sage-dark rounded-full text-xs font-body border border-sage-border/30">
+                        <span key={tip} className="px-4 py-2 md:px-3 md:py-1 bg-sage-light text-sage-dark rounded-full text-xs font-body border border-sage-border/30">
                           {tip}
                         </span>
                       ))}
@@ -145,7 +145,7 @@ export default function Experiences() {
               </div>
               <div className="mt-8 flex flex-wrap gap-2">
                 {["Home-cooked meals", "Local ingredients", "Al fresco dining", "BBQ & bonfires", "Dietary flexibility"].map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-sage-light text-sage-dark rounded-full text-xs font-body border border-sage-border/30">
+                  <span key={tag} className="px-4 py-2 md:px-3 md:py-1 bg-sage-light text-sage-dark rounded-full text-xs font-body border border-sage-border/30">
                     {tag}
                   </span>
                 ))}

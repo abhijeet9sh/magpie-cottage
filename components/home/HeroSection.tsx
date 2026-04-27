@@ -113,7 +113,7 @@ export function HeroSection() {
               custom={i}
             >
               <h1 
-                className={`font-display text-7xl md:text-8xl lg:text-[10rem] text-cream font-light tracking-tight leading-[0.9] ${
+                className={`font-display text-6xl md:text-8xl lg:text-[10rem] text-cream font-light tracking-tight leading-[0.9] ${
                   i === 1 ? "italic font-extralight" : ""
                 }`}
                 style={{ display: "contents" }}

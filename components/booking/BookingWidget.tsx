@@ -25,7 +25,7 @@ export function BookingWidget() {
   }, []);
 
   return (
-    <div className="bg-white/70 backdrop-blur-xl border border-white/50 rounded-[2rem] md:rounded-full py-5 px-6 md:py-3 md:px-4 mt-16 md:mt-24 w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0 relative z-20 shadow-2xl shadow-black/10">
+    <div className="bg-white/70 backdrop-blur-xl border border-white/50 rounded-[2rem] md:rounded-full py-3 px-6 md:py-3 md:px-4 mt-16 md:mt-24 w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative z-20 shadow-2xl shadow-black/10">
       
       {/* Dates Section */}
       <div className="flex w-full md:w-[60%] flex-col md:flex-row items-center justify-between gap-5 md:gap-0">
