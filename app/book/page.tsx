@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BookingPage } from "@/components/booking/BookingPage";
@@ -20,7 +21,9 @@ export default function Book() {
           </h1>
         </div>
 
-        <BookingPage />
+        <Suspense fallback={<div className="animate-pulse bg-stone-200 rounded-3xl h-96 w-full" />}>
+          <BookingPage />
+        </Suspense>
       </div>
 
       <Footer />
