@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Magpie bird silhouette on branch -->
+  <circle cx="60" cy="60" r="58" fill="#394735" opacity="0.05"/>
+  <g transform="translate(20, 18)" fill="#394735">
+    <!-- Bird body -->
+    <path d="M50 35 C55 28, 65 22, 72 20 C70 25, 68 30, 65 34 C62 38, 58 40, 54 42 C50 44, 46 44, 42 42 C38 40, 35 36, 34 32 C33 28, 34 24, 37 22 C40 20, 44 20, 47 22 C49 24, 50 28, 50 35Z" opacity="0.9"/>
+    <!-- Wing detail -->
+    <path d="M42 30 C45 28, 50 26, 55 25 C52 30, 48 34, 44 36 C40 38, 37 36, 38 33 C39 31, 40 30, 42 30Z" fill="#8A987D"/>
+    <!-- Tail -->
+    <path d="M34 38 C28 44, 20 52, 16 60 C18 58, 22 54, 28 48 C30 46, 33 42, 34 40Z" opacity="0.8"/>
+    <!-- Beak -->
+    <path d="M72 20 C76 18, 80 17, 82 18 C80 20, 76 21, 72 20Z"/>
+    <!-- Eye -->
+    <circle cx="68" cy="23" r="1.5" fill="#F8F7F4"/>
+    <!-- Branch -->
+    <path d="M10 65 C20 60, 35 52, 50 48 C60 45, 70 44, 80 46" stroke="#394735" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Leaves on branch -->
+    <path d="M25 58 C23 54, 22 50, 24 48 C26 50, 27 54, 25 58Z" fill="#8A987D" opacity="0.7"/>
+    <path d="M70 45 C72 41, 74 38, 76 40 C74 42, 72 44, 70 45Z" fill="#8A987D" opacity="0.7"/>
+  </g>
+  <!-- Text -->
+  <text x="60" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="#394735" letter-spacing="3" font-weight="400">MAGPIE COTTAGE</text>
+</svg>

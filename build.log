@@ -1,0 +1,24 @@
+
+> magpie-cottage@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.2s
+  Running TypeScript ...
+Failed to type check.
+
+./app/api/availability/route.ts:25:36
+Type error: Parameter 'd' implicitly has an 'any' type.
+
+  [90m23 |[0m     [90m// Build list of unavailable date ranges[0m
+  [90m24 |[0m     [36mconst[0m unavailableDates = [
+[31m[1m>[0m [90m25 |[0m       ...(blockedDates || []).map((d) => ({
+  [90m   |[0m                                    [31m[1m^[0m
+  [90m26 |[0m         [36mfrom[0m: d.start_date,
+  [90m27 |[0m         to: d.end_date,
+  [90m28 |[0m         [36mtype[0m: [32m"blocked"[0m [36mas[0m [36mconst[0m,
+Next.js build worker exited with code: 1 and signal: null

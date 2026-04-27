@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-forest: #394735;
+  --color-forest-mid: #4F6149;
+  --color-forest-light: #6E8268;
+  
+  --color-sage: #8A987D;
+  --color-sage-light: #F0F2ED;
+  --color-sage-border: #A3AF99;
+  --color-sage-dark: #5C6B50;
+  
+  --color-cream: #F8F7F4;
+  
+  --color-stone-50: #faf8f4;
+  --color-stone-100: #f4f1eb;
+  --color-stone-200: #e8e4db;
+  --color-stone-300: #d4cfc4;
+  
+  --color-text-dark: #252525;
+  --color-text-mid: #525252;
+  --color-text-light: #8A8A8A;
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #FAF9F7;
+  --foreground: #252525;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2B3327;
+    --foreground: #F8F7F4;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #d4cfc4;
+  border-radius: 4px;
+}
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: #253d29;
+  }
+}
+
+/* === MARQUEE ANIMATION === */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  will-change: transform;
+}
+
+/* === CLIP REVEAL UTILITIES === */
+.clip-hidden {
+  clip-path: inset(100% 0% 0% 0%);
+}
+
+.clip-visible {
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+/* === HIDE SCROLLBAR === */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* === SMOOTH IMAGE HOVER === */
+.img-hover-zoom {
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* === CALENDAR STYLES FIX === */
+.custom-calendar .rdp-month {
+  font-family: var(--font-body);
+}
+.custom-calendar .rdp-day_selected {
+  background-color: #394735 !important;
+  color: #F8F7F4 !important;
+}
+.custom-calendar .rdp-day_range_middle {
+  background-color: #F0F2ED !important;
+  color: #394735 !important;
+}
