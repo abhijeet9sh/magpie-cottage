@@ -32,7 +32,7 @@ export function Footer() {
               <span className="font-display text-xl text-cream">Magpie Cottage</span>
             </Link>
             <p className="font-body text-cream/70 text-sm leading-relaxed mb-4 max-w-sm">
-              A private jungle retreat nestled on the edge of a tiger reserve in Lansdowne, Uttarakhand. Where the forest begins where the garden ends.
+              A private jungle retreat nestled on the edge of a tiger reserve in Simalsaira, Uttarakhand. Where the forest begins where the garden ends.
             </p>
             <p className="font-body text-sage text-xs uppercase tracking-widest mb-6">Hosted by Malini</p>
             <div className="flex gap-4">
@@ -107,7 +107,7 @@ export function Footer() {
               </a>
               <div className="text-cream/70 font-body text-sm flex items-start gap-2">
                 <MapPin size={14} className="mt-0.5 shrink-0" />
-                <span>Lansdowne, Pauri Garhwal,<br/>Uttarakhand, India</span>
+                <span>QP4H+67 Simalsaira,<br/>Uttarakhand 246155</span>
               </div>
             </div>
           </motion.div>

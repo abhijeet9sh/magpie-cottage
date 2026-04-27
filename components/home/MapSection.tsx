@@ -18,7 +18,7 @@ export function MapSection() {
           className="w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-stone-200"
         >
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.68595460833!2d78.61460592750389!3d29.837748430761614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39097e32a6886e41%3A0xda81ad792fc64fa3!2sLansdowne%2C%20Uttarakhand%20246155!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.6063628771485!2d78.72555827616654!3d29.7555205391629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909814324743179%3A0x5d17e715e66e8917!2sMagpie%20Cottage!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
@@ -36,7 +36,7 @@ export function MapSection() {
             Six hours from Delhi. <br/> A world away.
           </h2>
           <p className="font-body text-text-mid leading-relaxed text-lg mb-8 max-w-md">
-            Located in Lansdowne, Pauri Garhwal, Uttarakhand — accessible by road from Delhi, Dehradun, and Haridwar. The final stretch is a scenic forest drive.
+            Located in Simalsaira, Uttarakhand 246155 — accessible by road from Delhi, Dehradun, and Haridwar. The final stretch is a scenic forest drive.
           </p>
           
           <div className="flex flex-wrap gap-3 mb-10">
@@ -46,7 +46,7 @@ export function MapSection() {
           </div>
 
           <a 
-            href="https://maps.google.com/?q=Lansdowne,Uttarakhand" 
+            href="https://www.google.com/maps/place/Magpie+Cottage/@29.7555205,78.7255583,17z/data=!4m16!1m7!3m6!1s0x3909814324743179:0x5d17e715e66e8917!2sMagpie+Cottage!8m2!3d29.7555159!4d78.7281332" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex px-8 py-4 bg-forest text-cream rounded-xl font-medium hover:bg-forest-mid transition-colors"

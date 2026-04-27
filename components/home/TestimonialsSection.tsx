@@ -6,16 +6,20 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const quotes = [
   {
-    text: "We completely disconnected. The river sounds, the birds, the bonfires — it was exactly what we needed.",
-    author: "Rahul & Priya S., Delhi"
+    text: "Absolutely blissful place ensconced in a veritable green fortress with a gurgling gushing stream for company.",
+    author: "Rajesh Madan"
   },
   {
-    text: "A hidden gem in Lansdowne. The hospitality was unmatched and the views are simply breathtaking.",
-    author: "Ananya M., Dehradun"
+    text: "A gem of a cottage, tastefully appointed, clean, spacious and comfortable. Surrounded by forests on either side, beside the Plane river.",
+    author: "Kaustuv Chatterjee"
   },
   {
-    text: "The perfect weekend getaway. Waking up to the sounds of the jungle was an unforgettable experience.",
-    author: "Vikram R., Noida"
+    text: "Amazing location and villa. The villa gives a very cosy vibe. The staff is polite and the food is amazing.",
+    author: "Shilpa"
+  },
+  {
+    text: "It is a wonderful house, very comfortable. Neat and clean. Caretaker and the cook both are taking good care of the guest.",
+    author: "Divya Jindal"
   }
 ];
 
