@@ -189,15 +189,15 @@ export function Navbar() {
             </div>
 
             {/* ── CENTER LOGO ── */}
-            <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0 lg:mx-8">
+            <Link href="/" className="flex items-center gap-3 group flex-shrink-0 lg:mx-8">
               <Image
                 src="/logo.svg"
                 alt="Magpie Cottage"
-                width={44}
-                height={44}
-                className="w-11 h-11 lg:w-9 lg:h-9 transition-transform duration-300 group-hover:scale-105"
+                width={56}
+                height={56}
+                className="w-14 h-14 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:scale-105"
               />
-              <span className={`font-display text-base tracking-wide transition-colors duration-500 hidden sm:inline ${
+              <span className={`font-display text-xl md:text-2xl tracking-wide transition-colors duration-500 hidden sm:inline ${
                 isScrolled ? "text-forest" : "text-cream"
               }`}>
                 Magpie Cottage
