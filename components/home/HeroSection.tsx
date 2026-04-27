@@ -28,7 +28,7 @@ export function HeroSection() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, 8000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 
@@ -38,32 +38,33 @@ export function HeroSection() {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-forest">
       {/* Fading Stack Slideshow with Ken Burns */}
       <motion.div className="absolute inset-0 z-0 w-full h-[120%]" style={{ y }}>
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, i) => (
             <motion.div
+              key={slide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: i === currentSlide ? 1 : 0 }}
+              transition={{ duration: 2.5, ease: "easeInOut" }}
               className="absolute inset-0"
-              initial={{ scale: 1.15 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 6, ease: "easeOut" }}
             >
-              <Image
-                src={heroSlides[currentSlide]}
-                alt={`Magpie Cottage view ${currentSlide + 1}`}
-                fill
-                className="object-cover"
-                priority={currentSlide === 0}
-                sizes="100vw"
-              />
+              <motion.div
+                className="absolute inset-0"
+                initial={{ scale: 1.15 }}
+                animate={{ scale: i === currentSlide ? 1 : 1.15 }}
+                transition={{ duration: 8, ease: "easeOut" }}
+              >
+                <Image
+                  src={slide}
+                  alt={`Magpie Cottage view ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={i === 0}
+                  sizes="100vw"
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          ))}
+        </div>
         <div className="absolute inset-0 bg-black/30" />
       </motion.div>
 
@@ -128,7 +129,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="w-full mt-16 md:mt-24 flex flex-col items-center"
+          className="w-full mt-8 md:mt-12 flex flex-col items-center"
         >
           <h2 className="font-display text-2xl md:text-3xl text-cream font-light tracking-wide mb-8">
             Your <span className="italic text-sage">jungle retreat</span>, six hours from Delhi.

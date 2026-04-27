@@ -31,7 +31,7 @@ export function BookingWidget() {
       <div className="relative w-full md:w-auto flex-1">
         <button 
           onClick={() => { setShowCalendar(!showCalendar); setShowGuests(false); }}
-          className="w-full flex items-center justify-between px-6 py-4 bg-white/5 rounded-[1.5rem] md:rounded-full hover:bg-white/10 transition-all duration-300 text-left"
+          className="w-full flex items-center justify-between px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all duration-300 text-left min-h-[80px]"
         >
           <div className="flex items-center gap-3">
             <CalendarIcon className="text-cream" size={24} />
@@ -73,7 +73,7 @@ export function BookingWidget() {
       <div className="relative w-full md:w-auto flex-1">
         <button 
           onClick={() => { setShowGuests(!showGuests); setShowCalendar(false); }}
-          className="w-full flex items-center justify-between px-6 py-4 bg-white/5 rounded-[1.5rem] md:rounded-full hover:bg-white/10 transition-all duration-300 text-left"
+          className="w-full flex items-center justify-between px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all duration-300 text-left min-h-[80px]"
         >
           <div className="flex items-center gap-3">
             <Users className="text-cream" size={24} />
@@ -104,7 +104,7 @@ export function BookingWidget() {
       </div>
 
       {/* CTA */}
-      <button className="w-full md:w-auto px-10 py-5 bg-sage text-cream font-medium hover:bg-sage-dark hover:scale-105 transition-all duration-300 rounded-[1.5rem] md:rounded-full whitespace-nowrap shadow-lg hover:shadow-xl uppercase tracking-wider text-sm">
+      <button className="w-full md:w-auto px-10 py-4 bg-sage text-cream font-medium hover:bg-sage-dark hover:scale-105 transition-all duration-300 rounded-2xl whitespace-nowrap shadow-lg hover:shadow-xl uppercase tracking-wider text-sm min-h-[80px]">
         Check Availability
       </button>
 
