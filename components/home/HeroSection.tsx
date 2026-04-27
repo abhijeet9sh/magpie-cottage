@@ -143,7 +143,7 @@ export function HeroSection() {
         >
           <BookingWidget />
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div 
