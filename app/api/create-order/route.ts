@@ -61,7 +61,7 @@ export async function POST(req: Request) {
     }
 
     const options = {
-      amount: Math.round(amount * 100), // amount in the smallest currency unit (paise)
+      amount: Math.round(totalAmount * 100), // amount in the smallest currency unit (paise) — always use server-calculated amount
       currency: "INR",
       receipt: `receipt_${Date.now()}`,
       notes: {

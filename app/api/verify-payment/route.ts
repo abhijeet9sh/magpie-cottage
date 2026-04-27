@@ -62,7 +62,7 @@ export async function POST(req: Request) {
             <div style="font-family: 'Georgia', serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
               <div style="text-align: center; margin-bottom: 32px;">
                 <h1 style="color: #394735; font-size: 28px; margin: 0;">Booking Confirmed ✓</h1>
-                <p style="color: #8A8A8A; font-size: 14px;">Magpie Cottage, Lansdowne</p>
+                <p style="color: #8A8A8A; font-size: 14px;">Magpie Cottage, Simalsaira</p>
               </div>
               
               <div style="background: #F0F2ED; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
               <div style="background: #FAF9F7; border: 1px solid #E8E4DB; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
                 <h3 style="color: #394735; font-size: 16px; margin: 0 0 12px 0;">Getting There</h3>
                 <p style="color: #525252; font-size: 14px; line-height: 1.6; margin: 0;">
-                  Magpie Cottage is located in Lansdowne, Pauri Garhwal, Uttarakhand. We'll send you detailed directions and a WhatsApp contact 3 days before your check-in.
+                  Magpie Cottage is located in Simalsaira, Uttarakhand 246155. We'll send you detailed directions and a WhatsApp contact 3 days before your check-in.
                 </p>
               </div>
 

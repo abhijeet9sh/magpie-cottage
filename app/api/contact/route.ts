@@ -7,7 +7,6 @@ const resend = new Resend(process.env.RESEND_API_KEY || "re_placeholder");
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    console.log("DEBUG: Received contact form body:", JSON.stringify(body, null, 2));
     const { fullName, email, phone, checkIn, checkOut, guests, pets, requests } = body;
 
     // Save enquiry to database

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function LocationButton() {
   return (
     <motion.a
-      href="https://maps.google.com/?q=Magpie+Cottage+Lansdowne+Uttarakhand"
+      href="https://www.google.com/maps/place/Magpie+Cottage/@29.7555205,78.7255583,17z/data=!4m16!1m7!3m6!1s0x3909814324743179:0x5d17e715e66e8917!2sMagpie+Cottage!8m2!3d29.7555159!4d78.7281332"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-forest text-cream rounded-full shadow-lg shadow-forest/30 hover:shadow-xl hover:shadow-forest/40 flex items-center justify-center transition-all duration-300 hover:scale-110"

@@ -68,8 +68,7 @@ export function RazorpayButton({ booking, disabled }: { booking: BookingDetails,
       rzp.open();
     } catch (error) {
       console.error("Payment failed", error);
-      // Fallback for development without Razorpay setup
-      window.location.href = "/book/confirmed";
+      alert("Payment could not be processed. Please try again or contact us via WhatsApp at +91 98119 34909.");
     }
   }
 

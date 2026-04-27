@@ -40,7 +40,7 @@ export default function Contact() {
                 <MapPin className="text-sage mt-1" size={24} />
                 <div>
                   <p className="font-medium text-text-dark">Address</p>
-                  <p>Lansdowne, Pauri Garhwal<br/>Uttarakhand, India</p>
+                  <p>Simalsaira,<br/>Uttarakhand 246155</p>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -65,7 +65,7 @@ export default function Contact() {
 
           <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-stone-200 border border-stone-200 flex-1 min-h-[300px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.68595460833!2d78.61460592750389!3d29.837748430761614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39097e32a6886e41%3A0xda81ad792fc64fa3!2sLansdowne%2C%20Uttarakhand%20246155!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.6063628771485!2d78.72555827616654!3d29.7555205391629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909814324743179%3A0x5d17e715e66e8917!2sMagpie%20Cottage!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { format, differenceInDays, eachDayOfInterval, parseISO } from "date-fns";
 import { DayPicker, DateRange } from "react-day-picker";
 import "react-day-picker/dist/style.css";
@@ -8,6 +9,7 @@ import { RazorpayButton } from "./RazorpayButton";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function BookingPage() {
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
   const [guests, setGuests] = useState(2);
@@ -15,6 +17,24 @@ export function BookingPage() {
   const [numberOfMonths, setNumberOfMonths] = useState(1);
   const [minDate, setMinDate] = useState<Date | undefined>(new Date());
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
+
+  // Pre-fill from URL params (from hero booking widget)
+  useEffect(() => {
+    const checkIn = searchParams.get("checkIn");
+    const checkOut = searchParams.get("checkOut");
+    const guestsParam = searchParams.get("guests");
+
+    if (checkIn || checkOut) {
+      setDateRange({
+        from: checkIn ? parseISO(checkIn) : undefined,
+        to: checkOut ? parseISO(checkOut) : undefined,
+      });
+    }
+    if (guestsParam) {
+      const parsed = parseInt(guestsParam, 10);
+      if (parsed >= 1 && parsed <= 8) setGuests(parsed);
+    }
+  }, [searchParams]);
   
   useEffect(() => {
     const handleResize = () => {

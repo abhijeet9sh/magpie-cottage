@@ -35,7 +35,7 @@ export function HeroSection() {
   const titleWords = ["Magpie", "Cottage"];
 
   return (
-    <section className="relative z-[100] w-full min-h-screen flex items-center justify-center bg-forest">
+    <section className="relative z-20 w-full min-h-screen flex items-center justify-center bg-forest">
       {/* Fading Stack Slideshow with Ken Burns */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div className="absolute inset-0 w-full h-[120%]" style={{ y }}>
@@ -139,7 +139,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="w-full flex flex-col items-center relative z-50"
+          className="w-full flex flex-col items-center relative z-[60]"
         >
           <BookingWidget />
         </motion.div>
