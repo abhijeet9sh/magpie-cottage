@@ -15,6 +15,7 @@ const leftLinks = [
     dropdown: [
       { name: "About Us", href: "/our-story" },
       { name: "Our Values", href: "/our-story#values" },
+      { name: "The Legacy", href: "/legacy" },
     ]
   },
   { 

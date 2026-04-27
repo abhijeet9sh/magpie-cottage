@@ -55,6 +55,7 @@ export function Footer() {
               {[
                 { name: "Home", href: "/" },
                 { name: "Our Story", href: "/our-story" },
+                { name: "The Legacy", href: "/legacy" },
                 { name: "The Cottage", href: "/the-cottage" },
                 { name: "Experiences", href: "/experiences" },
               ].map((link) => (
@@ -130,7 +131,7 @@ export function Footer() {
             <p className="flex items-center gap-1">
               Made with <span className="text-red-500 text-sm">♥</span> by{" "}
               <a 
-                href="https://instagram.com/apr.explorier" 
+                href="https://abhijeet9sh.github.io/Portfolio_Website/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-cream transition-colors border-b border-cream/20 hover:border-cream/60 pb-0.5"
