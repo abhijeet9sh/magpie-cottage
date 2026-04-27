@@ -1,32 +1,85 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { BookingWidget } from "@/components/booking/BookingWidget";
 import { ArrowDown } from "lucide-react";
 import { splitTextContainer, splitTextWord } from "@/lib/animations";
+
+const heroSlides = [
+  "/images/slides/slide-1.jpg",
+  "/images/slides/slide-2.jpg",
+  "/images/slides/slide-3.jpg",
+  "/images/slides/slide-4.jpg",
+  "/images/slides/slide-5.jpg",
+  "/images/slides/slide-6.jpg",
+];
 
 export function HeroSection() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 400]);
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
+
   const titleWords = ["Magpie", "Cottage"];
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-forest">
-      {/* Background Image with parallax */}
+      {/* Fading Stack Slideshow with Ken Burns */}
       <motion.div className="absolute inset-0 z-0 w-full h-[120%]" style={{ y }}>
-        <Image
-          src="/images/real/drone-hero.jpg"
-          alt="Magpie Cottage aerial view of the jungle retreat"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <motion.div
+              className="absolute inset-0"
+              initial={{ scale: 1.15 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 6, ease: "easeOut" }}
+            >
+              <Image
+                src={heroSlides[currentSlide]}
+                alt={`Magpie Cottage view ${currentSlide + 1}`}
+                fill
+                className="object-cover"
+                priority={currentSlide === 0}
+                sizes="100vw"
+              />
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inset-0 bg-black/30" />
       </motion.div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {heroSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentSlide(i)}
+            className={`h-1 rounded-full transition-all duration-500 ${
+              i === currentSlide ? "bg-cream w-8" : "bg-cream/40 w-2"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
 
       <motion.div 
         className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-48 pb-32 flex flex-col items-center text-center"

@@ -4,7 +4,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import Image from "next/image";
 import Link from "next/link";
-import { BedDouble, Users, PawPrint, Waves, TreePine, Wifi, Coffee, Flame, Bath, Monitor } from "lucide-react";
+import { BedDouble, Users, PawPrint, Waves, TreePine, Wifi, Coffee, Flame, Bath, Monitor, Clock, LogOut, UserCheck, Camera, Cigarette, AlertTriangle, ShieldAlert } from "lucide-react";
 
 export const metadata = {
   title: "The Cottage | Magpie Cottage",
@@ -54,27 +54,29 @@ export default function TheCottage() {
 
       <div className="pt-12 pb-24 md:pt-16 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto space-y-32">
         {/* Bedrooms */}
-        {rooms.map((room, i) => (
-          <AnimatedSection key={i} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className={`relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg group ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
-              <Image src={room.image} alt={room.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <div className={i % 2 !== 0 ? 'md:order-1' : ''}>
-              <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{room.name}</h2>
-              <p className="font-body text-text-mid leading-relaxed mb-8">{room.desc}</p>
-              <div className="flex flex-wrap gap-3">
-                {room.features.map(f => (
-                  <span key={f} className="px-5 py-2.5 bg-stone-50 rounded-full text-xs uppercase tracking-widest font-body text-text-mid border border-stone-200 hover:border-sage hover:text-sage transition-colors cursor-default">
-                    {f}
-                  </span>
-                ))}
+        <div id="rooms" className="scroll-mt-24 space-y-32">
+          {rooms.map((room, i) => (
+            <AnimatedSection key={i} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className={`relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg group ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
+                <Image src={room.image} alt={room.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
-            </div>
-          </AnimatedSection>
-        ))}
+              <div className={i % 2 !== 0 ? 'md:order-1' : ''}>
+                <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{room.name}</h2>
+                <p className="font-body text-text-mid leading-relaxed mb-8">{room.desc}</p>
+                <div className="flex flex-wrap gap-3">
+                  {room.features.map(f => (
+                    <span key={f} className="px-5 py-2.5 bg-stone-50 rounded-full text-xs uppercase tracking-widest font-body text-text-mid border border-stone-200 hover:border-sage hover:text-sage transition-colors cursor-default">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
 
         {/* Amenities */}
-        <AnimatedSection className="bg-cream rounded-[3rem] p-12 md:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
+        <AnimatedSection id="amenities" className="scroll-mt-24 bg-cream rounded-[3rem] p-12 md:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sage/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-forest/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
           <div className="text-center mb-16 relative z-10">
@@ -91,7 +93,7 @@ export default function TheCottage() {
           </div>
         </AnimatedSection>
 
-        {/* Pricing & Rules */}
+        {/* Pricing, House Rules, Cancellation, Safety */}
         <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Pricing */}
           <div className="bg-forest text-cream rounded-3xl p-10 flex flex-col justify-center">
@@ -112,17 +114,91 @@ export default function TheCottage() {
             </Link>
           </div>
 
-          {/* Rules */}
+          {/* House Rules */}
           <div className="bg-white border border-stone-200 rounded-3xl p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-6 text-text-dark">House Rules</h3>
-            <ul className="space-y-4 font-body text-text-mid list-disc list-inside marker:text-sage">
-              <li>Check-in: 1:00 PM – 5:00 PM</li>
-              <li>Check-out: 11:00 AM</li>
-              <li>No loud music after 10:00 PM</li>
-              <li>Pets must be leashed in shared outdoor areas</li>
-              <li>No smoking indoors</li>
-              <li>Please respect the surrounding wildlife</li>
-            </ul>
+            <div className="space-y-5 font-body text-text-mid">
+              {/* Checking in and out */}
+              <div>
+                <span className="text-xs uppercase tracking-widest text-text-light block mb-3">Checking in and out</span>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <Clock size={18} className="text-sage shrink-0" />
+                    <span>Check-in: 12:00 – 17:00</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <LogOut size={18} className="text-sage shrink-0" />
+                    <span>Checkout before 10:00</span>
+                  </li>
+                </ul>
+              </div>
+              {/* During your stay */}
+              <div className="border-t border-stone-100 pt-5">
+                <span className="text-xs uppercase tracking-widest text-text-light block mb-3">During your stay</span>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <UserCheck size={18} className="text-sage shrink-0" />
+                    <span>8 guests maximum</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <PawPrint size={18} className="text-sage shrink-0" />
+                    <span>Pets allowed</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Camera size={18} className="text-sage shrink-0" />
+                    <span>Commercial photography allowed</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Cigarette size={18} className="text-sage shrink-0" />
+                    <span>Smoking is allowed</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Cancellation Policy + Safety & Property */}
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Cancellation Policy */}
+          <div className="bg-stone-50 border border-stone-200 rounded-3xl p-10 flex flex-col justify-center">
+            <h3 className="font-display text-3xl mb-4 text-text-dark">Cancellation Policy</h3>
+            <p className="font-body text-text-mid leading-relaxed mb-6">
+              Add your trip dates to get the cancellation details for this stay.
+            </p>
+            <Link 
+              href="/book" 
+              className="inline-flex items-center gap-2 text-forest font-medium border-b border-forest pb-1 hover:text-sage hover:border-sage transition-colors w-fit"
+            >
+              Select dates &rarr;
+            </Link>
+          </div>
+
+          {/* Safety & Property */}
+          <div className="bg-white border border-stone-200 rounded-3xl p-10 flex flex-col justify-center">
+            <h3 className="font-display text-3xl mb-4 text-text-dark">Safety & Property</h3>
+            <p className="font-body text-text-mid text-sm mb-6">
+              Avoid surprises by looking over these important details about your host&apos;s property.
+            </p>
+            <div className="space-y-5 font-body text-text-mid">
+              <span className="text-xs uppercase tracking-widest text-text-light block mb-1">Safety devices</span>
+              
+              <div className="flex items-start gap-3 bg-amber-50 border border-amber-200/50 rounded-xl p-4">
+                <AlertTriangle size={20} className="text-amber-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-text-dark text-sm">Carbon monoxide alarm not reported</p>
+                  <p className="text-xs text-text-light mt-1">The Host hasn&apos;t reported a carbon monoxide alarm on the property. We suggest bringing a portable detector for your trip.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-amber-50 border border-amber-200/50 rounded-xl p-4">
+                <ShieldAlert size={20} className="text-amber-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-text-dark text-sm">Smoke alarm not reported</p>
+                  <p className="text-xs text-text-light mt-1">The Host hasn&apos;t reported a smoke alarm on the property. We suggest bringing a portable detector for your trip.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </AnimatedSection>
       </div>

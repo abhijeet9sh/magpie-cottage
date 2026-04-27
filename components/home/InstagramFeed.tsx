@@ -35,7 +35,7 @@ export function InstagramFeed() {
           {igPosts.map((post, i) => (
             <motion.a
               key={i}
-              href="https://instagram.com/magpiecottage_"
+              href="https://www.instagram.com/magpiecottage_?igsh=MTZpMWIyYzJzNGxxMg=="
               target="_blank"
               rel="noopener noreferrer"
               variants={scaleUpItem}
@@ -56,7 +56,7 @@ export function InstagramFeed() {
         </motion.div>
 
         <a 
-          href="https://instagram.com/magpiecottage_"
+          href="https://www.instagram.com/magpiecottage_?igsh=MTZpMWIyYzJzNGxxMg=="
           target="_blank" 
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 text-forest font-medium border-b border-forest pb-1 hover:text-sage-border hover:border-sage-border transition-colors"

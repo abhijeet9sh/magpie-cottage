@@ -3,7 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { LocationButton } from "@/components/ui/LocationButton";
+import { CallButton } from "@/components/ui/CallButton";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -36,7 +36,7 @@ export default function RootLayout({
         <LenisProvider>
           {children}
           <WhatsAppButton />
-          <LocationButton />
+          <CallButton />
         </LenisProvider>
       </body>
     </html>
