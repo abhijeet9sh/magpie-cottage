@@ -32,8 +32,9 @@ export function ExperiencesPreview() {
     <section className="py-16 md:py-24 px-6 md:px-12 bg-cream text-text-dark w-full">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-12 md:mb-16" animation="clipReveal">
+          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">The Cottage</span>
           <h2 className="font-display text-4xl md:text-5xl font-light italic leading-tight text-text-dark">
-            Serene experiences
+            Built With Nature
           </h2>
         </AnimatedSection>
 

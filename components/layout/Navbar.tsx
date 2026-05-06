@@ -5,294 +5,315 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-/* ─── Split nav groups: LEFT | LOGO | RIGHT ─── */
-const leftLinks = [
-  { 
-    name: "Our Story", 
+/* ─── Navigation data ─── */
+const navLinks = [
+  { name: "Home", href: "/" },
+  {
+    name: "Our Story",
     href: "/our-story",
     dropdown: [
       { name: "About Us", href: "/our-story" },
       { name: "Our Values", href: "/our-story#values" },
       { name: "The Legacy", href: "/legacy" },
-    ]
+      { name: "Your Host", href: "/our-story#host" },
+    ],
   },
-  { 
-    name: "The Cottage", 
+  {
+    name: "The Cottage",
     href: "/the-cottage",
     dropdown: [
-      { name: "Bedrooms", href: "/the-cottage#rooms" },
+      { name: "Rooms", href: "/the-cottage#rooms" },
       { name: "Amenities", href: "/the-cottage#amenities" },
-    ]
+      { name: "House Rules", href: "/the-cottage#rules" },
+    ],
   },
-  { 
-    name: "Experiences", 
+  {
+    name: "Experiences",
     href: "/experiences",
     dropdown: [
-      { name: "Activities", href: "/experiences#activities" },
+      { name: "All Activities", href: "/experiences#activities" },
+      { name: "Safari", href: "/experiences#safari" },
+      { name: "Birdwatching", href: "/experiences#birdwatching" },
       { name: "Dining", href: "/experiences#dining" },
-    ]
+    ],
   },
-];
-
-const rightLinks = [
   { name: "Gallery", href: "/gallery" },
-  { name: "Contact", href: "/contact" },
   { name: "Journal", href: "/journal" },
+  { name: "Contact", href: "/contact" },
 ];
 
-const allLinks = [...leftLinks, ...rightLinks];
+/* ── Individual nav item with fly-out dropdown ── */
+function NavItem({ link, pathname }: { link: (typeof navLinks)[0]; pathname: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLLIElement>(null);
+  const isActive =
+    pathname === link.href ||
+    (link.href !== "/" && pathname.startsWith(link.href));
 
-type NavLinkItem = {
-  name: string;
-  href: string;
-  dropdown?: { name: string; href: string }[];
-};
-
-/* ─── Reusable nav link renderer ─── */
-function NavLink({ 
-  link, 
-  isScrolled, 
-  pathname, 
-  activeDropdown, 
-  setActiveDropdown 
-}: { 
-  link: NavLinkItem; 
-  isScrolled: boolean; 
-  pathname: string; 
-  activeDropdown: string | null; 
-  setActiveDropdown: (v: string | null) => void;
-}) {
-  const hasDropdown = 'dropdown' in link && link.dropdown;
-  const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
+  // Close on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   return (
-    <div className="relative">
-      {hasDropdown ? (
-        <button
-          onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-          className={`flex items-center gap-1 px-3 py-1.5 text-sm font-body tracking-wide transition-all duration-300 ${
-            isScrolled
-              ? "text-forest/80 hover:text-forest"
-              : "text-cream/90 hover:text-cream"
-          } ${isActive ? "font-semibold" : "font-normal"}`}
-        >
-          {link.name}
-          <ChevronDown 
-            size={12} 
-            className={`transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180" : ""}`}
-          />
-        </button>
-      ) : (
-        <Link
-          href={link.href}
-          className={`px-3 py-1.5 text-sm font-body tracking-wide transition-all duration-300 ${
-            isScrolled
-              ? "text-forest/80 hover:text-forest"
-              : "text-cream/90 hover:text-cream"
-          } ${isActive ? "font-semibold" : "font-normal"}`}
-        >
-          {link.name}
-        </Link>
-      )}
+    <li
+      ref={ref}
+      className="relative w-full"
+      onMouseEnter={() => link.dropdown && setOpen(true)}
+      onMouseLeave={() => link.dropdown && setOpen(false)}
+    >
+      <Link
+        href={link.href}
+        className={`block py-[10px] px-5 text-[12px] font-body leading-none tracking-[0.08em] transition-all duration-200 text-center ${
+          isActive ? "text-white" : "text-white/60 hover:text-white"
+        }`}
+      >
+        {link.name}
+      </Link>
 
-      {/* Dropdown menu */}
-      <AnimatePresence>
-        {hasDropdown && activeDropdown === link.name && (
-          <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            className="absolute top-full left-0 mt-3 min-w-[200px] bg-cream rounded-xl shadow-xl border border-sage/10 overflow-hidden py-2"
-          >
-            {link.dropdown?.map((sub) => (
-              <Link
-                key={sub.name}
-                href={sub.href}
-                className="block px-5 py-3 text-sm text-forest hover:bg-sage/10 transition-colors font-body"
-                onClick={() => setActiveDropdown(null)}
-              >
-                <span className="font-medium">{sub.name}</span>
-              </Link>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+      {/* Fly-out dropdown — appears to the right of the sidebar */}
+      {link.dropdown && (
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, x: -6 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -6 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              className="absolute top-0 left-full ml-0 z-50 pointer-events-auto"
+            >
+              {/* invisible bridge so hover doesn't break when crossing gap */}
+              <div className="pl-3">
+                <div className="min-w-[180px] bg-black/80 backdrop-blur-md border border-white/10 overflow-hidden">
+                  {link.dropdown.map((sub, i) => (
+                    <Link
+                      key={sub.name}
+                      href={sub.href}
+                      className={`block px-5 py-3 text-[12px] tracking-[0.1em] text-white/60 hover:text-white hover:bg-white/5 transition-colors font-body ${
+                        i !== link.dropdown!.length - 1 ? "border-b border-white/5" : ""
+                      }`}
+                    >
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+    </li>
   );
 }
 
-/* ─── Main Navbar ─── */
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [hideNav, setHideNav] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
+  // Close mobile nav on route change
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 80);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsMobileOpen(false);
-    setActiveDropdown(null);
+    setIsNavOpen(false);
   }, [pathname]);
 
+  // Body scroll lock on mobile nav
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setActiveDropdown(null);
+    document.body.style.overflow = isNavOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isNavOpen]);
+
+  // Peek behaviour on inner pages
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      if (!isHomePage) {
+        setHideNav(y > lastScrollY && y > 80);
       }
+      setLastScrollY(y);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, isHomePage]);
 
   return (
     <>
-      <motion.nav
-        className="fixed top-0 left-0 right-0 z-50"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      {/* ════════════════════════════════════════════════════════
+          DESKTOP — narrow fixed left sidebar (Black Iris style)
+          Width: 112px, full height, semi-transparent black
+      ════════════════════════════════════════════════════════ */}
+      <nav
+        className={`hidden lg:flex flex-col fixed top-0 left-0 h-full z-50 transition-transform duration-500 ease-in-out backdrop-blur-xl ${
+          hideNav ? "-translate-x-full" : "translate-x-0"
+        }`}
+        style={{ width: "120px", background: "rgba(0,0,0,0.65)" }}
       >
-        {/* The inner bar — transforms from transparent full-width to floating pill */}
-        <div
-          className={`transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
-            isScrolled
-              ? "mx-4 md:mx-8 lg:mx-12 mt-3 bg-cream/92 backdrop-blur-xl shadow-lg shadow-forest/5 rounded-full border border-sage/10"
-              : "mx-0 mt-0 bg-transparent rounded-none border-transparent"
-          }`}
-          ref={dropdownRef}
-        >
-          <div className={`max-w-7xl mx-auto flex items-center justify-between transition-all duration-500 ${
-            isScrolled ? "px-6 md:px-8 h-14" : "px-6 md:px-12 h-16"
-          }`}>
-            
-            {/* ── LEFT LINKS ── */}
-            <div className="hidden lg:flex items-center gap-1 flex-1">
-              {leftLinks.map((link) => (
-                <NavLink
-                  key={link.name}
-                  link={link}
-                  isScrolled={isScrolled}
-                  pathname={pathname}
-                  activeDropdown={activeDropdown}
-                  setActiveDropdown={setActiveDropdown}
-                />
-              ))}
-            </div>
-
-            {/* ── CENTER LOGO ── */}
-            <Link href="/" className="flex items-center gap-3 group flex-shrink-0 lg:mx-8">
+        {/* Nav links + Logo — centered together */}
+        <div className="flex-1 flex flex-col justify-center">
+          {/* Logo — sits directly above Home */}
+          <div className="flex flex-col items-center mb-5">
+            <Link href="/" className="flex flex-col items-center group">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Magpie Cottage"
-                width={56}
-                height={56}
-                className="w-14 h-14 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:scale-105"
+                width={72}
+                height={72}
+                className="w-[72px] h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+                style={{ filter: "invert(1) brightness(1.5)" }}
+                unoptimized
               />
-              <span className={`font-display text-xl md:text-2xl tracking-wide transition-colors duration-500 hidden sm:inline ${
-                isScrolled ? "text-forest" : "text-cream"
-              }`}>
-                Magpie Cottage
-              </span>
             </Link>
-
-            {/* ── RIGHT LINKS + BOOK BUTTON ── */}
-            <div className="hidden lg:flex items-center gap-1 flex-1 justify-end">
-              {rightLinks.map((link) => (
-                <NavLink
-                  key={link.name}
-                  link={link}
-                  isScrolled={isScrolled}
-                  pathname={pathname}
-                  activeDropdown={activeDropdown}
-                  setActiveDropdown={setActiveDropdown}
-                />
-              ))}
-
-              {/* Book button — filled when scrolled, outline at top */}
-              <Link
-                href="/book"
-                className={`ml-3 px-5 py-2 rounded-full text-sm font-body font-medium border transition-all duration-300 ${
-                  isScrolled
-                    ? "bg-forest border-forest text-cream hover:bg-forest/90"
-                    : "border-cream/50 text-cream hover:bg-cream/10"
-                }`}
-              >
-                Book a room
-              </Link>
-            </div>
-
-            {/* ── MOBILE MENU BUTTON ── */}
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileOpen ? (
-                <X size={22} className={isScrolled ? "text-forest" : "text-cream"} />
-              ) : (
-                <Menu size={22} className={isScrolled ? "text-forest" : "text-cream"} />
-              )}
-            </button>
           </div>
-        </div>
-      </motion.nav>
 
-      {/* ── MOBILE MENU OVERLAY ── */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-forest/98 backdrop-blur-2xl lg:hidden flex items-center justify-center"
+          {/* Divider */}
+          <div className="mx-5 mb-4 h-px bg-white/10" />
+
+          <ul className="flex flex-col items-center w-full py-2">
+          {navLinks.map((link) => (
+            <NavItem key={link.name} link={link} pathname={pathname} />
+          ))}
+          </ul>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="px-5 py-8">
+          <div className="h-px bg-white/10 mb-5" />
+          <Link
+            href="/book"
+            className="block text-center py-2.5 border border-white/20 text-[11px] tracking-[0.18em] uppercase text-white/70 hover:text-white hover:border-white/60 transition-all duration-300 font-body"
           >
+            Book Now
+          </Link>
+        </div>
+      </nav>
+
+      {/* ════════════════════════════════════════════════════════
+          MOBILE — thin top bar + slide-out drawer
+      ════════════════════════════════════════════════════════ */}
+      <div
+        className={`lg:hidden fixed top-0 left-0 w-full h-16 z-40 flex items-center justify-between px-5 transition-transform duration-500 ${
+          hideNav ? "-translate-y-full" : "translate-y-0"
+        }`}
+        style={{ background: "rgba(0,0,0,0.70)" }}
+      >
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image
+            src="/logo.png"
+            alt="Magpie Cottage"
+            width={32}
+            height={32}
+            className="w-8 h-8 object-contain"
+            style={{ filter: "invert(1) brightness(1.5)" }}
+            unoptimized
+          />
+          <span className="text-[9px] tracking-[0.18em] uppercase text-white/80 font-body">
+            Magpie Cottage
+          </span>
+        </Link>
+        <button
+          onClick={() => setIsNavOpen(!isNavOpen)}
+          className="text-white/70 hover:text-white transition-colors p-1"
+          aria-label="Toggle menu"
+        >
+          <Menu size={22} strokeWidth={1.5} />
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {isNavOpen && (
+          <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 }}
-              className="flex flex-col items-center gap-6"
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="lg:hidden fixed inset-0 z-[45] bg-black/70 backdrop-blur-sm"
+              onClick={() => setIsNavOpen(false)}
+            />
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+              className="lg:hidden fixed top-0 left-0 h-full z-[46] flex flex-col py-8 overflow-y-auto"
+              style={{ width: "280px", background: "rgba(0,0,0,0.92)" }}
             >
-              {allLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
+              {/* Mobile header */}
+              <div className="flex items-center justify-between px-7 mb-10">
+                <Link href="/" className="flex items-center gap-3">
+                  <Image
+                    src="/logo.png"
+                    alt="Magpie Cottage"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-contain"
+                    style={{ filter: "invert(1) brightness(1.5)" }}
+                    unoptimized
+                  />
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-white/70 font-body">
+                    Magpie Cottage
+                  </span>
+                </Link>
+                <button
+                  onClick={() => setIsNavOpen(false)}
+                  className="text-white/50 hover:text-white transition-colors"
                 >
-                  <Link
-                    href={link.href}
-                    className="font-display text-3xl text-cream hover:text-sage transition-colors"
-                    onClick={() => setIsMobileOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + allLinks.length * 0.08, duration: 0.4 }}
-              >
+                  <X size={20} strokeWidth={1.5} />
+                </button>
+              </div>
+
+              {/* Mobile links */}
+              <div className="flex flex-col px-7 flex-1 space-y-1">
+                {navLinks.map((link) => {
+                  const isActive =
+                    pathname === link.href ||
+                    (link.href !== "/" && pathname.startsWith(link.href));
+                  return (
+                    <div key={link.name} className="border-b border-white/5 pb-3 pt-2">
+                      <Link
+                        href={link.href}
+                        className={`block text-[13px] tracking-[0.1em] font-body transition-colors ${
+                          isActive ? "text-white" : "text-white/60 hover:text-white"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                      {link.dropdown && (
+                        <div className="mt-2.5 pl-3 border-l border-white/10 space-y-2">
+                          {link.dropdown.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              className="block text-[11px] tracking-[0.12em] text-white/40 hover:text-white/80 font-body transition-colors"
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="px-7 mt-8">
                 <Link
                   href="/book"
-                  className="mt-4 px-8 py-3 rounded-full bg-sage text-forest font-body font-medium"
-                  onClick={() => setIsMobileOpen(false)}
+                  className="block text-center py-3 border border-white/20 text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white hover:border-white/60 transition-all font-body"
                 >
-                  Book a room
+                  Book Now
                 </Link>
-              </motion.div>
+              </div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

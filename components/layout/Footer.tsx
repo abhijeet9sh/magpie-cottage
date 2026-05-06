@@ -23,13 +23,14 @@ export function Footer() {
           <motion.div variants={footerItem} className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Magpie Cottage"
-                width={40}
-                height={40}
-                className="brightness-0 invert"
+                width={80}
+                height={80}
+                className="object-contain"
+                style={{ filter: "invert(1) brightness(1.5)" }}
+                unoptimized
               />
-              <span className="font-display text-xl text-cream">Magpie Cottage</span>
             </Link>
             <p className="font-body text-cream/70 text-sm leading-relaxed mb-4 max-w-sm">
               A private jungle retreat nestled on the edge of a tiger reserve in Simalsaira, Uttarakhand. Where the forest begins where the garden ends.
@@ -58,6 +59,9 @@ export function Footer() {
                 { name: "The Legacy", href: "/legacy" },
                 { name: "The Cottage", href: "/the-cottage" },
                 { name: "Experiences", href: "/experiences" },
+                { name: "Gallery", href: "/gallery" },
+                { name: "Journal", href: "/journal" },
+                { name: "Contact", href: "/contact" },
               ].map((link) => (
                 <Link
                   key={link.name}

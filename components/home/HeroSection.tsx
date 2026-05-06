@@ -32,7 +32,7 @@ export function HeroSection() {
     return () => clearInterval(timer);
   }, [nextSlide]);
 
-  const titleWords = ["Magpie", "Cottage"];
+
 
   return (
     <section className="relative z-20 w-full min-h-screen flex items-center justify-center bg-forest">
@@ -91,47 +91,49 @@ export function HeroSection() {
           className="w-full flex flex-col items-center"
           style={{ opacity }}
         >
-          {/* Location tag */}
-          <motion.span 
-            className="uppercase tracking-[0.3em] text-sage text-xs font-body mb-8 block"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Lansdowne, Uttarakhand
-          </motion.span>
-          
-          {/* Split-text hero title */}
+          {/* Combined hero title — Stillness In the Wild */}
           <motion.div
             variants={splitTextContainer}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap justify-center"
+            className="flex flex-wrap justify-center items-baseline gap-x-4 md:gap-x-6"
             style={{ perspective: 600 }}
           >
-            {titleWords.map((word, i) => (
-              <motion.span
-                key={word}
-                variants={splitTextWord}
-                className="inline-block mr-[0.3em]"
-                style={{ transformOrigin: "bottom" }}
-                custom={i}
+            {/* Stillness */}
+            <motion.span
+              variants={splitTextWord}
+              className="inline-block"
+              style={{ transformOrigin: "bottom" }}
+              custom={0}
+            >
+              <h1 
+                className="font-display text-5xl md:text-7xl lg:text-[8rem] text-cream font-light tracking-tight leading-[0.9]"
+                style={{ display: "contents" }}
               >
-                <h1 
-                  className={`font-display text-6xl md:text-8xl lg:text-[10rem] text-cream font-light tracking-tight leading-[0.9] ${
-                    i === 1 ? "italic font-extralight" : ""
-                  }`}
-                  style={{ display: "contents" }}
-                >
-                  {word}
-                </h1>
-              </motion.span>
-            ))}
-          </motion.div>
+                Stillness
+              </h1>
+            </motion.span>
 
-          <h2 className="font-display text-2xl md:text-3xl text-cream font-light tracking-wide mt-8 md:mt-12 mb-8">
-            Your <span className="italic text-sage">jungle retreat</span>, six hours from Delhi.
-          </h2>
+            {/* In the Wild wrapper to prevent wrapping between these specific words if possible */}
+            <div className="flex items-baseline gap-x-2 md:gap-x-4">
+              {["In", "the", "Wild"].map((word, i) => (
+                <motion.span
+                  key={word}
+                  variants={splitTextWord}
+                  className="inline-block"
+                  style={{ transformOrigin: "bottom" }}
+                  custom={i + 1}
+                >
+                  <span 
+                    className="font-display text-xl md:text-4xl lg:text-5xl text-cream/80 font-extralight italic tracking-wide leading-[0.9]"
+                    style={{ display: "contents" }}
+                  >
+                    {word}
+                  </span>
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Booking widget - Kept solid (no scroll opacity) */}

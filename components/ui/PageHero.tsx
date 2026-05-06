@@ -6,10 +6,11 @@ import Image from "next/image";
 
 interface PageHeroProps {
   title: string;
+  subtitle?: string;
   imageSrc: string;
 }
 
-export function PageHero({ title, imageSrc }: PageHeroProps) {
+export function PageHero({ title, subtitle, imageSrc }: PageHeroProps) {
   return (
     <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -32,6 +33,16 @@ export function PageHero({ title, imageSrc }: PageHeroProps) {
         >
           {title}
         </motion.h1>
+        {subtitle && (
+          <motion.p
+            className="font-display text-xl md:text-2xl text-cream/80 font-light italic tracking-wide mt-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            {subtitle}
+          </motion.p>
+        )}
       </div>
     </section>
   );

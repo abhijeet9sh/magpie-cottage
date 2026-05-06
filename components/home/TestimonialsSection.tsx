@@ -18,19 +18,23 @@ const StarIcon = ({ className = "" }: { className?: string }) => (
 const quotes = [
   {
     text: "Absolutely blissful place ensconced in a veritable green fortress with a gurgling gushing stream for company.",
-    author: "Rajesh Madan"
+    author: "Rajesh Madan",
+    source: "Airbnb"
   },
   {
     text: "A gem of a cottage, tastefully appointed, clean, spacious and comfortable. Surrounded by forests on either side, beside the Plane river.",
-    author: "Kaustuv Chatterjee"
+    author: "Kaustuv Chatterjee",
+    source: "Airbnb"
   },
   {
     text: "Amazing location and villa. The villa gives a very cosy vibe. The staff is polite and the food is amazing.",
-    author: "Shilpa"
+    author: "Shilpa",
+    source: "MakeMyTrip"
   },
   {
     text: "It is a wonderful house, very comfortable. Neat and clean. Caretaker and the cook both are taking good care of the guest.",
-    author: "Divya Jindal"
+    author: "Divya Jindal",
+    source: "MakeMyTrip"
   }
 ];
 
@@ -73,6 +77,9 @@ export function TestimonialsSection() {
                 <span className="w-6 h-px bg-text-mid/30 block"></span>
                 {quotes[currentIndex].author}
                 <span className="w-6 h-px bg-text-mid/30 block"></span>
+              </p>
+              <p className="font-body text-xs text-text-light mt-2 tracking-wider">
+                via {quotes[currentIndex].source}
               </p>
             </motion.div>
           </AnimatePresence>

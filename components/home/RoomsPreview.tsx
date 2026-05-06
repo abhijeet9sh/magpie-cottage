@@ -29,7 +29,7 @@ const rooms = [
 
 export function RoomsPreview() {
   return (
-    <section className="py-24 md:py-32 bg-cream overflow-hidden">
+    <section id="rooms-preview" className="py-24 md:py-32 bg-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <AnimatedSection className="mb-16 md:mb-24" animation="clipReveal">
           <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Where You&apos;ll Sleep</span>

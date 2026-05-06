@@ -78,6 +78,61 @@ export default function Contact() {
         </AnimatedSection>
       </div>
 
+      {/* How to Reach Us */}
+      <section className="bg-cream border-t border-stone-200/50 py-16 md:py-24 px-6 md:px-12">
+        <AnimatedSection className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Getting Here</span>
+            <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">How to reach us</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* By Air */}
+            <div className="bg-white rounded-3xl p-8 border border-stone-200 text-center hover:shadow-lg transition-shadow duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-forest/5 flex items-center justify-center mx-auto mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="text-forest"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+              </div>
+              <h3 className="font-display text-xl italic text-text-dark mb-3">By Air</h3>
+              <p className="font-body text-text-mid text-sm leading-relaxed mb-2">
+                <span className="font-semibold text-text-dark">Jolly Grant Airport, Dehradun</span>
+              </p>
+              <p className="font-body text-text-light text-sm">~150 km · approx. 4.5 hrs drive</p>
+            </div>
+            {/* By Rail */}
+            <div className="bg-white rounded-3xl p-8 border border-stone-200 text-center hover:shadow-lg transition-shadow duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-forest/5 flex items-center justify-center mx-auto mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="text-forest"><path d="M4 11V4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v7"/><path d="M4 11h16"/><path d="M4 15v4a1 1 0 0 0 1 1h2l1-2h8l1 2h2a1 1 0 0 0 1-1v-4"/><path d="M4 15h16"/><circle cx="8.5" cy="18.5" r=".5" fill="currentColor"/><circle cx="15.5" cy="18.5" r=".5" fill="currentColor"/></svg>
+              </div>
+              <h3 className="font-display text-xl italic text-text-dark mb-3">By Rail</h3>
+              <p className="font-body text-text-mid text-sm leading-relaxed mb-2">
+                <span className="font-semibold text-text-dark">Kotdwar Railway Station</span>
+              </p>
+              <p className="font-body text-text-light text-sm">~40 km · approx. 1.5 hrs drive</p>
+            </div>
+            {/* By Road */}
+            <div className="bg-white rounded-3xl p-8 border border-stone-200 text-center hover:shadow-lg transition-shadow duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-forest/5 flex items-center justify-center mx-auto mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="text-forest"><path d="M4 19L8 5"/><path d="M16 5l4 14"/><path d="M7 15h10"/><path d="M9 9h6"/></svg>
+              </div>
+              <h3 className="font-display text-xl italic text-text-dark mb-3">By Road</h3>
+              <p className="font-body text-text-mid text-sm leading-relaxed mb-2">
+                <span className="font-semibold text-text-dark">From Delhi via NH9</span>
+              </p>
+              <p className="font-body text-text-light text-sm">~280 km · approx. 6 hrs drive</p>
+            </div>
+          </div>
+          <div className="mt-10 text-center">
+            <a
+              href="https://maps.app.goo.gl/magpiecottage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-body text-sm text-forest font-medium border-b border-forest pb-1 hover:text-sage hover:border-sage transition-colors"
+            >
+              Open in Google Maps &rarr;
+            </a>
+          </div>
+        </AnimatedSection>
+      </section>
+
       <Footer />
     </main>
   );

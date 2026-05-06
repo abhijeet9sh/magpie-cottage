@@ -129,7 +129,7 @@ export function BookingPage() {
                   </div>
                   <div className="flex items-center gap-3 pt-8">
                     <input type="checkbox" id="pets-booking" checked={pets} onChange={e => setPets(e.target.checked)} className="w-5 h-5 rounded border-stone-300 text-sage focus:ring-sage accent-sage" />
-                    <label htmlFor="pets-booking" className="text-sm font-medium text-text-dark">Bringing Pets?</label>
+                    <label htmlFor="pets-booking" className="text-sm font-medium text-text-dark">Bringing Pets? (Stay Free)</label>
                   </div>
                 </div>
 
@@ -240,7 +240,7 @@ export function BookingPage() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-cream/70">Guests</span>
-              <span className="font-medium">{guests} Adults {pets ? "+ Pets" : ""}</span>
+              <span className="font-medium">{guests} Adults {pets ? "+ Pets (Free)" : ""}</span>
             </div>
           </div>
 
@@ -285,6 +285,20 @@ export function BookingPage() {
               <span className="block font-medium text-text-dark">Instant Confirmation</span>
               <span className="text-xs">Receive your booking details immediately.</span>
             </div>
+          </div>
+        </div>
+        {/* Alternative Booking Options */}
+        <div className="bg-white rounded-3xl p-6 md:p-8 border border-stone-200 shadow-sm font-body">
+          <h4 className="font-medium text-text-dark mb-4">Also available on</h4>
+          <div className="flex flex-col gap-3">
+            <a href="https://www.airbnb.co.uk/rooms/1646990107600437661?unique_share_id=4204505f-a341-4c9a-873f-0a1113059bd2&viralityEntryPoint=1&s=76" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-xl border border-stone-200 hover:border-[#FF5A5F] hover:bg-[#FF5A5F]/5 transition-colors group">
+              <span className="font-medium text-text-dark group-hover:text-[#FF5A5F]">Airbnb</span>
+              <svg className="w-5 h-5 text-stone-400 group-hover:text-[#FF5A5F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            <a href="https://www.goibibo.com/hotels/magpie-cottage-a-jungle-retreat-hotel-in-lansdowne-202603231540164664?mHotelId=202603231540164664&checkin=2026-04-15&checkout=2026-04-16&roomString=1-2-0&cc=IN&locusId=RGNCR&locusType=region" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-xl border border-stone-200 hover:border-[#2276E3] hover:bg-[#2276E3]/5 transition-colors group">
+              <span className="font-medium text-text-dark group-hover:text-[#2276E3]">Goibibo</span>
+              <svg className="w-5 h-5 text-stone-400 group-hover:text-[#2276E3]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
           </div>
         </div>
       </div>

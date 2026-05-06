@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magpie Cottage — Architectural Site Map</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f5f3ef;
+      --header-bg: #c1593a;
+      --standard-bg: #e6e2f4;
+      --diff-bg: #d4ebd8;
+      --integration-bg: #f5dfbf;
+      --text-dark: #1a1a1a;
+      --text-muted: #5e5e5e;
+      --line-color: #d1ced7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 40px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .sitemap-container {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      width: 100%;
+      max-width: 1400px;
+      margin-bottom: 80px;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 260px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .col-header {
+      background-color: var(--header-bg);
+      color: white;
+      width: 100%;
+      padding: 14px 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .col-header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      width: 1px;
+      height: 40px;
+      background-color: var(--line-color);
+    }
+
+    .node {
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .node::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      width: 1px;
+      height: 40px;
+      background-color: var(--line-color);
+    }
+
+    .node:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      width: 1px;
+      height: 40px;
+      background-color: var(--line-color);
+    }
+
+    /* Sub-menu lines */
+    .dropdown-group {
+      width: 100%;
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .dropdown-group::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      width: 1px;
+      height: 40px;
+      background-color: var(--line-color);
+    }
+
+    .dropdown-wrapper {
+      display: flex;
+      gap: 16px;
+      position: relative;
+    }
+
+    .dropdown-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 20%;
+      right: 20%;
+      height: 1px;
+      background-color: var(--line-color);
+    }
+
+    .dropdown-node {
+      flex: 1;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .dropdown-node::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      width: 1px;
+      height: 12px;
+      background-color: var(--line-color);
+    }
+
+    .node-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .node-desc {
+      font-size: 11px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .bg-standard {
+      background-color: var(--standard-bg);
+    }
+
+    .bg-diff {
+      background-color: var(--diff-bg);
+    }
+
+    .bg-integration {
+      background-color: var(--integration-bg);
+    }
+
+    .legend {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1400px;
+      background-color: white;
+      padding: 16px 32px;
+      border-radius: 8px;
+      border: 1px solid var(--line-color);
+      margin-bottom: 24px;
+    }
+
+    .legend-items {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    .legend-note {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    .badge-nav {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 2;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge-subnav {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #8a8a8a;
+      color: white;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .tag-existing {
+      display: inline-block;
+      background-color: #e2e8f0;
+      color: #475569;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-added {
+      display: inline-block;
+      background-color: #fef08a;
+      color: #854d0e;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px dashed #ca8a04;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      body {
+        zoom: 0.5;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .sitemap-container {
+        flex-wrap: nowrap !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .sitemap-container {
+        flex-wrap: wrap;
+      }
+
+      .column {
+        flex: 1 1 45%;
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Sitemap | Magpie Cottage</h1>
+    <p>A Jungle Retreat · Lansdowne · Complete Architecture</p>
+  </div>
+
+  <div class="sitemap-container">
+
+    <!-- Column 1: Home & Core -->
+    <div class="column">
+      <div class="col-header">Home & General</div>
+
+      <div class="node bg-standard">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Hero Section</div>
+        <div class="node-desc">Stillness in the wild<br>Logo & Vertical Nav</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">About the cottage</div>
+        <div class="node-desc">3 BR · sleeps 6-8 · pet-friendly<br>intro · links to Our Story</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-diff">
+        <div class="node-title">Cottage Preview</div>
+        <div class="node-desc">Built with nature<br>Rooms & Amenities summary</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-diff">
+        <div class="node-title">Experiences & Location</div>
+        <div class="node-desc">Safari · birdwatching · hikes<br>8.6 km to Jim Corbett · map embed</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">Guest reviews</div>
+        <div class="node-desc">Pulled manually from Airbnb / MMT</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-integration">
+        <div class="node-title">Instagram Feed</div>
+        <div class="node-desc">Live social updates<br>@magpiecottage_</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-diff">
+        <div class="node-title">Booking band</div>
+        <div class="node-desc">Airbnb · MakeMyTrip · WhatsApp<br>"From ₹8,788/night" reference</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+    </div>
+
+    <!-- Column 2: The Cottage & Experiences -->
+    <div class="column">
+      <div class="col-header">The Cottage & Gallery</div>
+
+      <div class="node bg-standard">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">The Cottage (Page)</div>
+        <div class="node-desc">Detailed property overview<br>Hero image</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="dropdown-group">
+        <div class="dropdown-wrapper">
+          <div class="dropdown-node bg-standard">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">Bedrooms</div>
+            <div class="node-desc">3 rooms</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+          <div class="dropdown-node bg-standard">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">Amenities</div>
+            <div class="node-desc">Wi-Fi, chef, caretaker, heater</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="node bg-diff">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Experiences (Page)</div>
+        <div class="node-desc">What to do in Lansdowne<br>Curated list</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="dropdown-group">
+        <div class="dropdown-wrapper">
+          <div class="dropdown-node bg-diff">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">Activities</div>
+            <div class="node-desc">Safari, Birding<br>Hiking</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+          <div class="dropdown-node bg-diff">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">Dining</div>
+            <div class="node-desc">Local cuisine<br>Chef specials</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Photo gallery</div>
+        <div class="node-desc">20+ images · masonry · lightbox</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+    </div>
+
+    <!-- Column 3: Story & Legacy -->
+    <div class="column">
+      <div class="col-header">Our Story</div>
+
+      <div class="node bg-standard">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Page hero</div>
+        <div class="node-desc">"Our Story" · ambient drone image</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">How Magpie began</div>
+        <div class="node-desc">Founder prose · why Lansdowne<br>the dream of a jungle retreat</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-diff">
+        <div class="node-title">Meet Malini the founder</div>
+        <div class="node-desc">Founder bio + photos</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="dropdown-group">
+        <div class="dropdown-wrapper">
+          <div class="dropdown-node bg-standard">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">About Us</div>
+            <div class="node-desc">Host biographies</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+          <div class="dropdown-node bg-standard">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">Our Values</div>
+            <div class="node-desc">Sustainability</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">The land & philosophy</div>
+        <div class="node-desc">River · forest · birdlife<br>slow living · pull quote</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">The Legacy (Page)</div>
+        <div class="node-desc">History of the property<br>Kalagarh tiger reserve</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Journal (Blog)</div>
+        <div class="node-desc">Articles & Guides</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="dropdown-group">
+        <div class="dropdown-wrapper">
+          <div class="dropdown-node bg-standard">
+            <div class="badge-subnav">Submenu</div>
+            <div class="node-title">Articles</div>
+            <div class="node-desc">Weekend in wild<br>Birdwatching guide</div>
+            <span class="tag-existing">Current Site</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">"Come stay with us" band</div>
+        <div class="node-desc">Routes to Contact + WhatsApp</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+    </div>
+
+    <!-- Column 4: Contact & Booking -->
+    <div class="column">
+      <div class="col-header">Contact & Booking</div>
+
+      <div class="node bg-standard">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Page hero</div>
+        <div class="node-desc">"Plan your stay" · verandah image</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-diff">
+        <div class="node-title">Three booking options</div>
+        <div class="node-desc">Airbnb · MakeMyTrip · WhatsApp<br>Pre-filled host message</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-integration">
+        <div class="badge-nav">Main Menu</div>
+        <div class="node-title">Inquiry form / Contact</div>
+        <div class="node-desc">Name · dates · guests · message<br>→ Resend → host email + WhatsApp</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">How to reach & map</div>
+        <div class="node-desc">Road · railway · airport<br>Simalsaira, Lansdowne · Maps link</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">House rules & FAQ</div>
+        <div class="node-desc">Check-in · IDs · pets (₹4000)<br>smoking · couples welcome</div>
+        <span class="tag-added">Added from Ref</span>
+      </div>
+
+      <div class="node bg-standard">
+        <div class="node-title">Contact details</div>
+        <div class="node-desc">Phone · WhatsApp · email · Insta</div>
+        <span class="tag-existing">Current Site</span>
+      </div>
+
+      <div class="dropdown-group" style="margin-bottom: 0;">
+        <div class="dropdown-wrapper">
+          <div class="dropdown-node bg-standard" style="padding: 8px;">
+            <div class="badge-subnav" style="font-size: 7px; padding: 2px 4px; top: -8px;">Submenu</div>
+            <div class="node-title" style="font-size: 11px;">Terms</div>
+            <span class="tag-existing" style="font-size: 6px; padding: 1px 3px;">Current</span>
+          </div>
+          <div class="dropdown-node bg-standard" style="padding: 8px;">
+            <div class="badge-subnav" style="font-size: 7px; padding: 2px 4px; top: -8px;">Submenu</div>
+            <div class="node-title" style="font-size: 11px;">Privacy</div>
+            <span class="tag-existing" style="font-size: 6px; padding: 1px 3px;">Current</span>
+          </div>
+          <div class="dropdown-node bg-standard" style="padding: 8px;">
+            <div class="badge-subnav" style="font-size: 7px; padding: 2px 4px; top: -8px;">Submenu</div>
+            <div class="node-title" style="font-size: 11px;">Refunds</div>
+            <span class="tag-existing" style="font-size: 6px; padding: 1px 3px;">Current</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="legend">
+    <div class="legend-items">
+      <div class="legend-item">
+        <div class="legend-color bg-standard"></div>
+        <span>Standard section</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color bg-diff"></div>
+        <span>Differentiator section</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color bg-integration"></div>
+        <span>Custom integration</span>
+      </div>
+      <div class="legend-item">
+        <span class="tag-existing" style="margin: 0;">CURRENT SITE</span>
+      </div>
+      <div class="legend-item">
+        <span class="tag-added" style="margin: 0;">ADDED FROM REF</span>
+      </div>
+    </div>
+    <div class="legend-note">
+      Nav, footer & floating WA button persist site-wide
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -94,7 +94,7 @@ export default function TheCottage() {
         </AnimatedSection>
 
         {/* Pricing, House Rules, Cancellation, Safety */}
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <AnimatedSection id="rules" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Pricing */}
           <div className="bg-forest text-cream rounded-3xl p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-6">Rates</h3>

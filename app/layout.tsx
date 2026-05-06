@@ -31,12 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="antialiased">
         <LenisProvider>
-          {children}
-          <WhatsAppButton />
-          <CallButton />
+          {/* Content extends full-width — sidebar overlays with glassmorphism */}
+          <div>
+            {children}
+            <WhatsAppButton />
+            <CallButton />
+          </div>
         </LenisProvider>
       </body>
     </html>
