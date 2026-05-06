@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 const platforms = [
   {
     name: "Airbnb",
-    href: "https://www.airbnb.co.in/rooms/1026aborea",
+    href: "https://www.airbnb.co.uk/rooms/1646990107600437661?unique_share_id=4204505f-a341-4c9a-873f-0a1113059bd2&viralityEntryPoint=1&s=76",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.995 17.586c-.387.808-.86 1.378-1.395 1.77-.62.455-1.31.644-2.005.644-.537 0-1.08-.12-1.565-.36a9.31 9.31 0 01-1.03-.585 9.31 9.31 0 01-1.03.585c-.486.24-1.028.36-1.565.36-.695 0-1.385-.189-2.005-.644-.536-.392-1.008-.962-1.395-1.77-.403-.84-.604-1.773-.604-2.76 0-1.23.375-2.498 1.116-3.768a18.525 18.525 0 012.05-2.76A24.304 24.304 0 0112 5.118a24.304 24.304 0 013.434 3.18 18.525 18.525 0 012.05 2.76c.741 1.27 1.116 2.538 1.116 3.768 0 .987-.2 1.92-.605 2.76z" />
@@ -15,14 +15,14 @@ const platforms = [
     color: "hover:text-[#FF5A5F] hover:border-[#FF5A5F]/30",
   },
   {
-    name: "MakeMyTrip",
-    href: "https://www.makemytrip.com",
+    name: "Goibibo",
+    href: "https://www.goibibo.com/hotels/magpie-cottage-a-jungle-retreat-hotel-in-lansdowne-202603231540164664?mHotelId=202603231540164664&checkin=2026-04-15&checkout=2026-04-16&roomString=1-2-0&cc=IN&locusId=RGNCR&locusType=region",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
         <path d="M21.5 3h-19A1.5 1.5 0 001 4.5v15A1.5 1.5 0 002.5 21h19a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0021.5 3zM12 17.5a5.5 5.5 0 110-11 5.5 5.5 0 010 11zm0-9a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
       </svg>
     ),
-    color: "hover:text-[#0078D4] hover:border-[#0078D4]/30",
+    color: "hover:text-[#2276E3] hover:border-[#2276E3]/30",
   },
   {
     name: "WhatsApp",

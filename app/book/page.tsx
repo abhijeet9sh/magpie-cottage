@@ -27,7 +27,7 @@ export default function Book() {
           <p className="font-body text-text-light text-sm mb-6">Prefer a familiar platform? Reserve through any of these channels.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <a
-              href="https://www.airbnb.co.in/rooms/1026aborea"
+              href="https://www.airbnb.co.uk/rooms/1646990107600437661?unique_share_id=4204505f-a341-4c9a-873f-0a1113059bd2&viralityEntryPoint=1&s=76"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-4 px-6 py-5 rounded-2xl border border-stone-200 hover:border-[#FF5A5F]/30 hover:shadow-md transition-all duration-300"
@@ -43,18 +43,18 @@ export default function Book() {
               </div>
             </a>
             <a
-              href="https://www.makemytrip.com"
+              href="https://www.goibibo.com/hotels/magpie-cottage-a-jungle-retreat-hotel-in-lansdowne-202603231540164664?mHotelId=202603231540164664&checkin=2026-04-15&checkout=2026-04-16&roomString=1-2-0&cc=IN&locusId=RGNCR&locusType=region"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 px-6 py-5 rounded-2xl border border-stone-200 hover:border-[#0078D4]/30 hover:shadow-md transition-all duration-300"
+              className="group flex items-center gap-4 px-6 py-5 rounded-2xl border border-stone-200 hover:border-[#2276E3]/30 hover:shadow-md transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#0078D4]/5 flex items-center justify-center shrink-0 group-hover:bg-[#0078D4]/10 transition-colors">
-                <svg className="w-5 h-5 text-[#0078D4]" viewBox="0 0 24 24" fill="currentColor">
+              <div className="w-10 h-10 rounded-xl bg-[#2276E3]/5 flex items-center justify-center shrink-0 group-hover:bg-[#2276E3]/10 transition-colors">
+                <svg className="w-5 h-5 text-[#2276E3]" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M21.5 3h-19A1.5 1.5 0 001 4.5v15A1.5 1.5 0 002.5 21h19a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0021.5 3zM12 17.5a5.5 5.5 0 110-11 5.5 5.5 0 010 11zm0-9a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
                 </svg>
               </div>
               <div>
-                <p className="font-body text-sm font-semibold text-text-dark">MakeMyTrip</p>
+                <p className="font-body text-sm font-semibold text-text-dark">Goibibo</p>
                 <p className="font-body text-xs text-text-light">View listing &rarr;</p>
               </div>
             </a>
