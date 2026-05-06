@@ -16,7 +16,7 @@ const navLinks = [
     dropdown: [
       { name: "About Us", href: "/our-story" },
       { name: "Our Values", href: "/our-story#values" },
-      { name: "The Legacy", href: "/legacy" },
+      { name: "The Legacy", href: "/our-story#legacy" },
       { name: "Your Host", href: "/our-story#host" },
     ],
   },
