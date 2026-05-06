@@ -96,43 +96,26 @@ export function HeroSection() {
             variants={splitTextContainer}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap justify-center items-baseline gap-x-4 md:gap-x-6"
+            className="flex flex-wrap justify-center items-baseline gap-x-3 md:gap-x-4"
             style={{ perspective: 600 }}
           >
-            {/* Stillness */}
-            <motion.span
-              variants={splitTextWord}
-              className="inline-block"
-              style={{ transformOrigin: "bottom" }}
-              custom={0}
-            >
-              <h1 
-                className="font-display text-5xl md:text-7xl lg:text-[8rem] text-cream font-light tracking-tight leading-[0.9]"
-                style={{ display: "contents" }}
+            {/* Stillness In the Wild - Uniform and Elegant */}
+            {["Stillness", "In", "the", "Wild"].map((word, i) => (
+              <motion.span
+                key={`${word}-${i}`}
+                variants={splitTextWord}
+                className="inline-block"
+                style={{ transformOrigin: "bottom" }}
+                custom={i}
               >
-                Stillness
-              </h1>
-            </motion.span>
-
-            {/* In the Wild wrapper */}
-            <div className="flex items-baseline gap-x-2 md:gap-x-6">
-              {["In", "the", "Wild"].map((word, i) => (
-                <motion.span
-                  key={word}
-                  variants={splitTextWord}
-                  className="inline-block"
-                  style={{ transformOrigin: "bottom" }}
-                  custom={i + 1}
+                <span 
+                  className="font-display text-4xl md:text-6xl lg:text-7xl text-cream font-light italic tracking-tight leading-[0.9]"
+                  style={{ display: "contents" }}
                 >
-                  <span 
-                    className="font-display text-5xl md:text-7xl lg:text-[8rem] text-cream font-light tracking-tight leading-[0.9]"
-                    style={{ display: "contents" }}
-                  >
-                    {word}
-                  </span>
-                </motion.span>
-              ))}
-            </div>
+                  {word}
+                </span>
+              </motion.span>
+            ))}
           </motion.div>
         </motion.div>
 
