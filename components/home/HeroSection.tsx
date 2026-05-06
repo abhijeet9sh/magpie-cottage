@@ -109,7 +109,7 @@ export function HeroSection() {
                 custom={i}
               >
                 <span 
-                  className="font-display text-4xl md:text-6xl lg:text-7xl text-cream font-light italic tracking-tight leading-[0.9]"
+                  className="font-display text-3xl md:text-4xl lg:text-5xl text-cream font-light italic tracking-tight leading-[0.9]"
                   style={{ display: "contents" }}
                 >
                   {word}
