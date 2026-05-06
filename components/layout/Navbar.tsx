@@ -155,26 +155,26 @@ export function Navbar() {
         }`}
         style={{ width: "120px", background: "rgba(0,0,0,0.65)" }}
       >
-        {/* Nav links + Logo — centered together */}
+        {/* Logo — Absolute Top */}
+        <div className="flex flex-col items-center pt-8 pb-4 w-full">
+          <Link href="/" className="flex flex-col items-center group">
+            <Image
+              src="/logo.png"
+              alt="Magpie Cottage"
+              width={72}
+              height={72}
+              className="w-[72px] h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+              style={{ filter: "invert(1) brightness(1.5)" }}
+              unoptimized
+            />
+          </Link>
+        </div>
+
+        {/* Divider */}
+        <div className="mx-5 mb-4 h-px bg-white/10" />
+
+        {/* Nav links — centered vertically in remaining space */}
         <div className="flex-1 flex flex-col justify-center">
-          {/* Logo — sits directly above Home */}
-          <div className="flex flex-col items-center mb-5">
-            <Link href="/" className="flex flex-col items-center group">
-              <Image
-                src="/logo.png"
-                alt="Magpie Cottage"
-                width={72}
-                height={72}
-                className="w-[72px] h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
-                style={{ filter: "invert(1) brightness(1.5)" }}
-                unoptimized
-              />
-            </Link>
-          </div>
-
-          {/* Divider */}
-          <div className="mx-5 mb-4 h-px bg-white/10" />
-
           <ul className="flex flex-col items-center w-full py-2">
           {navLinks.map((link) => (
             <NavItem key={link.name} link={link} pathname={pathname} />

@@ -185,7 +185,7 @@ export default function OurStory() {
           <div className="bg-stone-50/50 p-10 md:p-16 rounded-3xl border border-stone-200/60 shadow-sm relative">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-7xl text-sage/40 font-display font-bold leading-none">&quot;</span>
             <p className="font-display text-2xl md:text-3xl italic font-light text-stone-800 leading-relaxed mb-8 pt-4">
-              &ldquo;It is a wonderful house, very comfortable, neat, and clean. The caretaker and the cook both take very good care of the guests.&rdquo;
+              &ldquo;It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests&rdquo;
             </p>
             <p className="font-body text-[11px] uppercase tracking-[0.2em] font-medium text-stone-500">
               — Divya Jindal
