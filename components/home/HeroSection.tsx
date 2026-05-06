@@ -114,8 +114,8 @@ export function HeroSection() {
               </h1>
             </motion.span>
 
-            {/* In the Wild wrapper to prevent wrapping between these specific words if possible */}
-            <div className="flex items-baseline gap-x-2 md:gap-x-4">
+            {/* In the Wild wrapper */}
+            <div className="flex items-baseline gap-x-2 md:gap-x-6">
               {["In", "the", "Wild"].map((word, i) => (
                 <motion.span
                   key={word}
@@ -125,7 +125,7 @@ export function HeroSection() {
                   custom={i + 1}
                 >
                   <span 
-                    className="font-display text-xl md:text-4xl lg:text-5xl text-cream/80 font-extralight italic tracking-wide leading-[0.9]"
+                    className="font-display text-5xl md:text-7xl lg:text-[8rem] text-cream font-light tracking-tight leading-[0.9]"
                     style={{ display: "contents" }}
                   >
                     {word}

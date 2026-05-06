@@ -203,7 +203,7 @@ export function Navbar() {
         }`}
         style={{ background: "rgba(0,0,0,0.70)" }}
       >
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Magpie Cottage"
@@ -213,9 +213,6 @@ export function Navbar() {
             style={{ filter: "invert(1) brightness(1.5)" }}
             unoptimized
           />
-          <span className="text-[9px] tracking-[0.18em] uppercase text-white/80 font-body">
-            Magpie Cottage
-          </span>
         </Link>
         <button
           onClick={() => setIsNavOpen(!isNavOpen)}
@@ -248,7 +245,7 @@ export function Navbar() {
             >
               {/* Mobile header */}
               <div className="flex items-center justify-between px-7 mb-10">
-                <Link href="/" className="flex items-center gap-3">
+                <Link href="/" className="flex items-center">
                   <Image
                     src="/logo.png"
                     alt="Magpie Cottage"
@@ -258,9 +255,6 @@ export function Navbar() {
                     style={{ filter: "invert(1) brightness(1.5)" }}
                     unoptimized
                   />
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-white/70 font-body">
-                    Magpie Cottage
-                  </span>
                 </Link>
                 <button
                   onClick={() => setIsNavOpen(false)}
