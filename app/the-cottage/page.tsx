@@ -52,16 +52,16 @@ export default function TheCottage() {
         </div>
       </section>
 
-      <div className="pt-12 pb-24 md:pt-16 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto space-y-32">
+      <div className="pt-12 pb-24 md:pt-16 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto space-y-24 md:space-y-32">
         {/* Bedrooms */}
-        <div id="rooms" className="scroll-mt-24 space-y-32">
+        <div id="rooms" className="scroll-mt-24 space-y-24 md:space-y-32">
           {rooms.map((room, i) => (
-            <AnimatedSection key={i} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <AnimatedSection key={i} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className={`relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg group ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
                 <Image src={room.image} alt={room.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
               <div className={i % 2 !== 0 ? 'md:order-1' : ''}>
-                <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{room.name}</h2>
+                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light italic mb-6 text-text-dark">{room.name}</h2>
                 <p className="font-body text-text-mid leading-relaxed mb-8">{room.desc}</p>
                 <div className="flex flex-wrap gap-3">
                   {room.features.map(f => (
@@ -76,14 +76,14 @@ export default function TheCottage() {
         </div>
 
         {/* Amenities */}
-        <AnimatedSection id="amenities" className="scroll-mt-24 bg-cream rounded-[3rem] p-12 md:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
+        <AnimatedSection id="amenities" className="scroll-mt-24 bg-cream rounded-[3rem] p-8 md:p-16 lg:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sage/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-forest/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
           <div className="text-center mb-16 relative z-10">
-            <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark mb-4">Amenities</h2>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light italic text-text-dark mb-4">Amenities</h2>
             <p className="font-body text-text-mid max-w-lg mx-auto">Everything you need for a comfortable stay in the wilderness.</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
             <div className="flex flex-col items-center text-center gap-4 group"><Wifi className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">High-Speed WiFi</span></div>
             <div className="flex flex-col items-center text-center gap-4 group"><Coffee className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Equipped Kitchen</span></div>
             <div className="flex flex-col items-center text-center gap-4 group"><Flame className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Firepit & Patio</span></div>
@@ -94,9 +94,9 @@ export default function TheCottage() {
         </AnimatedSection>
 
         {/* Pricing, House Rules, Cancellation, Safety */}
-        <AnimatedSection id="rules" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <AnimatedSection id="rules" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Pricing */}
-          <div className="bg-forest text-cream rounded-3xl p-10 flex flex-col justify-center">
+          <div className="bg-forest text-cream rounded-3xl p-6 md:p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-6">Rates</h3>
             <div className="space-y-4 font-body mb-8">
               <div className="flex justify-between border-b border-cream/10 pb-4">
@@ -115,7 +115,7 @@ export default function TheCottage() {
           </div>
 
           {/* House Rules */}
-          <div className="bg-white border border-stone-200 rounded-3xl p-10 flex flex-col justify-center">
+          <div className="bg-white border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-6 text-text-dark">House Rules</h3>
             <div className="space-y-5 font-body text-text-mid">
               {/* Checking in and out */}
@@ -159,9 +159,9 @@ export default function TheCottage() {
         </AnimatedSection>
 
         {/* Cancellation Policy + Safety & Property */}
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Cancellation Policy */}
-          <div className="bg-stone-50 border border-stone-200 rounded-3xl p-10 flex flex-col justify-center">
+          <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-4 text-text-dark">Cancellation Policy</h3>
             <p className="font-body text-text-mid leading-relaxed mb-6">
               Add your trip dates to get the cancellation details for this stay.
@@ -175,7 +175,7 @@ export default function TheCottage() {
           </div>
 
           {/* Safety & Property */}
-          <div className="bg-white border border-stone-200 rounded-3xl p-10 flex flex-col justify-center">
+          <div className="bg-white border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-4 text-text-dark">Safety & Property</h3>
             <p className="font-body text-text-mid text-sm mb-6">
               Avoid surprises by looking over these important details about your host&apos;s property.

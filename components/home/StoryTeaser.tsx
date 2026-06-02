@@ -7,7 +7,7 @@ import { AnimatedButton } from "@/components/ui/AnimatedButton";
 export function StoryTeaser() {
   return (
     <section className="pt-20 pb-12 md:pt-28 md:pb-16 px-6 md:px-12 max-w-7xl mx-auto bg-background">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
         {/* Image with reveal animation */}
         <ImageReveal
           src="/images/gallery/exterior/img_6.jpg"
@@ -19,7 +19,7 @@ export function StoryTeaser() {
         
         <AnimatedSection animation="slideInRight">
           <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">The Setting</span>
-          <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
             Where The Jungle <br/> Meets The River
           </h2>
           <h3 className="font-display text-xl md:text-2xl font-medium text-text-dark mb-4">

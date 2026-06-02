@@ -76,7 +76,7 @@ export default function OurStory() {
         ════════════════════════════════════════════ */}
         <AnimatedSection className="max-w-3xl mx-auto px-6 md:px-12 text-center">
           <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-4 block">How It Began</span>
-          <h2 className="font-display text-4xl md:text-[2.8rem] font-light italic leading-tight mb-10 text-stone-800">
+          <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic leading-tight mb-10 text-stone-800">
             The dream of a jungle retreat.
           </h2>
           <div className="font-body text-stone-500 space-y-5 leading-relaxed text-base md:text-[1.05rem] text-left">
@@ -98,10 +98,10 @@ export default function OurStory() {
             Section 1 — Built With Nature
             TEXT LEFT  |  PHOTO RIGHT
         ════════════════════════════════════════════ */}
-        <AnimatedSection className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <AnimatedSection className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div>
             <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-4 block">The Cottage</span>
-            <h2 className="font-display text-4xl md:text-[2.8rem] font-light italic leading-tight mb-8 text-stone-800">
+            <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic leading-tight mb-8 text-stone-800">
               Built with nature.
             </h2>
             <div className="font-body text-stone-500 space-y-5 leading-relaxed text-base md:text-[1.05rem]">
@@ -118,7 +118,7 @@ export default function OurStory() {
         ════════════════════════════════════════════ */}
         <AnimatedSection className="max-w-5xl mx-auto px-6 md:px-12 text-center">
           <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-4 block">The Setting</span>
-          <h2 className="font-display text-4xl md:text-[2.8rem] font-light italic leading-tight mb-12 text-stone-800">
+          <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic leading-tight mb-12 text-stone-800">
             Where the jungle meets the river.
           </h2>
 
@@ -142,7 +142,7 @@ export default function OurStory() {
             Philosophy — contained dark green card
         ════════════════════════════════════════════ */}
         <div className="max-w-5xl mx-auto px-6 md:px-12">
-          <div className="bg-[#2D3929] rounded-3xl px-10 py-20 md:px-20 text-center">
+          <div className="bg-[#2D3929] rounded-3xl px-6 py-12 md:px-20 md:py-20 text-center">
             <p className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-8 block">Our Philosophy</p>
             <p className="font-display text-2xl md:text-4xl font-light italic text-stone-100 leading-snug max-w-3xl mx-auto">
               &quot;We believe true luxury isn&apos;t about excess; it&apos;s about space, silence, and the freedom to simply be.&quot;
@@ -159,7 +159,7 @@ export default function OurStory() {
         <AnimatedSection id="values" className="scroll-mt-24 max-w-5xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
             <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-4 block">What We Stand For</span>
-            <h2 className="font-display text-4xl md:text-[2.8rem] font-light italic text-stone-800">Our Values</h2>
+            <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic text-stone-800">Our Values</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
@@ -168,7 +168,7 @@ export default function OurStory() {
               { icon: <Heart size={26} strokeWidth={1.5} />, title: "Community", body: "Every meal is prepared by local cooks using locally sourced ingredients. We work with village artisans and contribute to the community's livelihood." },
               { icon: <Bird size={26} strokeWidth={1.5} />, title: "Nature First", body: "Wildlife corridors remain undisturbed. Our no-loud-music policy respects the animals that share this land—leopards, elephants, and rare birds." },
             ].map(({ icon, title, body }) => (
-              <div key={title} className="bg-stone-100 p-10 md:p-12 rounded-3xl">
+              <div key={title} className="bg-stone-100 p-6 md:p-12 rounded-3xl">
                 <div className="text-[#2D3929] mb-6">{icon}</div>
                 <h3 className="font-display text-2xl italic mb-4 text-stone-800">{title}</h3>
                 <p className="font-body text-sm md:text-base text-stone-500 leading-relaxed">{body}</p>
@@ -182,7 +182,7 @@ export default function OurStory() {
         ════════════════════════════════════════════ */}
         <AnimatedSection className="max-w-4xl mx-auto px-6 md:px-12 text-center pt-8">
           <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-6 block">Guest Experiences</span>
-          <div className="bg-stone-50/50 p-10 md:p-16 rounded-3xl border border-stone-200/60 shadow-sm relative">
+          <div className="bg-stone-50/50 p-6 md:p-16 rounded-3xl border border-stone-200/60 shadow-sm relative">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-7xl text-sage/40 font-display font-bold leading-none">&quot;</span>
             <p className="font-display text-2xl md:text-3xl italic font-light text-stone-800 leading-relaxed mb-8 pt-4">
               &ldquo;It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests&rdquo;
@@ -202,7 +202,7 @@ export default function OurStory() {
           <div className="text-center space-y-10">
             <div>
               <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-4 block">Our Foundation</span>
-              <h2 className="font-display text-4xl md:text-[2.8rem] font-light italic text-stone-800">
+              <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic text-stone-800">
                 The legacy of late Mr Ashok Kumar.
               </h2>
             </div>
@@ -215,7 +215,7 @@ export default function OurStory() {
           {/* ── Champion for every living thing
                2-col:  [portrait pair]  |  text
           ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left: two portrait-oriented thumbnails side by side */}
             <div className="grid grid-cols-2 gap-4">
               <Thumb src="/images/story/champion_1.png" alt="Conservation advocacy" aspect="aspect-[3/4]" />
@@ -236,7 +236,7 @@ export default function OurStory() {
           {/* ── The Beginnings
                2-col:  text  |  [staggered pair]
           ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left: text */}
             <div className="order-2 lg:order-1">
               <h3 className="font-display text-2xl md:text-3xl font-light italic mb-6 text-stone-800">The beginnings.</h3>
@@ -256,7 +256,7 @@ export default function OurStory() {
                Left: featured wide + two thumbnails below
                Right: text
           ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left: editorial stack — 1 wide on top, 2 thumbs below */}
             <div className="space-y-4">
               <Photo src="/images/story/war_1.png" alt="Wildlife trade monitoring" aspect="aspect-[16/9]" />
@@ -280,7 +280,7 @@ export default function OurStory() {
           {/* ── The Lineage
                2-col:  text  |  [tall feature + offset thumb]
           ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left: text */}
             <div className="order-2 lg:order-1">
               <h3 className="font-display text-2xl md:text-3xl font-light italic mb-6 text-stone-800">The lineage.</h3>
@@ -305,8 +305,8 @@ export default function OurStory() {
             Meet Malini the Founder
             Founder bio with photo
         ════════════════════════════════════════════ */}
-        <AnimatedSection id="host" className="scroll-mt-24 max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <div className="sticky top-32 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg lg:max-w-md mx-auto w-full">
+        <AnimatedSection id="host" className="scroll-mt-24 max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          <div className="lg:sticky lg:top-32 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg lg:max-w-md mx-auto w-full">
             <img
               src="/malini.png"
               alt="Malini Kumar — Your Host"
@@ -316,7 +316,7 @@ export default function OurStory() {
           </div>
           <div>
             <span className="text-[11px] uppercase tracking-[0.22em] text-stone-400 font-body mb-4 block">Your Host: &ldquo;Legacy. Wilderness. Connection.&rdquo;</span>
-            <h2 className="font-display text-4xl md:text-[2.8rem] font-light italic leading-tight mb-4 text-stone-800">
+            <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic leading-tight mb-4 text-stone-800">
               Malini Kumar
             </h2>
             <p className="font-display text-xl italic text-stone-600 mb-8">
@@ -351,7 +351,7 @@ export default function OurStory() {
       ════════════════════════════════════════════ */}
       <section className="bg-[#2D3929] py-20 md:py-28 text-center">
         <AnimatedSection className="max-w-3xl mx-auto px-6">
-          <h2 className="font-display text-4xl md:text-5xl font-light italic text-stone-100 mb-6">
+          <h2 className="font-display text-3xl md:text-5xl font-light italic text-stone-100 mb-6">
             Come stay with us.
           </h2>
           <p className="font-body text-stone-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">

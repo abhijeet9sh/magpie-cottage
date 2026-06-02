@@ -7,7 +7,7 @@ import { slideInLeft } from "@/lib/animations";
 export function MapSection() {
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
         
         {/* Left: Google Maps Embed */}
         <motion.div
@@ -32,7 +32,7 @@ export function MapSection() {
         {/* Right: Text */}
         <AnimatedSection>
           <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Getting Here</span>
-          <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
             Six hours from Delhi. <br/> A world away.
           </h2>
           <p className="font-body text-text-mid leading-relaxed text-lg mb-8 max-w-md">

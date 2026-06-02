@@ -14,7 +14,7 @@ const highlights = [
 export function AboutCottage() {
   return (
     <section className="py-20 md:py-28 px-6 md:px-12 bg-background">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Image */}
         <AnimatedSection animation="slideInLeft">
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
@@ -32,7 +32,7 @@ export function AboutCottage() {
           <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">
             A Private Retreat
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
             Your own jungle cottage.
           </h2>
           <p className="font-body text-text-mid leading-relaxed text-lg mb-10 max-w-md">

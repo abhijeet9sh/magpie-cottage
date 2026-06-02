@@ -4,6 +4,7 @@ import "./globals.css";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CallButton } from "@/components/ui/CallButton";
+import { SplashScreen } from "@/components/ui/SplashScreen";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="antialiased">
+        <SplashScreen />
         <LenisProvider>
           {/* Content extends full-width — sidebar overlays with glassmorphism */}
           <div>

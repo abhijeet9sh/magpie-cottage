@@ -87,7 +87,7 @@ export function BookingPage() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       {/* Left: Form */}
       <div className="lg:col-span-7">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-stone-200/50 border border-stone-200">
+        <div className="bg-white rounded-3xl p-6 md:p-12 shadow-xl shadow-stone-200/50 border border-stone-200">
           
           {/* Step Indicators */}
           <div className="flex gap-4 mb-12">
@@ -225,8 +225,8 @@ export function BookingPage() {
       </div>
 
       {/* Right: Sticky Pricing Summary */}
-      <div className="lg:col-span-5 sticky top-32 space-y-6">
-        <div className="bg-forest text-cream rounded-[2rem] p-8 md:p-10 shadow-2xl">
+      <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-6">
+        <div className="bg-forest text-cream rounded-[2rem] p-6 md:p-10 shadow-2xl">
           <h3 className="font-display text-2xl mb-6 italic">Booking Summary</h3>
           
           <div className="space-y-4 mb-8 font-body border-b border-white/10 pb-6">

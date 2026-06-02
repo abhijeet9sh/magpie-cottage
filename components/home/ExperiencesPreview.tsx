@@ -33,7 +33,7 @@ export function ExperiencesPreview() {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-12 md:mb-16" animation="clipReveal">
           <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">The Cottage</span>
-          <h2 className="font-display text-4xl md:text-5xl font-light italic leading-tight text-text-dark">
+          <h2 className="font-display text-3xl md:text-5xl font-light italic leading-tight text-text-dark">
             Built With Nature
           </h2>
         </AnimatedSection>

@@ -35,7 +35,7 @@ export function HeroSection() {
 
 
   return (
-    <section className="relative z-20 w-full min-h-screen flex items-center justify-center bg-forest">
+    <section className="relative z-40 w-full min-h-screen flex items-center justify-center bg-forest">
       {/* Fading Stack Slideshow with Ken Burns */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div className="absolute inset-0 w-full h-[120%]" style={{ y }}>

@@ -55,9 +55,9 @@ export default function LegacyPage() {
       <div className="py-24 md:py-32 px-6 md:px-12 max-w-6xl mx-auto space-y-40">
         
         {/* Section: The Beginnings */}
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="font-display text-4xl md:text-5xl font-light mb-8 text-sage">The Beginnings</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-light mb-8 text-sage">The Beginnings</h2>
             <div className="font-body text-cream/80 space-y-5 leading-relaxed text-lg">
               <p>
                 His journey into conservation began during his tenure at Tata Steel, with frequent visits to Simlipal in Odisha, where he was deeply influenced by the legendary conservationist Saroj Raj Choudhary.
@@ -77,7 +77,7 @@ export default function LegacyPage() {
 
         {/* Section: Institutionalising the War */}
         <AnimatedSection className="text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-light mb-10 text-sage max-w-4xl mx-auto leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl font-light mb-10 text-sage max-w-4xl mx-auto leading-tight">
             Institutionalizing the War Against Wildlife Crime & Illegal Trade
           </h2>
           <div className="font-body text-cream/80 space-y-6 leading-relaxed text-lg max-w-3xl mx-auto mb-16 text-left">
@@ -105,12 +105,12 @@ export default function LegacyPage() {
         </AnimatedSection>
 
         {/* Section: The Lineage */}
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="relative w-full rounded-[2rem] overflow-hidden">
             <Image src={ASSETS.lineage} alt="The Lineage" width={800} height={1600} className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
-            <h2 className="font-display text-4xl md:text-5xl font-light mb-8 text-sage">The Lineage</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-light mb-8 text-sage">The Lineage</h2>
             <div className="font-body text-cream/80 space-y-5 leading-relaxed text-lg">
               <p>
                 Ashok Kumar&apos;s legacy was shaped by a lineage of courage and conviction. His mother, Urmila Shastri, was a freedom fighter who worked closely with Mahatma Gandhi and was imprisoned during India&apos;s independence movement.

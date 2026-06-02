@@ -198,7 +198,7 @@ export function Navbar() {
           MOBILE — thin top bar + slide-out drawer
       ════════════════════════════════════════════════════════ */}
       <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-16 z-40 flex items-center justify-between px-5 transition-transform duration-500 ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-20 z-[60] flex items-center justify-between px-5 backdrop-blur-xl border-b border-white/5 transition-transform duration-500 ${
           hideNav ? "-translate-y-full" : "translate-y-0"
         }`}
         style={{ background: "rgba(0,0,0,0.70)" }}
@@ -207,10 +207,10 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt="Magpie Cottage"
-            width={32}
-            height={32}
-            className="w-8 h-8 object-contain"
-            style={{ filter: "invert(1) brightness(1.5)" }}
+            width={84}
+            height={84}
+            className="w-[84px] h-[84px] object-contain -ml-2"
+            style={{ filter: "invert(1) brightness(1.2)" }}
             unoptimized
           />
         </Link>
@@ -219,7 +219,7 @@ export function Navbar() {
           className="text-white/70 hover:text-white transition-colors p-1"
           aria-label="Toggle menu"
         >
-          <Menu size={22} strokeWidth={1.5} />
+          <Menu size={24} strokeWidth={1.5} />
         </button>
       </div>
 
@@ -232,7 +232,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden fixed inset-0 z-[45] bg-black/70 backdrop-blur-sm"
+              className="lg:hidden fixed inset-0 z-[65] bg-black/70 backdrop-blur-sm"
               onClick={() => setIsNavOpen(false)}
             />
             <motion.div
@@ -240,27 +240,28 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-              className="lg:hidden fixed top-0 left-0 h-full z-[46] flex flex-col py-8 overflow-y-auto"
+              className="lg:hidden fixed top-0 left-0 h-[100dvh] z-[70] flex flex-col py-8 overflow-y-auto pb-16"
               style={{ width: "280px", background: "rgba(0,0,0,0.92)" }}
             >
               {/* Mobile header */}
-              <div className="flex items-center justify-between px-7 mb-10">
-                <Link href="/" className="flex items-center">
+              <div className="flex items-center justify-between px-7 mb-10 relative">
+                <div className="w-8"></div> {/* Spacer for perfect centering */}
+                <Link href="/" className="flex items-center absolute left-1/2 -translate-x-1/2">
                   <Image
                     src="/logo.png"
                     alt="Magpie Cottage"
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 object-contain"
-                    style={{ filter: "invert(1) brightness(1.5)" }}
+                    width={110}
+                    height={110}
+                    className="w-[110px] h-[110px] object-contain"
+                    style={{ filter: "invert(1) brightness(1.2)" }}
                     unoptimized
                   />
                 </Link>
                 <button
                   onClick={() => setIsNavOpen(false)}
-                  className="text-white/50 hover:text-white transition-colors"
+                  className="text-white/50 hover:text-white transition-colors p-1"
                 >
-                  <X size={20} strokeWidth={1.5} />
+                  <X size={24} strokeWidth={1.5} />
                 </button>
               </div>
 
@@ -274,6 +275,7 @@ export function Navbar() {
                     <div key={link.name} className="border-b border-white/5 pb-3 pt-2">
                       <Link
                         href={link.href}
+                        onClick={() => setIsNavOpen(false)}
                         className={`block text-[13px] tracking-[0.1em] font-body transition-colors ${
                           isActive ? "text-white" : "text-white/60 hover:text-white"
                         }`}
@@ -286,6 +288,7 @@ export function Navbar() {
                             <Link
                               key={sub.name}
                               href={sub.href}
+                              onClick={() => setIsNavOpen(false)}
                               className="block text-[11px] tracking-[0.12em] text-white/40 hover:text-white/80 font-body transition-colors"
                             >
                               {sub.name}
@@ -301,6 +304,7 @@ export function Navbar() {
               <div className="px-7 mt-8">
                 <Link
                   href="/book"
+                  onClick={() => setIsNavOpen(false)}
                   className="block text-center py-3 border border-white/20 text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white hover:border-white/60 transition-all font-body"
                 >
                   Book Now

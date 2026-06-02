@@ -36,34 +36,34 @@ export function BookingWidget() {
   }, []);
 
   return (
-    <div className="bg-white/70 backdrop-blur-xl border border-white/50 rounded-[2rem] md:rounded-full py-3 px-6 md:py-3 md:px-4 mt-16 md:mt-24 w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative z-20 shadow-2xl shadow-black/10">
+    <div className="bg-white/70 backdrop-blur-xl border border-white/50 rounded-[1.5rem] md:rounded-full p-4 md:py-3 md:px-4 mt-8 md:mt-24 w-[90%] max-w-[340px] sm:max-w-sm md:max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative z-20 shadow-2xl shadow-black/10">
       
       {/* Dates Section */}
-      <div className="flex w-full md:w-[60%] flex-col md:flex-row items-center justify-between gap-5 md:gap-0">
+      <div className="flex w-full md:w-[60%] flex-row items-center justify-between gap-2 md:gap-0">
         <button 
           onClick={() => { setShowCalendar(!showCalendar); setShowGuests(false); }}
-          className="flex flex-col items-start md:px-6 w-full md:w-auto flex-1 text-left group"
+          className="flex flex-col items-start md:px-6 flex-1 text-left group"
         >
           <span className="text-[10px] md:text-[11px] text-[#6b7280] font-semibold uppercase tracking-[0.08em] mb-1 group-hover:text-forest transition-colors">Check In</span>
-          <span className="text-[#374151] font-medium text-[15px] md:text-[16px]">
+          <span className="text-[#374151] font-medium text-[13px] md:text-[16px] truncate max-w-[110px] md:max-w-none">
             {dateRange?.from ? format(dateRange.from, "MMM dd, yyyy") : "Add dates"}
           </span>
         </button>
 
-        <div className="w-full h-px md:w-px md:h-10 bg-stone-300/70 shrink-0"></div>
+        <div className="w-px h-10 bg-stone-300/70 shrink-0 mx-2 md:mx-0"></div>
 
         <button 
           onClick={() => { setShowCalendar(!showCalendar); setShowGuests(false); }}
-          className="flex flex-col items-start md:px-6 w-full md:w-auto flex-1 text-left group"
+          className="flex flex-col items-start md:px-6 flex-1 text-left group"
         >
           <span className="text-[10px] md:text-[11px] text-[#6b7280] font-semibold uppercase tracking-[0.08em] mb-1 group-hover:text-forest transition-colors">Check Out</span>
-          <span className="text-[#374151] font-medium text-[15px] md:text-[16px]">
+          <span className="text-[#374151] font-medium text-[13px] md:text-[16px] truncate max-w-[110px] md:max-w-none">
             {dateRange?.to ? format(dateRange.to, "MMM dd, yyyy") : "Add dates"}
           </span>
         </button>
       </div>
 
-      <div className="w-full h-px md:w-px md:h-10 bg-stone-300/70 shrink-0"></div>
+      <div className="w-full h-px md:w-px md:h-10 bg-stone-300/70 shrink-0 my-1 md:my-0"></div>
 
       {/* Guests Section */}
       <div className="relative w-full md:w-[40%] flex justify-between items-center md:pl-6 md:pr-2 group">
@@ -72,7 +72,7 @@ export function BookingWidget() {
           className="flex flex-col items-start text-left flex-1"
         >
           <span className="text-[10px] md:text-[11px] text-[#6b7280] font-semibold uppercase tracking-[0.08em] mb-1 group-hover:text-forest transition-colors">Guests</span>
-          <span className="text-[#374151] font-medium text-[15px] md:text-[16px]">
+          <span className="text-[#374151] font-medium text-[14px] md:text-[16px]">
             {guests} {guests === 1 ? "Guest" : "Guests"}
           </span>
         </button>
@@ -80,9 +80,9 @@ export function BookingWidget() {
         {/* CTA Button */}
         <button 
           onClick={handleBooking}
-          className="w-12 h-12 md:w-[52px] md:h-[52px] bg-[#334b35] text-white rounded-full flex items-center justify-center hover:bg-[#203625] hover:scale-105 transition-all duration-300 shadow-md ml-4 shrink-0"
+          className="w-10 h-10 md:w-[52px] md:h-[52px] bg-[#334b35] text-white rounded-full flex items-center justify-center hover:bg-[#203625] hover:scale-105 transition-all duration-300 shadow-md ml-4 shrink-0"
         >
-          <ChevronRight size={22} strokeWidth={2} />
+          <ChevronRight size={20} className="md:w-[22px] md:h-[22px]" strokeWidth={2} />
         </button>
       </div>
 

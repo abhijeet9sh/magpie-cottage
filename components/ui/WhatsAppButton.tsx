@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       href="https://wa.me/919811934909"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-2 md:gap-3 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex items-center gap-2 md:gap-3 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       initial={{ scale: 0, opacity: 0 }}
