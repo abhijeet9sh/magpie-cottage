@@ -33,11 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`} suppressHydrationWarning>
-      <body className="antialiased">
+      <body className="antialiased overflow-x-hidden w-full relative">
         <SplashScreen />
         <LenisProvider>
           {/* Content extends full-width — sidebar overlays with glassmorphism */}
-          <div>
+          <div className="overflow-x-hidden w-full relative">
             {children}
             <WhatsAppButton />
             <CallButton />
