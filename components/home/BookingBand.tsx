@@ -44,7 +44,7 @@ export function BookingBand() {
           Book Your Stay
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-light italic text-text-dark mb-2">
-          From ₹12,000 / night
+          Your Exclusive Jungle Retreat
         </h2>
         <p className="font-body text-text-mid text-sm mb-10 max-w-md mx-auto">
           Reserve directly or through your preferred platform.

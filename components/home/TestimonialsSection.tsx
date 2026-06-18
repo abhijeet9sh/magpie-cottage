@@ -32,7 +32,7 @@ const quotes = [
     source: "MakeMyTrip"
   },
   {
-    text: '"It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests"',
+    text: "‘It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests’",
     author: "Divya Jindal",
     source: "MakeMyTrip"
   }

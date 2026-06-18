@@ -99,14 +99,9 @@ export default function TheCottage() {
           <div className="bg-forest text-cream rounded-3xl p-6 md:p-10 flex flex-col justify-center">
             <h3 className="font-display text-3xl mb-6">Rates</h3>
             <div className="space-y-4 font-body mb-8">
-              <div className="flex justify-between border-b border-cream/10 pb-4">
-                <span>Standard Nightly Rate</span>
-                <span className="font-medium text-sage">₹12,000</span>
-              </div>
-              <div className="flex justify-between border-b border-cream/10 pb-4">
-                <span>Weekend Rate (Fri-Sat)</span>
-                <span className="font-medium text-sage">₹15,000</span>
-              </div>
+              <p className="text-cream/90 leading-relaxed">
+                Our rates are dynamic and vary based on the season, day of the week, and length of your stay.
+              </p>
             </div>
             <p className="text-sm text-cream/60 mb-8 italic">Rates cover the entire 3-bedroom villa for up to 6 guests. Enquire for extended stays or packages.</p>
             <Link href="/book" className="w-full max-w-md mx-auto text-center px-6 py-4 bg-sage text-forest rounded-xl font-medium hover:bg-sage-dark hover:text-white transition-colors">

@@ -185,7 +185,7 @@ export default function OurStory() {
           <div className="bg-stone-50/50 p-6 md:p-16 rounded-3xl border border-stone-200/60 shadow-sm relative">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-7xl text-sage/40 font-display font-bold leading-none">&quot;</span>
             <p className="font-display text-2xl md:text-3xl italic font-light text-stone-800 leading-relaxed mb-8 pt-4">
-              &ldquo;It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests&rdquo;
+              &lsquo;It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests&rsquo;
             </p>
             <p className="font-body text-[11px] uppercase tracking-[0.2em] font-medium text-stone-500">
               — Divya Jindal
@@ -227,8 +227,8 @@ export default function OurStory() {
                 Champion for every living thing.
               </h3>
               <div className="font-body text-stone-500 space-y-4 leading-relaxed text-sm md:text-base">
-                <p>Ashok Kumar, founder of Magpie Cottage, was a visionary conservationist and one of India&apos;s foremost warriors against wildlife crime. Remembered by global conservation leaders as a champion for &quot;tigers, elephants, rhinos, Tibetan antelopes—and every living thing.&quot;</p>
-                <p>This was most evident at the 2007 CITES Conference in The Hague, where he powerfully opposed the legalization of trade in farmed tiger parts.</p>
+                <p>Ashok Kumar, founder of Magpie Cottage, was a visionary conservationist and one of India&apos;s foremost warriors against wildlife crime. Remembered by global conservation leaders as a champion for &ldquo;tigers, elephants, rhinos, Tibetan antelopes—and every living thing,&rdquo; he was known for his fearless advocacy and ability to challenge powerful interests.</p>
+                <p>This was most evident at the 2007 Conference of the Parties to the Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) in The Hague, where he powerfully opposed the legalization of trade in farmed tiger parts.</p>
               </div>
             </div>
           </div>
@@ -243,6 +243,7 @@ export default function OurStory() {
               <div className="font-body text-stone-500 space-y-4 leading-relaxed text-sm md:text-base">
                 <p>His journey into conservation began during his tenure at Tata Steel, with frequent visits to Simlipal in Odisha, where he was deeply influenced by the legendary conservationist Saroj Raj Choudhary.</p>
                 <p>He went on to play a pivotal role in securing protected status for Dalma as a wildlife sanctuary, working with national leaders and the renowned ornithologist Dr. Salim Ali.</p>
+                <p>He also supported early conservation efforts by facilitating office space for the eastern regional office of the World Wide Fund for Nature (WWF).</p>
               </div>
             </div>
             {/* Right: staggered duo — first image taller and offset down */}
@@ -271,8 +272,11 @@ export default function OurStory() {
                 Institutionalizing the war against wildlife crime.
               </h3>
               <div className="font-body text-stone-500 space-y-4 leading-relaxed text-sm md:text-base">
-                <p>While based in Dubai, Ashok Kumar witnessed the open trafficking of wildlife skins, leading him to engage with the CITES Secretariat and collaborate with Indian enforcement authorities.</p>
-                <p>He founded the Wildlife Protection Society of India and, as Member Secretary of the Supreme Court&apos;s Subramanian Committee, played a key role in creating the Wildlife Crime Control Bureau of India.</p>
+                <p>While based in Dubai, Ashok Kumar witnessed the open trafficking of wildlife skins. This experience led him to engage with the Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) Secretariat and collaborate with Indian enforcement authorities to combat illegal wildlife trade. Ultimately, he chose to leave the corporate world and dedicate himself entirely to conservation, driven by his belief: <span className="italic text-sage">&ldquo;I fell in love with everything wild.&rdquo;</span></p>
+                <p>A true institution builder, Ashok Kumar&apos;s contributions to conservation were both foundational and far-reaching. His early work included involvement with TRAFFIC (Trade Records Analysis of Flora and Fauna in Commerce), the wildlife trade monitoring network established by the World Wide Fund for Nature (WWF) and the International Union for Conservation of Nature (IUCN). He went on to found the Wildlife Protection Society of India, strengthening India&apos;s fight against illegal wildlife trade.</p>
+                <p>As Member Secretary of the Supreme Court&apos;s Subramanian Committee on wildlife crime, he played a key role in the creation of the Wildlife Crime Control Bureau of India, the country&apos;s primary agency for tackling wildlife offences. Over a span of more than 25 years, he represented India at CITES, contributing significantly to global conservation policy.</p>
+                <p>He was also instrumental in founding the Global Tiger Forum, an intergovernmental alliance for tiger conservation, and served on the Steering Committee of Project Tiger as well as the National Coordination Committee for Prevention of Wildlife Crime.</p>
+                <p>In 1998, he co-founded the Wildlife Trust of India, which he nurtured for nearly two decades, embedding enforcement and legal action as central strategies in conservation. He later served as its Founder and Chairman Emeritus.</p>
               </div>
             </div>
           </div>
@@ -285,8 +289,9 @@ export default function OurStory() {
             <div className="order-2 lg:order-1">
               <h3 className="font-display text-2xl md:text-3xl font-light italic mb-6 text-stone-800">The lineage.</h3>
               <div className="font-body text-stone-500 space-y-4 leading-relaxed text-sm md:text-base">
-                <p>Ashok Kumar&apos;s legacy was shaped by a lineage of courage and conviction. His mother, Urmila Shastri, was a freedom fighter who worked closely with Mahatma Gandhi.</p>
-                <p>Reflecting on her influence, he once said, &quot;She fought for India&apos;s freedom, and I fight for the forests and wild animals that make India… India.&quot;</p>
+                <p>Ashok Kumar&apos;s legacy was shaped by a lineage of courage and conviction. His mother, Urmila Shastri, was a freedom fighter who worked closely with Mahatma Gandhi and was imprisoned during India&apos;s independence movement.</p>
+                <p>Reflecting on her influence, he once said, &ldquo;She fought for India&apos;s freedom, and I fight for the forests and wild animals that make India&hellip; India.&rdquo;</p>
+                <p>Unconventional yet formidable, Ashok Kumar was not a traditional naturalist but a strategic and fearless force—widely regarded as one of India&apos;s most effective fighters against wildlife crime.</p>
                 <p className="font-semibold text-stone-700">
                   Magpie Cottage stands today as a tribute to his extraordinary life—an enduring symbol of his passion, courage, and unwavering commitment to protecting the wild.
                 </p>
