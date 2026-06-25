@@ -18,7 +18,7 @@ export function StoryTeaser() {
         />
         
         <AnimatedSection animation="slideInRight">
-          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">The Setting</span>
+          <span className="text-xs tracking-widest text-text-light font-body mb-4 block">The Setting</span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
             Where The Jungle <br/> Meets The River
           </h2>

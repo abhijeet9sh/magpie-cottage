@@ -40,9 +40,9 @@ export function InstagramFeed() {
           
           {/* Left Column: Text Content */}
           <AnimatedSection animation="fadeUp" className="lg:w-5/12 lg:pr-8">
-            <div className="flex items-center gap-2 text-sage uppercase tracking-widest text-xs font-body mb-6 font-semibold md:justify-center lg:justify-start">
+            <div className="flex items-center gap-2 text-sage tracking-widest text-xs font-body mb-6 font-semibold md:justify-center lg:justify-start">
               <InstagramIcon size={16} />
-              <span>JOIN OUR COMMUNITY</span>
+              <span>Join Our Community</span>
             </div>
             
             <h2 className="font-display text-5xl md:text-6xl text-forest mb-6 tracking-tight leading-tight text-left lg:text-left">

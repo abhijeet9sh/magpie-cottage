@@ -188,7 +188,7 @@ export function Navbar() {
           <div className="h-px bg-white/10 mb-5" />
           <Link
             href="/book"
-            className="block text-center py-2.5 border border-white/20 text-[11px] tracking-[0.18em] uppercase text-white/70 hover:text-white hover:border-white/60 transition-all duration-300 font-body"
+            className="block text-center py-2.5 border border-white/20 text-[11px] tracking-[0.18em] text-white/70 hover:text-white hover:border-white/60 transition-all duration-300 font-body"
           >
             Book Now
           </Link>
@@ -330,7 +330,7 @@ export function Navbar() {
                 <Link
                   href="/book"
                   onClick={() => setIsNavOpen(false)}
-                  className="block text-center py-3 border border-white/20 text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white hover:border-white/60 transition-all font-body"
+                  className="block text-center py-3 border border-white/20 text-[10px] tracking-[0.2em] text-white/70 hover:text-white hover:border-white/60 transition-all font-body"
                 >
                   Book Now
                 </Link>

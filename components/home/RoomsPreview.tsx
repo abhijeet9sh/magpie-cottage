@@ -32,7 +32,7 @@ export function RoomsPreview() {
     <section id="rooms-preview" className="py-24 md:py-32 bg-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <AnimatedSection className="mb-16 md:mb-24" animation="clipReveal">
-          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Where You&apos;ll Sleep</span>
+          <span className="text-xs tracking-widest text-text-light font-body mb-4 block">Where You&apos;ll Sleep</span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark leading-tight">
             Three bedrooms. <br/> Each one a retreat.
           </h2>

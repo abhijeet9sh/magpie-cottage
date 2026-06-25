@@ -137,7 +137,7 @@ export function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2.0, duration: 1 }}
       >
-        <span className="text-xs uppercase tracking-widest font-body">Scroll</span>
+        <span className="text-xs tracking-widest font-body">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

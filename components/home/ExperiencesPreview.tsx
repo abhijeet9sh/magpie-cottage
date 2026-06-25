@@ -32,7 +32,7 @@ export function ExperiencesPreview() {
     <section className="py-16 md:py-24 px-6 md:px-12 bg-cream text-text-dark w-full">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-12 md:mb-16" animation="clipReveal">
-          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">The Cottage</span>
+          <span className="text-xs tracking-widest text-text-light font-body mb-4 block">The Cottage</span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic leading-tight text-text-dark">
             Built With Nature
           </h2>
@@ -66,7 +66,7 @@ export function ExperiencesPreview() {
                   </div>
                 </div>
                 {/* Label below image — uppercase tracking like TheGaj */}
-                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-text-mid font-body">
+                <p className="mt-4 text-xs tracking-[0.2em] text-text-mid font-body">
                   {exp.label}
                 </p>
               </Link>

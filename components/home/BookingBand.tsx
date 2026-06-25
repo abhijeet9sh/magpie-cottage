@@ -40,7 +40,7 @@ export function BookingBand() {
   return (
     <section className="py-16 md:py-20 px-6 md:px-12 bg-cream border-y border-stone-200/50">
       <AnimatedSection className="max-w-5xl mx-auto text-center">
-        <span className="text-xs uppercase tracking-widest text-text-light font-body mb-3 block">
+        <span className="text-xs tracking-widest text-text-light font-body mb-3 block">
           Book Your Stay
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-light italic text-text-dark mb-2">
