@@ -99,8 +99,8 @@ export function HeroSection() {
             className="flex flex-wrap justify-center items-baseline gap-x-3 md:gap-x-4"
             style={{ perspective: 600 }}
           >
-            {/* Stillness In the Wild - Uniform and Elegant */}
-            {["Stillness", "In", "the", "Wild"].map((word, i) => (
+            {/* Stillness In The Wild - Uniform and Elegant */}
+            {["Stillness", "In", "The", "Wild"].map((word, i) => (
               <motion.span
                 key={`${word}-${i}`}
                 variants={splitTextWord}

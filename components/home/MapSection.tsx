@@ -31,13 +31,23 @@ export function MapSection() {
 
         {/* Right: Text */}
         <AnimatedSection>
-          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Getting Here</span>
-          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
-            Six hours from Delhi. <br/> A world away.
+          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block text-left">GETTING HERE</span>
+          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight text-left">
+            Six Hours From Delhi. <br/> A World Away.
           </h2>
-          <p className="font-body text-text-mid leading-relaxed text-lg mb-8 max-w-md">
+          <p className="font-body text-text-mid leading-relaxed text-[15px] md:text-lg mb-6 max-w-md text-left">
             Located in Simalsaira, Uttarakhand 246155 — accessible by road from Delhi, Dehradun, and Haridwar. The final stretch is a scenic forest drive.
           </p>
+          
+          <div className="text-left mb-8">
+            <h3 className="font-display text-xl font-semibold text-text-dark mb-3">GETTING AROUND:</h3>
+            <ul className="font-body text-text-mid text-[15px] md:text-lg flex flex-col gap-2">
+              <li>- Distance from Jolly Grant Airport - 142 km.</li>
+              <li>- Distance from Kotdwar Railway Station - 39 km.</li>
+              <li>- Distance from Motor Nagar Bus Stand - 39 km.</li>
+              <li>- Distance from Dhauntiyal Market - 15 km.</li>
+            </ul>
+          </div>
           
           <div className="flex flex-wrap gap-3 mb-10">
             <span className="px-4 py-2 rounded-full border border-forest/10 text-sm font-body text-forest bg-stone-50">Delhi — 6 hrs</span>
@@ -49,7 +59,7 @@ export function MapSection() {
             href="https://www.google.com/maps/place/Magpie+Cottage/@29.7555205,78.7255583,17z/data=!4m16!1m7!3m6!1s0x3909814324743179:0x5d17e715e66e8917!2sMagpie+Cottage!8m2!3d29.7555159!4d78.7281332" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex px-8 py-4 bg-forest text-cream rounded-xl font-medium hover:bg-forest-mid transition-colors"
+            className="inline-flex px-8 py-4 bg-forest text-cream rounded-xl font-medium hover:bg-forest-mid transition-colors justify-start"
           >
             Get Directions
           </a>

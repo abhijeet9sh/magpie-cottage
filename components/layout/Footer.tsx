@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="bg-forest text-cream">
       <motion.div 
-        className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-24"
+        className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16"
         variants={footerStagger}
         initial="hidden"
         whileInView="visible"
@@ -25,15 +25,15 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="Magpie Cottage"
-                width={80}
-                height={80}
+                width={120}
+                height={120}
                 className="object-contain"
                 style={{ filter: "invert(1) brightness(1.5)" }}
                 unoptimized
               />
             </Link>
             <p className="font-body text-cream/70 text-sm leading-relaxed mb-4 max-w-sm">
-              A private jungle retreat nestled on the edge of a tiger reserve in Simalsaira, Uttarakhand. Where the forest begins where the garden ends.
+              A wilderness hideaway on the banks of the Palain River, where the forest begins where the garden ends.
             </p>
             <p className="font-body text-sage text-xs uppercase tracking-widest mb-6">Hosted by Malini</p>
             <div className="flex gap-4">
@@ -105,9 +105,13 @@ export function Footer() {
                 <Mail size={14} />
                 bookmagpiecottage@gmail.com
               </a>
+              <a href="tel:+918882760940" className="text-cream/70 hover:text-cream transition-colors duration-300 font-body text-sm flex items-center gap-2">
+                <Phone size={14} />
+                Reservations: +91 8882760940
+              </a>
               <a href="tel:+919811934909" className="text-cream/70 hover:text-cream transition-colors duration-300 font-body text-sm flex items-center gap-2">
                 <Phone size={14} />
-                +91 98119 34909
+                Owner: +91 98119 34909
               </a>
               <div className="text-cream/70 font-body text-sm flex items-start gap-2">
                 <MapPin size={14} className="mt-0.5 shrink-0" />
@@ -133,7 +137,7 @@ export function Footer() {
           <div className="flex flex-col md:items-end gap-2 text-cream/40 text-xs font-body">
             <p>© {currentYear} Magpie Cottage. All rights reserved.</p>
             <p className="flex items-center gap-1">
-              Made with <span className="text-red-500 text-sm">♥</span> by{" "}
+              Made by{" "}
               <a 
                 href="https://abhijeet9sh.github.io/Portfolio_Website/" 
                 target="_blank" 

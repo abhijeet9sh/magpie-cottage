@@ -39,7 +39,7 @@ const features = [
 ];
 
 export function CtaBanner() {
-  const titleWords = ["Ready", "to", "unplug?"];
+  const titleWords = ["Ready", "To", "Unplug?"];
 
   return (
     <section className="relative w-full py-20 md:py-28 bg-forest text-cream flex items-center justify-center overflow-hidden">
@@ -100,7 +100,7 @@ export function CtaBanner() {
             variants={fadeUp}
             className="font-body text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
           >
-            Escape to Magpie Cottage — where the only notifications are birdsong and the river.
+            Escape to Magpie Cottage- where the only notifications are birdsongs and the gentle gurgling of the river
           </motion.p>
           
           <motion.div 

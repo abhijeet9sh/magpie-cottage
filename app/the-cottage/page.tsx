@@ -38,12 +38,12 @@ export default function TheCottage() {
       <Navbar />
       <PageHero 
         title="The Cottage" 
-        imageSrc="/images/real/facade.jpg"
+        imageSrc="/images/real/drone-hero.jpg"
       />
 
       {/* Overview Stat Strip */}
       <section className="bg-forest text-cream py-10 px-6 border-b border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 text-xs md:text-sm font-body tracking-[0.2em] uppercase">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 text-xs md:text-sm font-body tracking-[0.2em]">
           <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><BedDouble size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> 3 Bedrooms</div>
           <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><Users size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> Sleeps 4–8</div>
           <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><PawPrint size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> Pets Welcome</div>
@@ -65,7 +65,7 @@ export default function TheCottage() {
                 <p className="font-body text-text-mid leading-relaxed mb-8">{room.desc}</p>
                 <div className="flex flex-wrap gap-3">
                   {room.features.map(f => (
-                    <span key={f} className="px-5 py-2.5 bg-stone-50 rounded-full text-xs uppercase tracking-widest font-body text-text-mid border border-stone-200 hover:border-sage hover:text-sage transition-colors cursor-default">
+                    <span key={f} className="px-5 py-2.5 bg-stone-50 rounded-full text-xs tracking-widest font-body text-text-mid border border-stone-200 hover:border-sage hover:text-sage transition-colors cursor-default">
                       {f}
                     </span>
                   ))}
@@ -79,17 +79,17 @@ export default function TheCottage() {
         <AnimatedSection id="amenities" className="scroll-mt-24 bg-cream rounded-[3rem] p-8 md:p-16 lg:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sage/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-forest/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-          <div className="text-center mb-16 relative z-10">
+          <div className="text-left mb-16 relative z-10">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light italic text-text-dark mb-4">Amenities</h2>
-            <p className="font-body text-text-mid max-w-lg mx-auto">Everything you need for a comfortable stay in the wilderness.</p>
+            <p className="font-body text-text-mid max-w-lg">Everything you need for a comfortable stay in the wilderness.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
-            <div className="flex flex-col items-center text-center gap-4 group"><Wifi className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">High-Speed WiFi</span></div>
-            <div className="flex flex-col items-center text-center gap-4 group"><Coffee className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Equipped Kitchen</span></div>
-            <div className="flex flex-col items-center text-center gap-4 group"><Flame className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Firepit & Patio</span></div>
-            <div className="flex flex-col items-center text-center gap-4 group"><Monitor className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Dedicated Workspace</span></div>
-            <div className="flex flex-col items-center text-center gap-4 group"><PawPrint className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Pet Friendly</span></div>
-            <div className="flex flex-col items-center text-center gap-4 group"><Bath className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider uppercase text-text-dark">Bathtub</span></div>
+            <div className="flex flex-col items-start text-left gap-4 group"><Wifi className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider text-text-dark">High-Speed WiFi</span></div>
+            <div className="flex flex-col items-start text-left gap-4 group"><Coffee className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider text-text-dark">Equipped Kitchen</span></div>
+            <div className="flex flex-col items-start text-left gap-4 group"><Flame className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider text-text-dark">Firepit & Patio</span></div>
+            <div className="flex flex-col items-start text-left gap-4 group"><Monitor className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider text-text-dark">Dedicated Workspace</span></div>
+            <div className="flex flex-col items-start text-left gap-4 group"><PawPrint className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider text-text-dark">Pet Friendly</span></div>
+            <div className="flex flex-col items-start text-left gap-4 group"><Bath className="text-forest transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-sage" size={40} strokeWidth={1} /><span className="font-body text-sm tracking-wider text-text-dark">Bathtub</span></div>
           </div>
         </AnimatedSection>
 
@@ -109,90 +109,67 @@ export default function TheCottage() {
             </Link>
           </div>
 
-          {/* House Rules */}
-          <div className="bg-white border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center">
-            <h3 className="font-display text-3xl mb-6 text-text-dark">House Rules</h3>
-            <div className="space-y-5 font-body text-text-mid">
-              {/* Checking in and out */}
-              <div>
-                <span className="text-xs uppercase tracking-widest text-text-light block mb-3">Checking in and out</span>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <Clock size={18} className="text-sage shrink-0" />
-                    <span>Check-in: 12:00 – 17:00</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <LogOut size={18} className="text-sage shrink-0" />
-                    <span>Checkout before 10:00</span>
-                  </li>
-                </ul>
-              </div>
-              {/* During your stay */}
-              <div className="border-t border-stone-100 pt-5">
-                <span className="text-xs uppercase tracking-widest text-text-light block mb-3">During your stay</span>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <UserCheck size={18} className="text-sage shrink-0" />
-                    <span>8 guests maximum</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <PawPrint size={18} className="text-sage shrink-0" />
-                    <span>Pets allowed</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Camera size={18} className="text-sage shrink-0" />
-                    <span>Commercial photography allowed</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Cigarette size={18} className="text-sage shrink-0" />
-                    <span>Smoking is allowed</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Cancellation Policy + Safety & Property */}
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Cancellation Policy */}
-          <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center">
-            <h3 className="font-display text-3xl mb-4 text-text-dark">Cancellation Policy</h3>
-            <p className="font-body text-text-mid leading-relaxed mb-6">
-              Add your trip dates to get the cancellation details for this stay.
-            </p>
-            <Link 
-              href="/book" 
-              className="inline-flex items-center gap-2 text-forest font-medium border-b border-forest pb-1 hover:text-sage hover:border-sage transition-colors w-fit"
-            >
-              Select dates &rarr;
-            </Link>
-          </div>
-
-          {/* Safety & Property */}
-          <div className="bg-white border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center">
-            <h3 className="font-display text-3xl mb-4 text-text-dark">Safety & Property</h3>
-            <p className="font-body text-text-mid text-sm mb-6">
-              Avoid surprises by looking over these important details about your host&apos;s property.
-            </p>
-            <div className="space-y-5 font-body text-text-mid">
-              <span className="text-xs uppercase tracking-widest text-text-light block mb-1">Safety devices</span>
+          {/* House Rules & Policies */}
+          <div className="bg-white border border-stone-200 rounded-3xl p-6 md:p-10 flex flex-col justify-center lg:col-span-2">
+            <h3 className="font-display text-3xl mb-6 text-text-dark text-left">House Rules</h3>
+            <div className="space-y-8 font-body text-text-mid text-left">
               
-              <div className="flex items-start gap-3 bg-amber-50 border border-amber-200/50 rounded-xl p-4">
-                <AlertTriangle size={20} className="text-amber-600 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xl font-display italic text-text-dark mb-4">Welcome To Magpie Cottage – The Jungle Retreat</h4>
+                <p>We are delighted to welcome you to a peaceful stay amidst nature and wildlife.</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-bold text-forest mb-4">During Your Stay</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Please treat the cottage, its furnishings, gardens, and surroundings with the same care and respect as you would your own home.</li>
+                  <li>We are a pet-friendly property. Guests are responsible for supervising their pets at all times.</li>
+                  <li>A caretaker is available to prepare home-cooked meals and snacks upon request.</li>
+                  <li>
+                    Cooking charges:
+                    <ul className="list-[circle] pl-5 mt-1 space-y-1">
+                      <li>Up to 5 guests: ₹1,000 per day</li>
+                      <li>6 or more guests: ₹1,500 per day</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-bold text-forest mb-4">Safety & Property</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>The property is located within the buffer zone of a tiger reserve and wildlife sanctuary. Wildlife movement may occur in and around the property.</li>
+                  <li>For your safety, please avoid venturing outdoors after dark.</li>
+                  <li>Children and pets should remain indoors after sunset and must be supervised at all times.</li>
+                  <li>In the event of an emergency after dark, guests should move only in groups and exercise caution.</li>
+                </ul>
+              </div>
+
+              <div className="bg-stone-50 p-6 rounded-2xl space-y-4">
                 <div>
-                  <p className="font-medium text-text-dark text-sm">Carbon monoxide alarm not reported</p>
-                  <p className="text-xs text-text-light mt-1">The Host hasn&apos;t reported a carbon monoxide alarm on the property. We suggest bringing a portable detector for your trip.</p>
+                  <h4 className="font-bold text-forest">Address:</h4>
+                  <p>Simalsaira, Dhauntiyal, Uttarakhand 246155<br />After Kotdwar – Dhumakot Road, Lansdowne, Simalsaira, Uttarakhand</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-forest">Contact:</h4>
+                  <p>Reservations: Siddharth Ahuja: +918882760940<br />Owner: Malini Kumar: +9198119 34909<br />Email: bookmagpiecottage@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 bg-amber-50 border border-amber-200/50 rounded-xl p-4">
-                <ShieldAlert size={20} className="text-amber-600 shrink-0 mt-0.5" />
+              <div className="border-t border-stone-200 pt-8 space-y-6">
+                <h4 className="text-lg font-bold text-forest">By Accepting A Booking, The Guest Confirms:</h4>
+                
                 <div>
-                  <p className="font-medium text-text-dark text-sm">Smoke alarm not reported</p>
-                  <p className="text-xs text-text-light mt-1">The Host hasn&apos;t reported a smoke alarm on the property. We suggest bringing a portable detector for your trip.</p>
+                  <h5 className="font-bold text-text-dark mb-2">1. Guest Indemnity and Assumption of Risk</h5>
+                  <p className="text-sm">The Guest acknowledges that Magpie Cottage is situated in a natural, wildlife-rich environment and that participation in outdoor activities, including nature walks, safaris, birdwatching, trekking, cycling, and other recreational pursuits, involves inherent risks. These may include encounters with wildlife, insects, reptiles, uneven terrain, natural water bodies, adverse weather conditions, and other hazards associated with a wilderness setting. The Guest voluntarily assumes all such risks and agrees that the owners, management, employees, and representatives of Magpie Cottage shall not be held liable for any injury, illness, loss, damage, accident, or death arising from participation in such activities or from the natural conditions of the surrounding environment. Guests acknowledge that weather conditions and other natural events may affect access, outdoor activities, views, wildlife sightings, internet service, utilities like electricity, and overall conditions during their stay.</p>
+                </div>
+
+                <div>
+                  <h5 className="font-bold text-text-dark mb-2">2. Guest Responsibility For The Property</h5>
+                  <p className="text-sm">The Guest agrees to exercise reasonable care while using the cottage and its facilities and accepts responsibility for any loss, breakage, damage, or destruction caused by the Guest or any member of their party, including children, visitors, and pets. The Guest agrees to reimburse Magpie Cottage for the reasonable cost of repair, replacement, or restoration of damaged property.</p>
                 </div>
               </div>
+
             </div>
           </div>
         </AnimatedSection>

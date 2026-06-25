@@ -40,13 +40,13 @@ export function InstagramFeed() {
           
           {/* Left Column: Text Content */}
           <AnimatedSection animation="fadeUp" className="lg:w-5/12 lg:pr-8">
-            <div className="flex items-center gap-2 text-sage uppercase tracking-widest text-xs font-body mb-6 font-semibold">
+            <div className="flex items-center gap-2 text-sage uppercase tracking-widest text-xs font-body mb-6 font-semibold md:justify-center lg:justify-start">
               <InstagramIcon size={16} />
-              <span>Join Our Community</span>
+              <span>JOIN OUR COMMUNITY</span>
             </div>
             
-            <h2 className="font-display text-5xl md:text-6xl text-forest mb-6 tracking-tight leading-tight">
-              Stories from <br />
+            <h2 className="font-display text-5xl md:text-6xl text-forest mb-6 tracking-tight leading-tight text-left lg:text-left">
+              Stories From <br />
               <span className="italic text-sage">The Jungle</span>
             </h2>
             
@@ -66,31 +66,13 @@ export function InstagramFeed() {
             </a>
           </AnimatedSection>
 
-          {/* Right Column: Staggered Gallery */}
+          {/* Right Column: Precise Grid Layout */}
           <AnimatedSection animation="slideInRight" className="lg:w-7/12 w-full">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-              
-              {/* Column 1 */}
-              <div className="flex flex-col gap-3 md:gap-4 pt-8 md:pt-12">
-                {igPosts.slice(0, 2).map((post, i) => (
-                  <PostCard key={i} post={post} />
-                ))}
-              </div>
-
-              {/* Column 2 */}
-              <div className="flex flex-col gap-3 md:gap-4 pb-8 md:pb-12">
-                {igPosts.slice(2, 4).map((post, i) => (
-                  <PostCard key={i + 2} post={post} />
-                ))}
-              </div>
-
-              {/* Column 3 */}
-              <div className="flex flex-col gap-3 md:gap-4 pt-4 md:pt-6 hidden sm:flex">
-                {igPosts.slice(4, 6).map((post, i) => (
-                  <PostCard key={i + 4} post={post} />
-                ))}
-              </div>
-
+            {/* 2 photos per row grid without vertical staggered gaps */}
+            <div className="grid grid-cols-2 gap-4">
+              {igPosts.slice(0, 4).map((post, i) => (
+                <PostCard key={i} post={post} />
+              ))}
             </div>
           </AnimatedSection>
 

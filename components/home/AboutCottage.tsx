@@ -19,7 +19,7 @@ export function AboutCottage() {
         <AnimatedSection animation="slideInLeft">
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
             <img
-              src="/images/real/facade.jpg"
+              src="/images/real/drone-hero.jpg"
               alt="Magpie Cottage — a private jungle retreat"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
@@ -29,18 +29,20 @@ export function AboutCottage() {
 
         {/* Text */}
         <AnimatedSection animation="slideInRight">
-          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">
-            A Private Retreat
+          <span className="text-xs tracking-widest text-text-light font-body mb-4 block text-left">
+            A Wilderness Hideaway
           </span>
-          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight">
-            Your own jungle cottage.
+          <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight text-left">
+            Your Own Jungle Retreat
           </h2>
-          <p className="font-body text-text-mid leading-relaxed text-lg mb-10 max-w-md">
-            Magpie Cottage is a private three-bedroom villa nestled on the edge
-            of the Kalagarh Tiger Reserve in Simalsaira, Uttarakhand. Set among
-            sal forests and alongside the Palain river, it&apos;s an intimate
-            retreat where the forest begins where the garden ends.
-          </p>
+          <div className="font-body text-text-mid leading-relaxed text-[15px] md:text-lg mb-10 max-w-md text-left">
+            <p className="mb-4">
+              Tucked away in pristine wilderness, far from the sights and sounds of urban life, Magpie Cottage is an exclusive three-bedroom jungle retreat set amidst over half an acre of lush greenery and towering Sal trees. Home to more than 500 species of birds, it offers spacious living and dining areas, two open terraces, and the rare luxury of complete privacy in nature.
+            </p>
+            <p>
+              Nestled on the banks of the Palain River in Simalsaira, Uttarakhand, Magpie Cottage lies just 7 km from the Vatanvasa Gate of the Kalagarh Tiger Reserve. A short safari drive takes you deep into the forests, while the historic Halduparao Forest Rest House ( Corbett Tiger Reserve) built in 1890 and located within 10 km, offers opportunities to spot elephants, spotted deer, and, if fortune favours, even tigers along the Palain (Sonanadi/Golden) River.
+            </p>
+          </div>
 
           {/* Highlight grid */}
           <div className="grid grid-cols-2 gap-6 mb-10">

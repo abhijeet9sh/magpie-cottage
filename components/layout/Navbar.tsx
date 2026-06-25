@@ -116,6 +116,7 @@ export function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [hideNav, setHideNav] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({});
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -207,9 +208,9 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt="Magpie Cottage"
-            width={84}
-            height={84}
-            className="w-[84px] h-[84px] object-contain -ml-2"
+            width={100}
+            height={100}
+            className="w-[100px] h-[100px] object-contain -ml-2"
             style={{ filter: "invert(1) brightness(1.2)" }}
             unoptimized
           />
@@ -241,7 +242,7 @@ export function Navbar() {
               exit={{ x: "-100%" }}
               transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
               className="lg:hidden fixed top-0 left-0 h-[100dvh] z-[70] flex flex-col py-8 overflow-y-auto pb-16"
-              style={{ width: "280px", background: "rgba(0,0,0,0.92)" }}
+              style={{ width: "80vw", maxWidth: "320px", background: "rgba(0,0,0,0.92)" }}
             >
               {/* Mobile header */}
               <div className="flex items-center justify-between px-7 mb-10 relative">
@@ -250,9 +251,9 @@ export function Navbar() {
                   <Image
                     src="/logo.png"
                     alt="Magpie Cottage"
-                    width={110}
-                    height={110}
-                    className="w-[110px] h-[110px] object-contain"
+                    width={140}
+                    height={140}
+                    className="w-[140px] h-[140px] object-contain"
                     style={{ filter: "invert(1) brightness(1.2)" }}
                     unoptimized
                   />
@@ -271,31 +272,55 @@ export function Navbar() {
                   const isActive =
                     pathname === link.href ||
                     (link.href !== "/" && pathname.startsWith(link.href));
+                  const isExpanded = expandedMenus[link.name];
+                  
                   return (
                     <div key={link.name} className="border-b border-white/5 pb-3 pt-2">
-                      <Link
-                        href={link.href}
-                        onClick={() => setIsNavOpen(false)}
-                        className={`block text-[13px] tracking-[0.1em] font-body transition-colors ${
-                          isActive ? "text-white" : "text-white/60 hover:text-white"
-                        }`}
-                      >
-                        {link.name}
-                      </Link>
-                      {link.dropdown && (
-                        <div className="mt-2.5 pl-3 border-l border-white/10 space-y-2">
-                          {link.dropdown.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              onClick={() => setIsNavOpen(false)}
-                              className="block text-[11px] tracking-[0.12em] text-white/40 hover:text-white/80 font-body transition-colors"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href={link.href}
+                          onClick={() => setIsNavOpen(false)}
+                          className={`block text-[13px] tracking-[0.1em] font-body transition-colors ${
+                            isActive ? "text-white" : "text-white/60 hover:text-white"
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                        {link.dropdown && (
+                          <button 
+                            onClick={() => setExpandedMenus(prev => ({...prev, [link.name]: !prev[link.name]}))}
+                            className="p-2 text-white/50 hover:text-white"
+                          >
+                            <svg className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                      
+                      <AnimatePresence>
+                        {link.dropdown && isExpanded && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-2.5 pl-3 border-l border-white/10 space-y-2">
+                              {link.dropdown.map((sub) => (
+                                <Link
+                                  key={sub.name}
+                                  href={sub.href}
+                                  onClick={() => setIsNavOpen(false)}
+                                  className="block text-[11px] tracking-[0.12em] text-white/40 hover:text-white/80 font-body transition-colors py-1"
+                                >
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 })}

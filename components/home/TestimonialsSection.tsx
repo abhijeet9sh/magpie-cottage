@@ -17,24 +17,24 @@ const StarIcon = ({ className = "" }: { className?: string }) => (
 
 const quotes = [
   {
-    text: "Absolutely blissful place ensconced in a veritable green fortress with a gurgling gushing stream for company.",
-    author: "Rajesh Madan",
-    source: "Airbnb"
-  },
-  {
-    text: "A gem of a cottage, tastefully appointed, clean, spacious and comfortable. Surrounded by forests on either side, beside the Plane river.",
-    author: "Kaustuv Chatterjee",
-    source: "Airbnb"
-  },
-  {
-    text: "Amazing location and villa. The villa gives a very cosy vibe. The staff is polite and the food is amazing.",
-    author: "Shilpa",
-    source: "MakeMyTrip"
-  },
-  {
-    text: "‘It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests’",
+    text: "“It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both took very good care of the guests”",
     author: "Divya Jindal",
-    source: "MakeMyTrip"
+    source: "Guest"
+  },
+  {
+    text: "“I have never had a better Airbnb experience than this. The property vibe is homely, and yet dreamy. It’s ventilated, well maintained, hygienic , spacious... The lush greens, fauna and river stream passing just steps away from the property are all a delight... Due to her hospitality, our stay is going to be memorable for long.”",
+    author: "Shilpa Dalmia",
+    source: "Airbnb"
+  },
+  {
+    text: "“Stayed at Magpie Cottage near Lansdowne. Peaceful, green, and perfect for a quick escape from the city. Loved the homely food and the warm, welcoming hospitality that made the stay truly memorable.”",
+    author: "Shubham Sharma",
+    source: "Guest"
+  },
+  {
+    text: "“The property is set in the midst of lush greens. The property has its own charm. The location and service of the property is amazing. The beauty of the property is that there is river flowing right beside it and the views are breath taking. The food here is amazing. Its a must visit”",
+    author: "Neha Singh",
+    source: "Guest"
   }
 ];
 
