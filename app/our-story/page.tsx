@@ -28,7 +28,7 @@ function Photo({
         src={src}
         alt={alt}
         loading={priority ? "eager" : "lazy"}
-        className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+        className={`w-full transition-transform duration-700 ease-out hover:scale-105 ${aspect === 'aspect-auto' ? 'h-auto object-contain' : 'h-full object-cover'}`}
       />
     </div>
   );
@@ -52,7 +52,7 @@ function Thumb({
         src={src}
         alt={alt}
         loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+        className={`w-full transition-transform duration-700 ease-out hover:scale-105 ${aspect === 'aspect-auto' ? 'h-auto object-contain' : 'h-full object-cover'}`}
       />
     </div>
   );
@@ -109,7 +109,7 @@ export default function OurStory() {
               <p>We&apos;ve kept the footprint small and the impact minimal, ensuring that the wildlife that calls this place home remains undisturbed.</p>
             </div>
           </div>
-          <Photo src="/images/real/facade.jpg" alt="The Cottage" aspect="aspect-[3/4]" priority />
+          <Photo src="/images/real/DJI_0573.jpg" alt="The Cottage" aspect="aspect-[3/4]" priority />
         </AnimatedSection>
 
         {/* ════════════════════════════════════════════
@@ -183,12 +183,11 @@ export default function OurStory() {
         <AnimatedSection className="max-w-4xl mx-auto px-6 md:px-12 text-left pt-8">
           <span className="text-[11px] tracking-[0.22em] text-stone-400 font-body mb-6 block">Guest Experiences</span>
           <div className="bg-stone-50/50 p-6 md:p-16 rounded-3xl border border-stone-200/60 shadow-sm relative">
-            <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-7xl text-sage/40 font-display font-bold leading-none">&quot;</span>
             <p className="font-display text-2xl md:text-3xl italic font-light text-stone-800 leading-relaxed mb-8 pt-4">
-              &lsquo;It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both take very good care of the guests&rsquo;
+              &ldquo;It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both took very good care of the guests&rdquo;
             </p>
-            <p className="font-body text-[11px] tracking-[0.2em] font-medium text-stone-500">
-              — Divya Jindal
+            <p className="font-body text-[11px] tracking-[0.2em] font-medium text-stone-500 uppercase">
+              DIVYA JINDAL
             </p>
           </div>
         </AnimatedSection>
@@ -206,8 +205,10 @@ export default function OurStory() {
                 The Legacy Of Late Mr Ashok Kumar
               </h2>
             </div>
-            <div className="max-w-lg mx-auto">
-              <Photo src="/images/story/legacy_ashok_new.png" alt="Late Mr Ashok Kumar in the forest" aspect="aspect-auto" />
+            <div className="order-1 lg:order-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <Thumb src="/images/story/legacy_ashok_new.png" alt="Late Mr Ashok Kumar in the forest" aspect="aspect-auto" />
+              <Thumb src="/images/story/jungle_1.jpg" alt="Late Mr Ashok Kumar" aspect="aspect-auto" />
+              <Thumb src="/images/story/jungle_2.jpg" alt="Late Mr Ashok Kumar" aspect="aspect-auto" />
             </div>
           </div>
 
@@ -293,22 +294,20 @@ export default function OurStory() {
                 </p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-              <Thumb src="/images/story/Picture12.jpg" alt="Lineage photo 1" aspect="aspect-auto" />
-              <Thumb src="/images/story/Picture13.png" alt="Lineage photo 2" aspect="aspect-auto" />
-              <Thumb src="/images/story/Picture14.png" alt="Lineage photo 3" aspect="aspect-auto" />
-              <Thumb src="/images/story/Picture15.png" alt="Lineage photo 4" aspect="aspect-auto" />
+            <div className="order-2 lg:order-2 grid grid-cols-2 gap-4">
+              <Thumb src="/images/story/lineage_1.jpg" alt="Urmila Shastri with baby" aspect="aspect-auto" />
+              <Thumb src="/images/story/lineage_2.png" alt="Urmila Shastri portrait" aspect="aspect-auto" />
             </div>
           </div>
 
         </AnimatedSection>
 
         {/* ════════════════════════════════════════════
-            Meet Malini the Founder
+            Meet Malini The Founder
             Founder bio with photo
         ════════════════════════════════════════════ */}
         <AnimatedSection id="host" className="scroll-mt-24 max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <div className="order-2 lg:order-1 text-left">
+          <div className="order-1 lg:order-1 text-left">
             <span className="text-[11px] tracking-[0.22em] text-stone-400 font-body mb-4 block">Hosted By</span>
             <h2 className="font-display text-3xl md:text-[2.8rem] font-light italic leading-tight mb-4 text-stone-800">
               Malini Kumar
@@ -337,12 +336,12 @@ export default function OurStory() {
               </p>
             </div>
           </div>
-          <div className="order-1 lg:order-2 lg:sticky lg:top-32 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg lg:max-w-md mx-auto w-full">
+          <div className="order-2 lg:order-2 lg:sticky lg:top-32 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg lg:max-w-md mx-auto w-full">
             <img
               src="/malini.png"
               alt="Malini Kumar — Your Host"
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+              className="w-full h-auto object-contain transition-transform duration-700 ease-out hover:scale-105"
             />
           </div>
         </AnimatedSection>
@@ -354,10 +353,10 @@ export default function OurStory() {
       <section className="bg-[#2D3929] py-20 md:py-28 text-left">
         <AnimatedSection className="max-w-3xl mx-auto px-6">
           <h2 className="font-display text-3xl md:text-5xl font-light italic text-stone-100 mb-6">
-            Come stay with us.
+            Come Stay With Us.
           </h2>
           <p className="font-body text-stone-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-            Experience the magic of the jungle for yourself. Whether you&apos;re looking for solitude, adventure, or simply a place to breathe — Magpie Cottage is waiting.
+            Experience the magic of the forest for yourself. Whether you&apos;re seeking solitude, adventure, or simply space to reconnect with nature and yourself, escape to <strong>Magpie Cottage – Stillness In The Wild</strong>, where the only notifications are birdsongs and the gentle gurgle of the river.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

@@ -8,22 +8,22 @@ import { cardStaggerContainer, cardItem } from "@/lib/animations";
 
 const experiences = [
   {
-    title: "Outdoor Relaxation",
-    label: "OUTDOOR",
-    image: "/images/real/outdoor.jpg",
-    href: "/experiences#outdoor"
+    title: "Nature Walks",
+    label: "NATURE WALKS",
+    image: "/images/experiences/nature-walk.jpg",
+    href: "/experiences#nature-walks"
   },
   {
-    title: "Al Fresco Dining",
-    label: "DINING",
-    image: "/images/real/dining.jpg",
-    href: "/experiences#dining"
+    title: "Stargazing & Bonfires",
+    label: "BONFIRES",
+    image: "/images/experiences/bonfire.jpg",
+    href: "/experiences#stargazing"
   },
   {
-    title: "Birdwatching",
-    label: "BIRDWATCHING",
-    image: "/images/gallery/exterior/img_3.jpg",
-    href: "/experiences#birdwatching"
+    title: "Riverside Life",
+    label: "RIVERSIDE",
+    image: "/images/experiences/river.jpg",
+    href: "/experiences#riverside"
   }
 ];
 
@@ -31,7 +31,7 @@ export function ExperiencesPreview() {
   return (
     <section className="py-16 md:py-24 px-6 md:px-12 bg-cream text-text-dark w-full">
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-12 md:mb-16" animation="clipReveal">
+        <AnimatedSection className="text-left mb-12 md:mb-16" animation="clipReveal">
           <span className="text-xs tracking-widest text-text-light font-body mb-4 block">The Cottage</span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic leading-tight text-text-dark">
             Built With Nature
@@ -74,7 +74,7 @@ export function ExperiencesPreview() {
           ))}
         </motion.div>
 
-        <div className="text-center mt-12">
+        <div className="text-left mt-12">
           <Link 
             href="/experiences"
             className="group inline-flex items-center gap-2 text-forest font-medium border-b border-forest pb-1 hover:text-sage hover:border-sage transition-colors"

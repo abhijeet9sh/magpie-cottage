@@ -42,44 +42,24 @@ export function CtaBanner() {
   const titleWords = ["Ready", "To", "Unplug?"];
 
   return (
-    <section className="relative w-full py-20 md:py-28 bg-forest text-cream flex items-center justify-center overflow-hidden">
+    <section className="relative w-full py-6 md:py-8 bg-forest text-cream flex items-center justify-center overflow-hidden">
       {/* Subtle texture overlay */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white to-transparent pointer-events-none mix-blend-overlay"></div>
       
-      <div className="relative z-10 text-center px-6 md:px-12 max-w-5xl mx-auto w-full">
+      <div className="relative z-10 text-left px-6 md:px-12 max-w-5xl mx-auto w-full">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          {/* Feature icons row — inspired by TheGaj */}
-          <motion.div 
-            variants={fadeUp}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-20"
-          >
-            {features.map((feature) => (
-              <div key={feature.title} className="flex flex-col items-center text-center gap-3 group">
-                <div className="text-sage/80 mb-1 transition-transform duration-500 group-hover:-translate-y-1">
-                  {feature.icon}
-                </div>
-                <h3 className="font-body text-sm font-semibold tracking-wide text-cream">
-                  {feature.title}
-                </h3>
-                <p className="font-body text-xs text-cream/60 max-w-[200px] leading-relaxed">
-                  {feature.desc}
-                </p>
-              </div>
-            ))}
-          </motion.div>
-
           {/* Split-text title */}
           <motion.div
             variants={splitTextContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="flex flex-wrap justify-center mb-6"
+            className="flex flex-wrap justify-start mb-4"
             style={{ perspective: 600 }}
           >
             {titleWords.map((word, i) => (
@@ -89,7 +69,7 @@ export function CtaBanner() {
                 className="inline-block mr-[0.3em]"
                 style={{ transformOrigin: "bottom" }}
               >
-                <span className="font-display text-5xl md:text-7xl font-light italic">
+                <span className="font-display text-4xl md:text-5xl font-light italic">
                   {word}
                 </span>
               </motion.span>
@@ -98,20 +78,20 @@ export function CtaBanner() {
           
           <motion.p 
             variants={fadeUp}
-            className="font-body text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+            className="font-body text-cream/70 text-base md:text-lg leading-relaxed max-w-2xl mb-6"
           >
             Escape to Magpie Cottage- where the only notifications are birdsongs and the gentle gurgling of the river
           </motion.p>
           
           <motion.div 
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6"
+            className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 md:gap-6"
           >
             <AnimatedButton href="/book" variant="secondary">
               Book Your Stay
             </AnimatedButton>
             <AnimatedButton 
-              href="https://wa.me/919811934909"
+              href="https://wa.me/918882760940"
               variant="outline"
               external
             >

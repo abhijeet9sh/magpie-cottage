@@ -135,14 +135,12 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      if (!isHomePage) {
-        setHideNav(y > lastScrollY && y > 80);
-      }
+      setHideNav(y > lastScrollY && y > 80);
       setLastScrollY(y);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isHomePage]);
+  }, [lastScrollY]);
 
   return (
     <>
@@ -162,12 +160,12 @@ export function Navbar() {
           <div className="flex flex-col items-center mb-5">
             <Link href="/" className="flex flex-col items-center group">
               <Image
-                src="/logo.png"
+                src="/logo-transparent.png"
                 alt="Magpie Cottage"
-                width={72}
-                height={72}
-                className="w-[72px] h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
-                style={{ filter: "invert(1) brightness(1.5)" }}
+                width={120}
+                height={120}
+                className="w-[120px] h-[120px] object-contain transition-transform duration-300 group-hover:scale-105"
+                style={{ filter: "invert(1) brightness(1.2)" }}
                 unoptimized
               />
             </Link>
@@ -199,14 +197,14 @@ export function Navbar() {
           MOBILE — thin top bar + slide-out drawer
       ════════════════════════════════════════════════════════ */}
       <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-20 z-[60] flex items-center justify-between px-5 backdrop-blur-xl border-b border-white/5 transition-transform duration-500 ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-[90px] z-[60] flex items-center justify-between px-5 backdrop-blur-xl border-b border-white/5 transition-transform duration-500 ${
           hideNav ? "-translate-y-full" : "translate-y-0"
         }`}
         style={{ background: "rgba(0,0,0,0.70)" }}
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo-transparent.png"
             alt="Magpie Cottage"
             width={100}
             height={100}
@@ -233,7 +231,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden fixed inset-0 z-[65] bg-black/70 backdrop-blur-sm"
+              className="lg:hidden fixed inset-0 z-[65] bg-black/40"
               onClick={() => setIsNavOpen(false)}
             />
             <motion.div
@@ -241,15 +239,14 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-              className="lg:hidden fixed top-0 left-0 h-[100dvh] z-[70] flex flex-col py-8 overflow-y-auto pb-16"
-              style={{ width: "80vw", maxWidth: "320px", background: "rgba(0,0,0,0.92)" }}
+              className="lg:hidden fixed top-0 left-0 h-[100dvh] z-[70] flex flex-col py-8 overflow-y-auto pb-8"
+              style={{ width: "200px", background: "rgba(0,0,0,0.95)" }}
             >
-              {/* Mobile header */}
-              <div className="flex items-center justify-between px-7 mb-10 relative">
-                <div className="w-8"></div> {/* Spacer for perfect centering */}
-                <Link href="/" className="flex items-center absolute left-1/2 -translate-x-1/2">
+              {/* Mobile header / Logo */}
+              <div className="flex items-center justify-between px-5 mb-10">
+                <Link href="/" className="flex items-center w-full justify-center">
                   <Image
-                    src="/logo.png"
+                    src="/logo-transparent.png"
                     alt="Magpie Cottage"
                     width={140}
                     height={140}
@@ -258,16 +255,19 @@ export function Navbar() {
                     unoptimized
                   />
                 </Link>
-                <button
-                  onClick={() => setIsNavOpen(false)}
-                  className="text-white/50 hover:text-white transition-colors p-1"
-                >
-                  <X size={24} strokeWidth={1.5} />
-                </button>
               </div>
+              
+              {/* Mobile Close Button */}
+              <button
+                onClick={() => setIsNavOpen(false)}
+                className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors p-1"
+                aria-label="Close menu"
+              >
+                <X size={20} strokeWidth={1.5} />
+              </button>
 
               {/* Mobile links */}
-              <div className="flex flex-col px-7 flex-1 space-y-1">
+              <div className="flex flex-col px-5 flex-1 space-y-1">
                 {navLinks.map((link) => {
                   const isActive =
                     pathname === link.href ||
@@ -279,19 +279,26 @@ export function Navbar() {
                       <div className="flex items-center justify-between">
                         <Link
                           href={link.href}
-                          onClick={() => setIsNavOpen(false)}
-                          className={`block text-[13px] tracking-[0.1em] font-body transition-colors ${
-                            isActive ? "text-white" : "text-white/60 hover:text-white"
+                          onClick={() => {
+                            // If it has a dropdown, toggle it instead of closing nav if we want submenus accessible,
+                            // or just navigate and close. 
+                            if (!link.dropdown) setIsNavOpen(false);
+                          }}
+                          className={`block text-[12px] tracking-[0.1em] font-body transition-colors ${
+                            isActive ? "text-white" : "text-white/70 hover:text-white"
                           }`}
                         >
                           {link.name}
                         </Link>
                         {link.dropdown && (
                           <button 
-                            onClick={() => setExpandedMenus(prev => ({...prev, [link.name]: !prev[link.name]}))}
-                            className="p-2 text-white/50 hover:text-white"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setExpandedMenus(prev => ({...prev, [link.name]: !prev[link.name]}))
+                            }}
+                            className="p-1.5 -mr-1.5 text-white/50 hover:text-white"
                           >
-                            <svg className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className={`w-3.5 h-3.5 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
                           </button>
@@ -306,13 +313,13 @@ export function Navbar() {
                             exit={{ height: 0, opacity: 0 }}
                             className="overflow-hidden"
                           >
-                            <div className="mt-2.5 pl-3 border-l border-white/10 space-y-2">
+                            <div className="mt-2.5 pl-2 border-l border-white/10 space-y-2">
                               {link.dropdown.map((sub) => (
                                 <Link
                                   key={sub.name}
                                   href={sub.href}
                                   onClick={() => setIsNavOpen(false)}
-                                  className="block text-[11px] tracking-[0.12em] text-white/40 hover:text-white/80 font-body transition-colors py-1"
+                                  className="block text-[11px] tracking-[0.12em] text-white/50 hover:text-white/90 font-body transition-colors py-1"
                                 >
                                   {sub.name}
                                 </Link>
@@ -326,14 +333,26 @@ export function Navbar() {
                 })}
               </div>
 
-              <div className="px-7 mt-8">
+              {/* Bottom Contact & CTA */}
+              <div className="px-5 mt-8 flex flex-col space-y-6">
                 <Link
                   href="/book"
                   onClick={() => setIsNavOpen(false)}
-                  className="block text-center py-3 border border-white/20 text-[10px] tracking-[0.2em] text-white/70 hover:text-white hover:border-white/60 transition-all font-body"
+                  className="block text-center py-2.5 border border-white/20 text-[10px] tracking-[0.2em] text-white/70 hover:text-white hover:border-white/60 transition-all font-body"
                 >
-                  Book Now
+                  BOOK NOW
                 </Link>
+                
+                <div className="text-[10px] font-body text-white/50 space-y-3 tracking-wider">
+                  <div>
+                    <span className="block mb-0.5 text-white/40">Reservations:</span>
+                    <a href="tel:+918882760940" className="text-white/80 hover:text-white transition-colors">+91 88827 60940</a>
+                  </div>
+                  <div>
+                    <span className="block mb-0.5 text-white/40">Owner:</span>
+                    <a href="tel:+919811934909" className="text-white/80 hover:text-white transition-colors">+91 98119 34909</a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </>

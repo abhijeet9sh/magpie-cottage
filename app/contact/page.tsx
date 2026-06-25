@@ -25,7 +25,7 @@ export default function Contact() {
           <div className="mb-10">
             <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Enquire Now</span>
             <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark leading-tight">
-              Let&apos;s plan your escape.
+              Let&apos;s Plan Your Escape.
             </h2>
           </div>
           <ContactForm />
@@ -55,8 +55,13 @@ export default function Contact() {
                 <Phone className="text-sage mt-1" size={24} />
                 <div>
                   <p className="font-medium text-text-dark">WhatsApp / Phone</p>
-                  <a href="https://wa.me/919811934909" className="flex items-center gap-1 hover:text-forest transition-colors">
+                  <p className="text-xs text-text-light mb-1">Owner</p>
+                  <a href="https://wa.me/919811934909" className="flex items-center gap-1 hover:text-forest transition-colors mb-2">
                     +91 98119 34909 <ArrowUpRight size={14} />
+                  </a>
+                  <p className="text-xs text-text-light mb-1">Reservations</p>
+                  <a href="https://wa.me/918882760940" className="flex items-center gap-1 hover:text-forest transition-colors">
+                    +91 88827 60940 <ArrowUpRight size={14} />
                   </a>
                 </div>
               </li>
@@ -78,12 +83,48 @@ export default function Contact() {
         </AnimatedSection>
       </div>
 
+      {/* House Rules */}
+      <section className="bg-cream border-t border-stone-200/50 py-16 md:py-24 px-6 md:px-12">
+        <AnimatedSection className="max-w-5xl mx-auto">
+          <div className="text-left mb-14">
+            <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">During Your Stay</span>
+            <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">House Rules</h2>
+          </div>
+          <div className="bg-white rounded-3xl p-8 md:p-12 border border-stone-200 shadow-sm max-w-4xl mx-auto text-left font-body text-stone-600 text-sm md:text-base leading-relaxed space-y-8">
+            <div>
+              <p className="font-medium text-stone-800 text-lg md:text-xl mb-2">WELCOME TO MAGPIE COTTAGE – THE JUNGLE RETREAT</p>
+              <p className="text-stone-500">We are delighted to welcome you to a peaceful stay amidst nature and wildlife.</p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-display text-2xl italic text-stone-800">Safety & Property</h3>
+              <ul className="list-disc pl-5 space-y-3 marker:text-sage">
+                <li>Please treat the cottage, its furnishings, gardens, and surroundings with the same care and respect as you would your own home.</li>
+                <li>We are a pet-friendly property. Guests are responsible for supervising their pets at all times.</li>
+                <li>A caretaker is available to prepare home-cooked meals and snacks upon request.</li>
+                <li>
+                  Cooking charges:
+                  <ul className="list-[circle] pl-5 mt-2 space-y-1">
+                    <li>Up to 5 guests: ₹1,000 per day</li>
+                    <li>6 or more guests: ₹1,500 per day</li>
+                  </ul>
+                </li>
+                <li>The property is located within the buffer zone of a tiger reserve and wildlife sanctuary. Wildlife movement may occur in and around the property.</li>
+                <li>For your safety, please avoid venturing outdoors after dark.</li>
+                <li>Children and pets should remain indoors after sunset and must be supervised at all times.</li>
+                <li>In the event of an emergency after dark, guests should move only in groups and exercise caution.</li>
+              </ul>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
       {/* How to Reach Us */}
       <section className="bg-cream border-t border-stone-200/50 py-16 md:py-24 px-6 md:px-12">
         <AnimatedSection className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-left mb-14">
             <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Getting Here</span>
-            <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">How to reach us</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">How To Reach Us</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* By Air */}

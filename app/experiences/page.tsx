@@ -2,8 +2,10 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/ui/PageHero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { GalleryGrid, SimpleGallery } from "@/components/ui/GalleryGrid";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Experiences | Magpie Cottage",
@@ -23,15 +25,23 @@ const activities = [
       </div>
     ),
     tips: ["Best from Nov to May", "Book 2 days in advance", "Bring binoculars"],
-    image: "/images/gallery/exterior/img_7.jpg",
-    extraImage: "/images/real/halduparao.jpg" // Placeholder for the halduparao photo
+    images: [
+      "/images/experiences/safari.jpg",
+      "/images/experiences/halduparao.jpg",
+      "/images/experiences/safari/Picture15.jpg",
+      "/images/experiences/safari/Picture16.jpg"
+    ]
   },
   {
     id: "riverside",
     title: "Riverside Life",
     desc: "Spend your afternoons by the Palain river. Swim in the natural pools, set up a picnic on the banks, or simply read a book to the sound of flowing water.",
     tips: ["Safe for swimming", "Picnic baskets available", "Perfect at golden hour"],
-    image: "/images/real/river.jpg" // Placeholder for relevant river pics
+    images: [
+      "/images/experiences/river.jpg",
+      "/images/experiences/riverside/DJI_0552.jpg",
+      "/images/experiences/riverside/DJI_0557.jpg"
+    ]
   },
   {
     id: "birdwatching",
@@ -64,28 +74,89 @@ const activities = [
       </div>
     ),
     tips: ["Early morning is best", "Local guide available", "Over 250 species"],
-    image: "/images/real/birds.jpg" // Placeholder for bird pics
+    images: [
+      "/images/experiences/birds.jpg",
+      "/images/experiences/birdwatch/Picture1.jpg",
+      "/images/experiences/birdwatch/Picture2.jpg",
+      "/images/experiences/birdwatch/Picture3.jpg",
+      "/images/experiences/birdwatch/Picture4.jpg",
+      "/images/experiences/birdwatch/Picture5.jpg",
+      "/images/experiences/birdwatch/Picture6.jpg",
+      "/images/experiences/birdwatch/Picture7.jpg",
+      "/images/experiences/birdwatch/Picture8.jpg",
+      "/images/experiences/birdwatch/Picture9.jpg",
+      "/images/experiences/birdwatch/Picture10.jpg",
+      "/images/experiences/birdwatch/Picture11.jpg",
+      "/images/experiences/birdwatch/Picture12.jpg",
+      "/images/experiences/birdwatch/Picture13.jpg",
+      "/images/experiences/birdwatch/Picture14.jpg"
+    ]
   },
   {
     id: "nature-walks",
     title: "Nature Walks",
     desc: "Take guided or independent walks through the dense pine and oak forests surrounding the property. Discover hidden waterfalls and panoramic valley views.",
     tips: ["Wear sturdy shoes", "Carry water", "Follow marked trails"],
-    image: "/images/gallery/exterior/img_8.jpg"
+    images: ["/images/experiences/nature-walk.jpg"]
   },
   {
     id: "stargazing",
     title: "Stargazing & Bonfires",
-    desc: "End your day under a canopy of stars. We set up a private bonfire for you to enjoy the crisp mountain air with your loved ones.",
+    desc: (
+      <div className="space-y-4">
+        <p>End your day under a breathtaking canopy of stars, far away from city lights. As the crisp mountain air rolls in at dusk, we set up a private, crackling bonfire for you and your loved ones.</p>
+        <p>Gather around to share stories, roast snacks, or simply listen to the gentle flow of the Palain river in the distance. The profound silence of the surrounding wilderness combined with the warmth of the fire creates an unforgettable, magical evening perfect for acoustic music and quiet reflection.</p>
+      </div>
+    ),
     tips: ["Clear skies in winter", "Wood provided", "Acoustic music welcome"],
-    image: "/images/real/bonfire.jpg" // Placeholder for stargazing/bonfire relevant
+    images: [
+      "/images/experiences/bonfire.jpg",
+      "/images/experiences/bonfire/IMG_2851.jpg",
+      "/images/experiences/bonfire/IMG_2855.jpg",
+      "/images/experiences/bonfire/IMG_4605.jpg",
+      "/images/experiences/bonfire/IMG_4606.jpg",
+      "/images/experiences/bonfire/PHOTO-2026-01-13-18-29-46.jpg"
+    ]
+  },
+  {
+    id: "magpie-night",
+    title: "Magpie At Night",
+    desc: (
+      <div className="space-y-4">
+        <p>Experience the tranquil beauty of Magpie Cottage as the sun sets and the wilderness transitions into the calm of the night. The property transforms under the moonlight, offering a serene atmosphere perfect for winding down.</p>
+        <p>Enjoy the peaceful ambiance of our beautifully lit outdoor spaces, listen to the nocturnal sounds of the forest, and embrace the secluded luxury of living close to nature after dark.</p>
+      </div>
+    ),
+    tips: ["Warm clothing", "Photography", "Quiet reflection"],
+    images: [
+      "/images/experiences/magpie-night/IMG_5189.jpg",
+      "/images/experiences/magpie-night/IMG_5194.jpg",
+      "/images/experiences/magpie-night/IMG_5200.jpg",
+      "/images/experiences/magpie-night/IMG_5202.jpg",
+      "/images/experiences/magpie-night/IMG_5602.jpg",
+      "/images/experiences/magpie-night/IMG_5959.jpg"
+    ]
   },
   {
     id: "lansdowne",
     title: "Lansdowne Town",
-    desc: "This secluded wilderness haven is approximately 48 km. away from Lansdowne and 38 km. from Kotdwar. Lansdowne is a peaceful, untouched hillstation in Uttarakhand. Engulfed in dense forests and touring pine trees, this quaint hillstation is cosy, picturesque and quiet, all at the same time.",
+    desc: (
+      <div className="space-y-6">
+        <p>This secluded wilderness haven is approximately 48 km. away from Lansdowne and 38 km. from Kotdwar. Lansdowne is a peaceful, untouched hillstation in Uttarakhand. Engulfed in dense forests and touring pine trees, this quaint hillstation is cosy, picturesque and quiet, all at the same time.</p>
+        
+        <div>
+          <h4 className="font-display text-2xl font-light italic text-text-dark mb-3">Getting Around:</h4>
+          <ul className="space-y-2 text-text-mid">
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-forest/50"></span> Distance from Jolly Grant Airport - 142 km.</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-forest/50"></span> Distance from Kotdwar Railway Station - 39 km.</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-forest/50"></span> Distance from Motor Nagar Bus Stand - 39 km.</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-forest/50"></span> Distance from Dhauntiyal Market - 15 km.</li>
+          </ul>
+        </div>
+      </div>
+    ),
     tips: ["48 km away", "Historical sites", "Local cafes"],
-    image: "/images/gallery/exterior/img_9.jpg"
+    images: ["/images/gallery/exterior/img_9.jpg"]
   }
 ];
 
@@ -113,60 +184,111 @@ export default function Experiences() {
           <AnimatedSection className="text-left mb-16" animation="clipReveal">
             <span className="text-xs tracking-widest text-text-light font-body mb-4 block">Things To Do</span>
             <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">Activities</h2>
-            <div className="font-body text-text-mid mt-8 space-y-2">
+            <div className="font-body text-text-mid mt-8 space-y-6">
               <p>While you&apos;re enjoying your peaceful stay at Magpie Cottage, here are a few nearby places and activities we recommend to make your stay even more memorable.</p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Visit Halduparao (Corbett Tiger Reserve) for wildlife spotting</li>
-                <li>Enjoy a day in the town of Lansdowne</li>
-                <li>Embark on nature trails and spot various birds</li>
-                <li>Catch fish in the Palain river, swim, paddle or picnic in/ near the river</li>
-                <li>Stargaze and roast some food over a bonfire</li>
-              </ul>
+              
+              <div className="flex flex-wrap gap-3 pt-2">
+                {activities.map(exp => (
+                  <a 
+                    key={exp.id} 
+                    href={`#${exp.id}`}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-sage-light/50 border border-sage-border/50 text-sage-dark text-sm hover:bg-sage-light transition-colors focus-visible:ring-2 focus-visible:ring-forest outline-none font-medium"
+                  >
+                    {exp.title}
+                  </a>
+                ))}
+              </div>
             </div>
           </AnimatedSection>
 
           <div className="space-y-32">
-            {activities.map((exp, i) => (
-              <AnimatedSection key={exp.id} id={exp.id} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className={`relative aspect-[4/3] rounded-2xl overflow-hidden ${i % 2 !== 0 ? 'md:order-2' : ''} flex flex-col gap-4`}>
-                  <div className="relative w-full h-full">
-                    <Image src={exp.image} alt={exp.title} fill className="object-cover rounded-2xl" sizes="(max-width: 768px) 100vw, 50vw" />
+            {activities.map((exp, i) => {
+              if (exp.id === "birdwatching") {
+                return (
+                  <div key={exp.id} id={exp.id} className="scroll-mt-24 space-y-8">
+                    <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                      <div className={`flex flex-col gap-4 ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                        <GalleryGrid title={exp.title} images={exp.images.slice(0, 2)} />
+                      </div>
+
+                      <div className={`sticky top-32 ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                        <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
+                        <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
+                        
+                        <div className="mb-10 bg-sage-light/20 border border-sage-border/30 rounded-2xl p-6">
+                          <span className="text-xs tracking-widest text-sage-dark font-body mb-4 block uppercase font-semibold">Good to Know</span>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.tips.map(tip => (
+                              <span key={tip} className="px-4 py-2 bg-white text-text-dark rounded-full text-xs font-body shadow-sm border border-sage-border/10">
+                                {tip}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <Link 
+                          href="/contact" 
+                          className="inline-flex items-center gap-2 group text-forest font-medium text-lg hover:text-sage-dark transition-colors focus-visible:ring-2 focus-visible:ring-forest rounded-lg p-1 outline-none"
+                        >
+                          Enquire about this 
+                          <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                        </Link>
+                      </div>
+                    </AnimatedSection>
+
+                    <AnimatedSection>
+                      <SimpleGallery 
+                        title={exp.title} 
+                        images={exp.images.slice(2)} 
+                        containerClassName="columns-2 sm:columns-3 md:columns-4 lg:columns-6 gap-3"
+                        masonry={true}
+                      />
+                    </AnimatedSection>
                   </div>
-                  {exp.extraImage && (
-                    <div className="relative w-full h-64 mt-4">
-                      <Image src={exp.extraImage} alt={exp.title + " extra"} fill className="object-cover rounded-2xl" sizes="(max-width: 768px) 100vw, 50vw" />
-                    </div>
-                  )}
-                </div>
-                <div className={i % 2 !== 0 ? 'md:order-1' : ''}>
-                  <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
-                  <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
+                );
+              }
+
+              return (
+                <AnimatedSection key={exp.id} id={exp.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                   
-                  <div className="mb-8">
-                    <span className="text-xs tracking-widest text-text-light font-body mb-3 block">Tips</span>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tips.map(tip => (
-                        <span key={tip} className="px-4 py-2 md:px-3 md:py-1 bg-sage-light text-sage-dark rounded-full text-xs font-body border border-sage-border/30">
-                          {tip}
-                        </span>
-                      ))}
-                    </div>
+                  <div className={`flex flex-col gap-4 ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                    {/* Grid layout for images with Lightbox support */}
+                    <GalleryGrid title={exp.title} images={exp.images} />
                   </div>
 
-                  <Link 
-                    href="/contact" 
-                    className="inline-flex items-center gap-2 text-forest font-medium border-b border-forest pb-1 hover:text-sage-border hover:border-sage-border transition-colors"
-                  >
-                    Enquire about this &rarr;
-                  </Link>
-                </div>
-              </AnimatedSection>
-            ))}
+                  <div className={`sticky top-32 ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                    <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
+                    <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
+                    
+                    <div className="mb-10 bg-sage-light/20 border border-sage-border/30 rounded-2xl p-6">
+                      <span className="text-xs tracking-widest text-sage-dark font-body mb-4 block uppercase font-semibold">Good to Know</span>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.tips.map(tip => (
+                          <span key={tip} className="px-4 py-2 bg-white text-text-dark rounded-full text-xs font-body shadow-sm border border-sage-border/10">
+                            {tip}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Link 
+                      href="/contact" 
+                      className="inline-flex items-center gap-2 group text-forest font-medium text-lg hover:text-sage-dark transition-colors focus-visible:ring-2 focus-visible:ring-forest rounded-lg p-1 outline-none"
+                    >
+                      Enquire about this 
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                    </Link>
+                  </div>
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
+      </div>
 
-        {/* === DINING SECTION === */}
-        <div id="dining" className="scroll-mt-24">
+      {/* === DINING SECTION === */}
+      <div id="dining" className="scroll-mt-24 bg-sage-light/20 py-24 md:py-32">
+        <div className="px-6 md:px-12 max-w-7xl mx-auto space-y-16">
           <AnimatedSection className="text-left mb-16" animation="clipReveal">
             <span className="text-xs tracking-widest text-text-light font-body mb-4 block">Culinary Experience</span>
             <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">Dining</h2>
@@ -204,22 +326,11 @@ export default function Experiences() {
             </div>
           </AnimatedSection>
 
-          {/* Dining Photo Gallery */}
-          <AnimatedSection className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            {diningImages.map((img, i) => (
-              <div key={i} className="relative aspect-square rounded-xl overflow-hidden group">
-                <Image 
-                  src={img} 
-                  alt={`Dining at Magpie Cottage ${i + 1}`} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                  sizes="(max-width: 768px) 50vw, 20vw" 
-                />
-              </div>
-            ))}
+          {/* Dining Photo Gallery with Lightbox support */}
+          <AnimatedSection>
+            <SimpleGallery title="Dining at Magpie Cottage" images={diningImages} />
           </AnimatedSection>
         </div>
-
       </div>
 
       <Footer />

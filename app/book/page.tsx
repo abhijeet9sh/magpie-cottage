@@ -38,7 +38,7 @@ export default function Book() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 border-y border-stone-100 py-8">
                 <div className="flex flex-col items-center">
                   <span className="font-display italic text-text-light mb-2 text-lg">Reservations</span>
-                  <a href="https://wa.me/919811934909" className="font-body text-xl text-text-dark tracking-wide hover:text-[#25D366] transition-colors">+91 98119 34909</a>
+                  <a href="https://wa.me/918882760940" className="font-body text-xl text-text-dark tracking-wide hover:text-[#25D366] transition-colors">+91 88827 60940</a>
                 </div>
                 <div className="hidden md:block w-px h-16 bg-stone-100"></div>
                 <div className="flex flex-col items-center">

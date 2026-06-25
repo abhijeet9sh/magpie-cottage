@@ -24,7 +24,7 @@ export function PageHero({ title, subtitle, imageSrc }: PageHeroProps) {
         <div className="absolute inset-0 bg-forest/40" />
       </div>
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-center pt-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-left pt-20">
         <motion.h1 
           className="font-display text-5xl md:text-7xl lg:text-8xl text-cream font-light"
           variants={fadeUp}

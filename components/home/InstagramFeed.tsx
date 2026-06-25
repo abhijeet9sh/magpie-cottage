@@ -66,10 +66,9 @@ export function InstagramFeed() {
             </a>
           </AnimatedSection>
 
-          {/* Right Column: Precise Grid Layout */}
+          {/* Right Column: Precise 2x2 Grid Layout */}
           <AnimatedSection animation="slideInRight" className="lg:w-7/12 w-full">
-            {/* 2 photos per row grid without vertical staggered gaps */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
               {igPosts.slice(0, 4).map((post, i) => (
                 <PostCard key={i} post={post} />
               ))}

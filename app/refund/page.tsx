@@ -64,7 +64,7 @@ export default function RefundPolicy() {
           <p>Date changes are subject to availability and must be requested at least 7 days before the original check-in date. No additional charges apply for the first modification. Subsequent changes may attract a processing fee.</p>
 
           <h2 className="font-display text-3xl text-text-dark mt-12 mb-6">6. Contact Us</h2>
-          <p>For any questions about our refund policy, please reach out to us at <a href="mailto:bookmagpiecottage@gmail.com" className="text-forest hover:underline">bookmagpiecottage@gmail.com</a> or call <a href="tel:+919811934909" className="text-forest hover:underline">+91 98119 34909</a>.</p>
+          <p>For any questions about our refund policy, please reach out to us at <a href="mailto:bookmagpiecottage@gmail.com" className="text-forest hover:underline">bookmagpiecottage@gmail.com</a> or call <a href="tel:+918882760940" className="text-forest hover:underline">+91 88827 60940</a>.</p>
         </AnimatedSection>
       </div>
 

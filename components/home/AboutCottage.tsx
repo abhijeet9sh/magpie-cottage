@@ -33,7 +33,7 @@ export function AboutCottage() {
             A Wilderness Hideaway
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight text-left">
-            Your Own Jungle Retreat
+            Your Own Jungle Cottage
           </h2>
           <div className="font-body text-text-mid leading-relaxed text-[15px] md:text-lg mb-10 max-w-md text-left">
             <p className="mb-4">

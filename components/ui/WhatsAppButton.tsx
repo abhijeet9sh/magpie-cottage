@@ -9,7 +9,7 @@ export function WhatsAppButton() {
 
   return (
     <motion.a
-      href="https://wa.me/919811934909"
+      href="https://wa.me/918882760940"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex items-center gap-2 md:gap-3 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow"
