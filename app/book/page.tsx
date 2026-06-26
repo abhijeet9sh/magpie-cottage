@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata = {
   title: "Book Your Stay | Magpie Cottage",
@@ -10,14 +11,12 @@ export default function Book() {
   return (
     <main className="bg-stone-50 relative min-h-screen flex flex-col">
       <Navbar />
+      <PageHero 
+        title="Plan your stay." 
+        imageSrc="/images/gallery/exterior/img_5.jpg"
+      />
       
-      <div className="flex-1 pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
-        <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-text-light font-body mb-4 block">Reservations</span>
-          <h1 className="font-display text-5xl md:text-6xl font-light italic text-text-dark">
-            Plan your stay.
-          </h1>
-        </div>
+      <div className="flex-1 pt-12 pb-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
 
         <div className="bg-white rounded-3xl p-10 md:p-16 border border-stone-100 shadow-2xl shadow-stone-200/40 relative overflow-hidden max-w-2xl mx-auto mb-16">
           <div className="relative z-10 flex flex-col items-center text-center">

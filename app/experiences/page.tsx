@@ -48,27 +48,29 @@ const activities = [
       <div className="space-y-4">
         <p>Magpie Cottage is a birder's paradise, home to over 250 species ranging from Himalayan endemics to migratory waterfowl. Upon request an experienced expert can accompany guests on a Birdwatching trail.</p>
         <p>The diverse elevation gradients make it perfect for spotting vibrant songbirds, raptors, and pheasants in their natural habitats.</p>
-        <p>Top species to look out for by habitat and season are as below.</p>
+        <p className="hidden md:block">Top species to look out for by habitat and season are as below.</p>
         
-        <h4 className="font-bold text-sm text-forest pt-2">Common & Year-Round Residents</h4>
-        <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Pheasants & Partridges:</strong> Kalij Pheasant, Cheer Pheasant, and Chukar Partridge.</li>
-          <li><strong>Flycatchers & Robins:</strong> Blue Whistling-Thrush, Verditer Flycatcher, and Gray-headed Canary-Flycatcher.</li>
-          <li><strong>Others:</strong> Gray Treepie, Large-billed Crow, and the White-throated Laughingthrush.</li>
-        </ul>
+        <div className="hidden md:block space-y-4">
+          <h4 className="font-bold text-sm text-forest pt-2">Common & Year-Round Residents</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Pheasants & Partridges:</strong> Kalij Pheasant, Cheer Pheasant, and Chukar Partridge.</li>
+            <li><strong>Flycatchers & Robins:</strong> Blue Whistling-Thrush, Verditer Flycatcher, and Gray-headed Canary-Flycatcher.</li>
+            <li><strong>Others:</strong> Gray Treepie, Large-billed Crow, and the White-throated Laughingthrush.</li>
+          </ul>
 
-        <h4 className="font-bold text-sm text-forest pt-2">Summer Visitors (Mar - Aug)</h4>
-        <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Vibrant Birds:</strong> Blue-capped Rock-Thrush, Rosy Minivet, and Indian Paradise-Flycatcher.</li>
-          <li><strong>Raptors & Birds of Prey:</strong></li>
-          <li><strong>Eagles & Kites:</strong> Black Eagle, Steppe Eagle, and Crested Serpent-Eagle.</li>
-          <li><strong>Vultures:</strong> Himalayan Griffon.</li>
-        </ul>
+          <h4 className="font-bold text-sm text-forest pt-2">Summer Visitors (Mar - Aug)</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Vibrant Birds:</strong> Blue-capped Rock-Thrush, Rosy Minivet, and Indian Paradise-Flycatcher.</li>
+            <li><strong>Raptors & Birds of Prey:</strong></li>
+            <li><strong>Eagles & Kites:</strong> Black Eagle, Steppe Eagle, and Crested Serpent-Eagle.</li>
+            <li><strong>Vultures:</strong> Himalayan Griffon.</li>
+          </ul>
 
-        <h4 className="font-bold text-sm text-forest pt-2">Migratory Waterfowl (Wintering, Near River)</h4>
-        <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Ducks & Mergansers:</strong> Brahminy Shelduck, Mallard, and Goosander.</li>
-        </ul>
+          <h4 className="font-bold text-sm text-forest pt-2">Migratory Waterfowl (Wintering, Near River)</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Ducks & Mergansers:</strong> Brahminy Shelduck, Mallard, and Goosander.</li>
+          </ul>
+        </div>
       </div>
     ),
     tips: ["Early morning is best", "Local guide available", "Over 250 species"],
@@ -78,15 +80,7 @@ const activities = [
       "/images/experiences/birdwatch/Picture3.jpg",
       "/images/experiences/birdwatch/Picture4.jpg",
       "/images/experiences/birdwatch/Picture5.jpg",
-      "/images/experiences/birdwatch/Picture6.jpg",
-      "/images/experiences/birdwatch/Picture7.jpg",
-      "/images/experiences/birdwatch/Picture8.jpg",
-      "/images/experiences/birdwatch/Picture9.jpg",
-      "/images/experiences/birdwatch/Picture10.jpg",
-      "/images/experiences/birdwatch/Picture11.jpg",
-      "/images/experiences/birdwatch/Picture12.jpg",
-      "/images/experiences/birdwatch/Picture13.jpg",
-      "/images/experiences/birdwatch/Picture14.jpg"
+      "/images/experiences/birdwatch/Picture6.jpg"
     ]
   },
   {

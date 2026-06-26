@@ -371,7 +371,7 @@ export function GalleryClient() {
 
             {/* Right Column: Image Grid (Airbnb Pattern: 1 Large, 2 Small) */}
             <div className="md:w-[70%]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 gap-3 md:gap-6">
                 {cat.images.map((img, index) => {
                   // Airbnb pattern logic:
                   // 1. First image is always full width (span 2)
@@ -383,7 +383,7 @@ export function GalleryClient() {
                     <div 
                       key={`${cat.id}-${index}`}
                       className={`relative aspect-[4/3] md:aspect-[16/10] overflow-hidden cursor-pointer group bg-stone-100 rounded-xl md:rounded-2xl transition-all duration-500 shadow-sm hover:shadow-xl ${
-                        isFullWidth ? 'md:col-span-2' : 'md:col-span-1'
+                        isFullWidth ? 'col-span-2' : 'col-span-1'
                       }`}
                       onClick={() => openLightbox(img.src)}
                     >

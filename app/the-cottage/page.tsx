@@ -42,9 +42,9 @@ export default function TheCottage() {
       />
 
       {/* Overview Stat Strip */}
-      <section className="bg-forest text-cream py-10 px-6 border-b border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 text-xs md:text-sm font-body tracking-[0.2em]">
-          <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><BedDouble size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> 3 Bedrooms</div>
+      <section className="bg-forest text-cream py-8 md:py-10 px-6 border-b border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:flex md:flex-wrap justify-start md:justify-center gap-y-6 gap-x-4 md:gap-16 text-xs md:text-sm font-body tracking-[0.1em] md:tracking-[0.2em]">
+          <div className="flex items-center gap-2 md:gap-3 group hover:text-sage transition-colors duration-300"><BedDouble size={18} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300 md:w-5 md:h-5" /> 3 Bedrooms</div>
           <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><Users size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> Sleeps 4–8</div>
           <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><PawPrint size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> Pets Welcome</div>
           <div className="flex items-center gap-3 group hover:text-sage transition-colors duration-300"><Waves size={20} strokeWidth={1} className="text-sage group-hover:scale-110 transition-transform duration-300" /> River View</div>
@@ -76,7 +76,7 @@ export default function TheCottage() {
         </div>
 
         {/* Amenities */}
-        <AnimatedSection id="amenities" className="scroll-mt-24 bg-cream rounded-[3rem] p-8 md:p-16 lg:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
+        <AnimatedSection id="amenities" className="scroll-mt-24 bg-cream rounded-3xl md:rounded-[3rem] p-8 md:p-16 lg:p-24 shadow-xl border border-stone-200/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sage/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-forest/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
           <div className="text-left mb-16 relative z-10">

@@ -18,16 +18,16 @@ export function Footer() {
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-8">
           {/* Column 1: Brand */}
-          <motion.div variants={footerItem} className="lg:col-span-1">
+          <motion.div variants={footerItem} className="lg:col-span-5">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <Image
                 src="/logo-transparent.png"
                 alt="Magpie Cottage"
                 width={500}
                 height={500}
-                className="w-[280px] md:w-[400px] object-contain mb-2 -ml-3"
+                className="w-[200px] md:w-[400px] object-contain mb-2 -ml-2 md:-ml-3"
                 style={{ filter: "invert(1) brightness(1.2)" }}
                 unoptimized
               />
@@ -50,7 +50,7 @@ export function Footer() {
           </motion.div>
 
           {/* Column 2: Navigation */}
-          <motion.div variants={footerItem}>
+          <motion.div variants={footerItem} className="lg:col-span-3">
             <h4 className="font-display text-lg text-cream mb-6 tracking-wide">Navigation</h4>
             <nav className="flex flex-col gap-3">
               {[
@@ -74,28 +74,8 @@ export function Footer() {
             </nav>
           </motion.div>
 
-          {/* Column 3: Gallery & Media */}
-          <motion.div variants={footerItem}>
-            <h4 className="font-display text-lg text-cream mb-6 tracking-wide">Gallery & Media</h4>
-            <nav className="flex flex-col gap-3">
-              {[
-                { name: "Gallery", href: "/gallery" },
-                { name: "Journal", href: "/journal" },
-                { name: "Book a Room", href: "/book" },
-              ].map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-cream/70 hover:text-cream transition-colors duration-300 font-body text-sm"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
-
-          {/* Column 4: Contact */}
-          <motion.div variants={footerItem}>
+          {/* Column 3: Contact */}
+          <motion.div variants={footerItem} className="lg:col-span-4">
             <h4 className="font-display text-lg text-cream mb-6 tracking-wide">Contact</h4>
             <div className="flex flex-col gap-4">
               <Link href="/contact" className="text-cream/70 hover:text-cream transition-colors duration-300 font-body text-sm">

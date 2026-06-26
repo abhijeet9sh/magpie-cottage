@@ -334,12 +334,12 @@ export default function OurStory() {
               </p>
             </div>
           </div>
-          <div className="order-2 lg:order-2 lg:sticky lg:top-32 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg lg:max-w-md mx-auto w-full">
+          <div className="order-2 lg:order-2 lg:sticky lg:top-32 relative rounded-2xl overflow-hidden shadow-lg lg:max-w-md mx-auto w-full">
             <img
               src="/malini.png"
               alt="Malini Kumar — Your Host"
               loading="lazy"
-              className="w-full h-auto object-contain transition-transform duration-700 ease-out hover:scale-105"
+              className="w-full h-auto block transition-transform duration-700 ease-out hover:scale-105"
             />
           </div>
         </AnimatedSection>
@@ -356,7 +356,7 @@ export default function OurStory() {
           <p className="font-body text-stone-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
             Experience the magic of the forest for yourself. Whether you&apos;re seeking solitude, adventure, or simply space to reconnect with nature and yourself, escape to <strong>Magpie Cottage – Stillness In The Wild</strong>, where the only notifications are birdsongs and the gentle gurgle of the river.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4">
             <a
               href="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-body font-medium text-sm tracking-[0.15em] bg-sage text-forest hover:bg-sage-dark hover:text-cream transition-all duration-500"
