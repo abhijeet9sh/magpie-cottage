@@ -126,7 +126,7 @@ export default function OurStory() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             <Thumb src="/images/story/jungle_1.jpg" alt="Aerial view — river and jungle" aspect="aspect-[3/4]" />
             <Thumb src="/images/story/jungle_2.jpg" alt="Forest canopy from above" aspect="aspect-[3/4]" className="-mt-0 md:mt-8" />
-            <Thumb src="/images/story/jungle_3.jpg" alt="Drone shot — landscape" aspect="aspect-[3/4]" className="hidden md:block" />
+            <Thumb src="/images/story/jungle_3.jpg" alt="Drone shot — landscape" aspect="aspect-[3/4]" />
           </div>
 
           <div className="max-w-2xl mx-auto font-body text-stone-500 space-y-4 leading-relaxed text-base md:text-[1.05rem]">
@@ -205,10 +205,8 @@ export default function OurStory() {
                 The Legacy Of Late Mr Ashok Kumar
               </h2>
             </div>
-            <div className="order-1 lg:order-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Thumb src="/images/story/legacy_ashok_new.png" alt="Late Mr Ashok Kumar in the forest" aspect="aspect-auto" />
-              <Thumb src="/images/story/jungle_1.jpg" alt="Late Mr Ashok Kumar" aspect="aspect-auto" />
-              <Thumb src="/images/story/jungle_2.jpg" alt="Late Mr Ashok Kumar" aspect="aspect-auto" />
+            <div className="max-w-lg mx-auto">
+              <Photo src="/images/story/legacy_ashok_new.png" alt="Late Mr Ashok Kumar in the forest" aspect="aspect-auto" />
             </div>
           </div>
 

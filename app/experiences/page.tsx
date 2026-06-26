@@ -27,9 +27,7 @@ const activities = [
     tips: ["Best from Nov to May", "Book 2 days in advance", "Bring binoculars"],
     images: [
       "/images/experiences/safari.jpg",
-      "/images/experiences/halduparao.jpg",
-      "/images/experiences/safari/Picture15.jpg",
-      "/images/experiences/safari/Picture16.jpg"
+      "/images/experiences/halduparao.jpg"
     ]
   },
   {
@@ -76,7 +74,6 @@ const activities = [
     tips: ["Early morning is best", "Local guide available", "Over 250 species"],
     images: [
       "/images/experiences/birds.jpg",
-      "/images/experiences/birdwatch/Picture1.jpg",
       "/images/experiences/birdwatch/Picture2.jpg",
       "/images/experiences/birdwatch/Picture3.jpg",
       "/images/experiences/birdwatch/Picture4.jpg",
@@ -201,17 +198,17 @@ export default function Experiences() {
             </div>
           </AnimatedSection>
 
-          <div className="space-y-32">
+          <div className="space-y-20 md:space-y-32">
             {activities.map((exp, i) => {
               if (exp.id === "birdwatching") {
                 return (
                   <div key={exp.id} id={exp.id} className="scroll-mt-24 space-y-8">
-                    <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                      <div className={`flex flex-col gap-4 ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                    <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-start">
+                      <div className={`flex flex-col gap-4 order-2 ${i % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                         <GalleryGrid title={exp.title} images={exp.images.slice(0, 2)} />
                       </div>
 
-                      <div className={`sticky top-32 ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                      <div className={`sticky top-32 order-1 ${i % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                         <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
                         <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
                         
@@ -249,14 +246,14 @@ export default function Experiences() {
               }
 
               return (
-                <AnimatedSection key={exp.id} id={exp.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <AnimatedSection key={exp.id} id={exp.id} className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-start">
                   
-                  <div className={`flex flex-col gap-4 ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                  <div className={`flex flex-col gap-4 order-2 ${i % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                     {/* Grid layout for images with Lightbox support */}
                     <GalleryGrid title={exp.title} images={exp.images} />
                   </div>
 
-                  <div className={`sticky top-32 ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                  <div className={`sticky top-32 order-1 ${i % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
                     <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
                     
