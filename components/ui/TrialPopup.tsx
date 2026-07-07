@@ -18,30 +18,12 @@ export function TrialPopup() {
   useEffect(() => {
     setIsClient(true);
     
-    // Check dismiss status
-    const today = new Date().toDateString();
-    const storedState = localStorage.getItem("previewDismissState");
-    
-    let currentCount = 0;
-    if (storedState) {
-      try {
-        const parsed = JSON.parse(storedState);
-        if (parsed.date === today) {
-          currentCount = parsed.count;
-        }
-      } catch (e) {
-        // ignore JSON parse error
-      }
+    if (pathname === "/") {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
     }
-
-    if (currentCount >= 5) {
-      setCanDismiss(false);
-    }
-    
-    // Always show it initially on page load
-    setIsVisible(true);
-
-  }, [pathname]); // Re-run when pathname changes
+  }, [pathname]);
 
   // Countdown timer in a separate effect so it doesn't re-bind constantly
   useEffect(() => {
@@ -73,28 +55,6 @@ export function TrialPopup() {
 
   const handleDismiss = () => {
     if (!canDismiss) return;
-    
-    const today = new Date().toDateString();
-    const storedState = localStorage.getItem("previewDismissState");
-    
-    let currentCount = 0;
-    if (storedState) {
-      try {
-        const parsed = JSON.parse(storedState);
-        if (parsed.date === today) {
-          currentCount = parsed.count;
-        }
-      } catch (e) {
-        // ignore
-      }
-    }
-
-    const newCount = currentCount + 1;
-    localStorage.setItem(
-      "previewDismissState",
-      JSON.stringify({ date: today, count: newCount })
-    );
-
     setIsVisible(false);
   };
 
@@ -139,6 +99,10 @@ export function TrialPopup() {
                 Your trial will expire on <strong className="text-red-400 font-bold">July 16, 2026</strong>.
               </p>
               
+              <p className="text-lg md:text-xl text-zinc-300 leading-relaxed italic text-center">
+                The 7 day access is provided for Evaluation Only.
+              </p>
+              
               <div className="flex items-center justify-center gap-4 bg-red-950/40 py-6 px-8 rounded-2xl border-2 border-red-900/50 shadow-inner my-8">
                 <Clock size={32} className="text-red-500 animate-pulse" />
                 <span className="font-mono font-bold text-4xl md:text-5xl tracking-widest text-white">
@@ -151,12 +115,6 @@ export function TrialPopup() {
                   Please <strong className="text-white bg-red-600 px-3 py-1 rounded">contact the developer</strong> immediately to activate the full permanent version of this website.
                 </p>
               </div>
-
-              {!canDismiss && timeLeft !== "Trial Expired" && (
-                <p className="text-sm md:text-base text-red-500 font-bold italic text-center mt-6 pt-6 border-t border-red-900/50">
-                  (You have used all your 5 dismissals for today. This message is now permanently pinned and cannot be closed.)
-                </p>
-              )}
             </div>
           </motion.div>
         </motion.div>
