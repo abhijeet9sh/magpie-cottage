@@ -152,7 +152,11 @@ export default function TheCottage() {
                 </div>
                 <div>
                   <h4 className="font-bold text-forest">Contact:</h4>
-                  <p>Reservations: Siddharth Ahuja: +918882760940<br />Owner: Malini Kumar: +9198119 34909<br />Email: bookmagpiecottage@gmail.com</p>
+                  <p className="space-y-1">
+                    <span className="block"><span className="font-medium">Reservations:</span>{" "}<span className="whitespace-nowrap">Siddharth Ahuja</span>{" · "}<a href="tel:+918882760940" className="whitespace-nowrap hover:text-forest transition-colors">+91 88827 60940</a></span>
+                    <span className="block"><span className="font-medium">Owner:</span>{" "}<span className="whitespace-nowrap">Malini Kumar</span>{" · "}<a href="tel:+919811934909" className="whitespace-nowrap hover:text-forest transition-colors">+91 98119 34909</a></span>
+                    <span className="block"><span className="font-medium">Email:</span>{" "}<a href="mailto:bookmagpiecottage@gmail.com" className="hover:text-forest transition-colors">bookmagpiecottage@gmail.com</a></span>
+                  </p>
                 </div>
               </div>
 

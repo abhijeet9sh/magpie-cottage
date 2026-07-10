@@ -42,7 +42,7 @@ export function CtaBanner() {
   const titleWords = ["Ready", "To", "Unplug?"];
 
   return (
-    <section className="relative w-full py-6 md:py-8 bg-forest text-cream flex items-center justify-center overflow-hidden">
+    <section className="relative w-full pt-6 pb-2 md:pt-8 md:pb-4 bg-forest text-cream flex items-center justify-center overflow-hidden">
       {/* Subtle texture overlay */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white to-transparent pointer-events-none mix-blend-overlay"></div>
       

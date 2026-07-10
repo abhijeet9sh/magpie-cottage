@@ -109,7 +109,7 @@ export default function OurStory() {
               <p>We&apos;ve kept the footprint small and the impact minimal, ensuring that the wildlife that calls this place home remains undisturbed.</p>
             </div>
           </div>
-          <Photo src="/images/real/DJI_0573.jpg" alt="The Cottage" aspect="aspect-[3/4]" priority />
+          <Photo src="/images/real/built-with-nature.jpg" alt="The Cottage" aspect="aspect-[3/4]" priority />
         </AnimatedSection>
 
         {/* ════════════════════════════════════════════
@@ -205,8 +205,9 @@ export default function OurStory() {
                 The Legacy Of Late Mr Ashok Kumar
               </h2>
             </div>
-            <div className="max-w-lg mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <Photo src="/images/story/legacy_ashok_new.png" alt="Late Mr Ashok Kumar in the forest" aspect="aspect-auto" />
+              <Photo src="/images/story/Picture15.png" alt="Ashok Kumar in the wild" aspect="aspect-auto" />
             </div>
           </div>
 
@@ -245,7 +246,7 @@ export default function OurStory() {
             </div>
             <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
               <Thumb src="/images/story/beginning_new_1.png" alt="Early conservation" aspect="aspect-auto" />
-              <Thumb src="/images/story/beginning_new_2.png" alt="Early days" aspect="aspect-auto" />
+              <Thumb src="/images/story/Picture14.png" alt="Ashok Kumar at Rajaji National Park" aspect="aspect-auto" />
             </div>
           </div>
 
@@ -292,9 +293,9 @@ export default function OurStory() {
                 </p>
               </div>
             </div>
-            <div className="order-2 lg:order-2 grid grid-cols-2 gap-4">
-              <Thumb src="/images/story/lineage_1.jpg" alt="Urmila Shastri with baby" aspect="aspect-auto" />
-              <Thumb src="/images/story/lineage_2.png" alt="Urmila Shastri portrait" aspect="aspect-auto" />
+            <div className="order-2 lg:order-2 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+              <Thumb src="/images/story/lineage_1.jpg" alt="Urmila Shastri with baby" aspect="aspect-[3/4]" />
+              <Thumb src="/images/story/Picture13.png" alt="Urmila Shastri portrait" aspect="aspect-[3/4]" />
             </div>
           </div>
 

@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="bg-forest text-cream">
       <motion.div 
-        className="max-w-7xl mx-auto px-6 md:px-12 pt-6 md:pt-8 pb-12 md:pb-16"
+        className="max-w-7xl mx-auto px-6 md:px-12 pt-3 md:pt-4 pb-4 md:pb-6"
         variants={footerStagger}
         initial="hidden"
         whileInView="visible"
@@ -27,13 +27,13 @@ export function Footer() {
                 alt="Magpie Cottage"
                 width={500}
                 height={500}
-                className="w-[200px] md:w-[400px] object-contain mb-2 -ml-2 md:-ml-3"
+                className="w-[100px] md:w-[140px] object-contain mb-4 -ml-2 md:-ml-3"
                 style={{ filter: "invert(1) brightness(1.2)" }}
                 unoptimized
               />
             </Link>
             <p className="font-body text-cream/70 text-sm leading-relaxed mb-4 max-w-sm">
-              A wilderness hideaway on the banks of the Palain River, at the edge of the Kalagarh (Corbett) Tiger Reserve. Where the garden gives way to the forest, and nature sets the rhythm. Discover your own moments of Stillness in the Wild.
+              A wilderness hideaway on the banks of the Palain River, at the edge of the Kalagarh (Corbett) Tiger Reserve. Where the Sal Trees gives way to the forest, and nature sets the rhythm. Discover your own moments of Stillness in the Wild.
             </p>
             <p className="font-body text-sage text-xs tracking-widest mb-6">Hosted by Malini Kumar</p>
             <div className="flex gap-4">
@@ -55,10 +55,9 @@ export function Footer() {
             <nav className="flex flex-col gap-3">
               {[
                 { name: "Home", href: "/" },
-                { name: "Our Story", href: "/our-story" },
-                { name: "The Legacy", href: "/legacy" },
                 { name: "The Cottage", href: "/the-cottage" },
                 { name: "Experiences", href: "/experiences" },
+                { name: "Our Story", href: "/our-story" },
                 { name: "Gallery", href: "/gallery" },
                 { name: "Journal", href: "/journal" },
                 { name: "Contact", href: "/contact" },

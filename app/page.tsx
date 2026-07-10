@@ -19,9 +19,9 @@ export default function Home() {
       
       <HeroSection />
       <AboutCottage />
-      <StoryTeaser />
-      <ExperiencesPreview />
       <RoomsPreview />
+      <ExperiencesPreview />
+      <StoryTeaser />
       <PhotoSlideshow />
       <TestimonialsSection />
       <MapSection />

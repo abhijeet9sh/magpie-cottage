@@ -4,12 +4,12 @@ const { chromium } = require('playwright');
   const browser = await chromium.launch();
   const page = await browser.newPage();
   
-  const htmlPath = 'file:///C:/Users/abhij/.gemini/antigravity-ide/brain/df1970c0-fb1a-42fc-a9d5-b71ffc47942e/scratch/client_report.html';
+  const htmlPath = 'file:///C:/Users/abhij/Desktop/Website%20work/Magpie%20Cottage/magpie-cottage/client-report.html';
   
   await page.goto(htmlPath, { waitUntil: 'networkidle' });
   
   await page.pdf({
-    path: 'Client_Report_From_HTML.pdf',
+    path: 'Magpie_Cottage_Feedback_Update_Report.pdf',
     format: 'A4',
     printBackground: true,
     margin: {

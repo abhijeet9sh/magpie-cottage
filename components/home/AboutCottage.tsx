@@ -39,8 +39,15 @@ export function AboutCottage() {
             <p className="mb-4">
               Tucked away in pristine wilderness, far from the sights and sounds of urban life, Magpie Cottage is an exclusive three-bedroom jungle retreat set amidst over half an acre of lush greenery and towering Sal trees. Home to more than 500 species of birds, it offers spacious living and dining areas, two open terraces, and the rare luxury of complete privacy in nature.
             </p>
-            <p>
+            <p className="mb-4">
               Nestled on the banks of the Palain River in Simalsaira, Uttarakhand, Magpie Cottage lies just 7 km from the Vatanvasa Gate of the Kalagarh Tiger Reserve. A short safari drive takes you deep into the forests, while the historic Halduparao Forest Rest House ( Corbett Tiger Reserve) built in 1890 and located within 10 km, offers opportunities to spot elephants, spotted deer, and, if fortune favours, even tigers along the Palain (Sonanadi/Golden) River.
+            </p>
+            <p className="mb-4">
+              <a href="/the-cottage" className="border-b border-text-mid/30 hover:border-text-mid transition-colors">Constructed with local stone and wood</a>, the cottage was designed to blend seamlessly into the surrounding forest canopy. Every window frames a living painting. We've kept the footprint small and the impact minimal, ensuring that the wildlife that calls this place home remains undisturbed.
+            </p>
+            <p>
+              <strong className="text-text-dark">Magpie Cottage – The Jungle Lodge</strong><br />
+              A wilderness hideaway on the banks of the Palain River, at the edge of the Kalagarh (Corbett) Tiger Reserve. Where the Sal Trees gives way to the forest, and nature sets the rhythm. Discover your own moments of Stillness in the Wild.
             </p>
           </div>
 

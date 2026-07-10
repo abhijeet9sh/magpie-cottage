@@ -25,11 +25,13 @@ const InstagramIcon = ({ size = 24, className = "" }) => (
 
 const igPosts = [
   { src: "/images/gallery/exterior/img_2.jpg", type: "carousel" },
+  { src: "/images/wildlife/Picture1.jpg", type: "photo" },
+  { src: "/images/wildlife/Picture2.jpg", type: "photo" },
+  { src: "/images/wildlife/Picture3.jpg", type: "photo" },
+  { src: "/images/wildlife/Picture4.jpg", type: "carousel" },
+  { src: "/images/wildlife/Picture5.jpg", type: "video" },
+  { src: "/images/wildlife/Picture6.jpg", type: "photo" },
   { src: "/images/gallery/living-room/img_3.jpg", type: "video" },
-  { src: "/images/gallery/bedroom-1/img_2.jpg", type: "photo" },
-  { src: "/images/gallery/dining-area/img_1.jpg", type: "video" },
-  { src: "/images/gallery/exterior/img_5.jpg", type: "carousel" },
-  { src: "/images/gallery/additional-photos/img_2.jpg", type: "photo" },
 ];
 
 export function InstagramFeed() {
@@ -40,14 +42,14 @@ export function InstagramFeed() {
           
           {/* Left Column: Text Content */}
           <AnimatedSection animation="fadeUp" className="lg:w-5/12 lg:pr-8">
-            <div className="flex items-center gap-2 text-sage tracking-widest text-xs font-body mb-6 font-semibold md:justify-center lg:justify-start">
+            <div className="flex items-center gap-2 text-sage tracking-widest text-xs font-body mb-4 font-semibold uppercase md:justify-center lg:justify-start">
               <InstagramIcon size={16} />
               <span>Join Our Community</span>
             </div>
             
-            <h2 className="font-display text-5xl md:text-6xl text-forest mb-6 tracking-tight leading-tight text-left lg:text-left">
+            <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight text-left lg:text-left">
               Stories From <br />
-              <span className="italic text-sage">The Jungle</span>
+              <span className="text-sage">The Jungle</span>
             </h2>
             
             <p className="font-body text-forest/70 mb-8 leading-relaxed text-[15px]">
@@ -66,10 +68,10 @@ export function InstagramFeed() {
             </a>
           </AnimatedSection>
 
-          {/* Right Column: Precise 2x2 Grid Layout */}
+          {/* Right Column: Precise 2x4 Grid Layout */}
           <AnimatedSection animation="slideInRight" className="lg:w-7/12 w-full">
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              {igPosts.slice(0, 4).map((post, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {igPosts.slice(0, 8).map((post, i) => (
                 <PostCard key={i} post={post} />
               ))}
             </div>

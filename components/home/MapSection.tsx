@@ -31,7 +31,7 @@ export function MapSection() {
 
         {/* Right: Text */}
         <AnimatedSection>
-          <span className="text-xs tracking-widest text-text-light font-body mb-4 block text-left">Getting Here</span>
+          <span className="text-xs tracking-widest text-text-light font-body mb-4 block text-left uppercase">Getting Here</span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic text-text-dark mb-6 leading-tight text-left">
             Six Hours From Delhi. <br/> A World Away.
           </h2>

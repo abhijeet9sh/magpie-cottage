@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magpie Cottage — Website Update Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --forest: #3B4A3F;
+      --sage: #8FA98B;
+      --cream: #FAF8F5;
+      --text-dark: #2C2C2C;
+      --text-mid: #6B6B6B;
+      --green-check: #4CAF50;
+      --amber: #F59E0B;
+      --border: #E8E4DF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: white;
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    /* Cover Page */
+    .cover {
+      min-height: 100vh;
+      background: var(--forest);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 40px;
+      page-break-after: always;
+    }
+
+    .cover-logo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .cover-logo svg {
+      width: 60px;
+      height: 60px;
+      fill: white;
+    }
+
+    .cover h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    .cover .subtitle {
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 60px;
+    }
+
+    .cover .report-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 12px;
+      color: var(--sage);
+    }
+
+    .cover .report-date {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .cover .divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 30px auto;
+    }
+
+    .cover .prepared-by {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+    }
+
+    /* Content Pages */
+    .page {
+      padding: 50px 55px;
+      page-break-after: always;
+      min-height: 100vh;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 35px;
+    }
+
+    .page-header .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    .page-header .page-num {
+      font-size: 10px;
+      color: var(--text-mid);
+      letter-spacing: 0.1em;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+
+    h2 + .section-sub {
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--forest);
+      margin-top: 28px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Status Items */
+    .item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .status-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .status-done {
+      background: #E8F5E9;
+      color: var(--green-check);
+    }
+
+    .status-pending {
+      background: #FFF8E1;
+      color: var(--amber);
+    }
+
+    .item-content {
+      flex: 1;
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--text-dark);
+    }
+
+    .item-desc {
+      font-size: 12.5px;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    .item-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+
+    .tag-done {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .tag-pending {
+      background: #FFF8E1;
+      color: #F57F17;
+    }
+
+    /* Summary Box */
+    .summary-box {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .summary-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .summary-label {
+      font-size: 11px;
+      color: var(--text-mid);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    /* Photos Section */
+    .photos-section {
+      margin-top: 20px;
+    }
+
+    .photo-group {
+      margin-bottom: 20px;
+    }
+
+    .photo-group-title {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+
+    .photo-list {
+      padding-left: 20px;
+    }
+
+    .photo-list li {
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-bottom: 3px;
+    }
+
+    /* Pending section */
+    .pending-note {
+      background: #FFFDE7;
+      border: 1px solid #FFF9C4;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 20px;
+      font-size: 12.5px;
+      color: #5D4037;
+      line-height: 1.6;
+    }
+
+    .pending-note strong {
+      color: #E65100;
+    }
+
+    /* Footer */
+    .page-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 55px;
+      font-size: 9px;
+      color: var(--text-mid);
+      letter-spacing: 0.05em;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .intro-text {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER PAGE -->
+  <div class="cover">
+    <div class="cover-logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+    </div>
+    <h1>Magpie Cottage</h1>
+    <p class="subtitle">The Jungle Retreat</p>
+    <div class="divider"></div>
+    <p class="report-title">Website Feedback — Update Report</p>
+    <p class="report-date">10th July 2026</p>
+    <div class="divider"></div>
+    <p class="prepared-by">Prepared by apr.studios</p>
+  </div>
+
+  <!-- PAGE 1: Overview -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Magpie Cottage — Update Report</span>
+      <span class="page-num">Page 1</span>
+    </div>
+
+    <h2>Overview</h2>
+    <p class="section-sub">Summary of all changes made based on your feedback</p>
+
+    <p class="intro-text">
+      Thank you for your detailed feedback on the Magpie Cottage website. We've gone through each point carefully and made the necessary updates. This report summarises what has been completed and what still needs your input before we can proceed.
+    </p>
+
+    <div class="summary-box">
+      <div class="summary-grid">
+        <div>
+          <div class="summary-num">20</div>
+          <div class="summary-label">Total Items Reviewed</div>
+        </div>
+        <div>
+          <div class="summary-num">18</div>
+          <div class="summary-label">Completed</div>
+        </div>
+        <div>
+          <div class="summary-num">2</div>
+          <div class="summary-label">Awaiting Your Input</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Previously Completed (Round 1)</h3>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Navigation Order Updated</div>
+        <div class="item-desc">Menu now reads: Home → The Cottage → Experiences → Our Story → Gallery → Journal → Contact — consistent across both the top menu and the footer.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Homepage Text Added</div>
+        <div class="item-desc">"Constructed with local stone and wood…" text is now visible under the Cottage section on the homepage.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Tagline Updated</div>
+        <div class="item-desc">"Magpie Cottage – The Jungle Lodge" with the Sal Trees description now appears on the homepage and in the footer.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Grandmother's Photo Repositioned</div>
+        <div class="item-desc">Moved to "The Lineage" section on the Our Story page for better context.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Our Story Photos Added</div>
+        <div class="item-desc">Tiger skin photo and older gentleman portrait now included on the Our Story page.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Footer Logo & Credits</div>
+        <div class="item-desc">Logo increased to proper size. Credits now read "Made by apr.studios" (no heart emoji). Broken "The Legacy" link removed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Round 2 Changes -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Magpie Cottage — Update Report</span>
+      <span class="page-num">Page 2</span>
+    </div>
+
+    <h2>Latest Changes (Round 2)</h2>
+    <p class="section-sub">Completed based on your most recent feedback</p>
+
+    <h3>Photos & Galleries</h3>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Duplicate Photos Removed</div>
+        <div class="item-desc">Several wildlife photos were appearing in multiple sections (Safari, Nature Walks). Each section now uses its own unique set of photos — no repeats anywhere on the page.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Jungle Safari — 2 New Photos Added</div>
+        <div class="item-desc">The historic Halduparao Forest Rest House building and the original FRH signboard are now featured in the Safari gallery.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Nature Walks — Animal Photos Added</div>
+        <div class="item-desc">This section previously used a single repeated elephant photo. It now has its own gallery with 4 dedicated wildlife images: elephants, tiger, and deer spotted on nature trails.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Lansdowne Town — Landmark Photos Added</div>
+        <div class="item-desc">Previously had no gallery. Now features 4 photos of local landmarks: St. John's Church, Darwan Singh Museum, Garhwal War Memorial, and St. Mary's Church.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Riverside — New Photo Added</div>
+        <div class="item-desc">A new riverside scene photo has been added to the gallery.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Bonfire & Night Photos — iPhone Format Fixed</div>
+        <div class="item-desc">The original photos were in iPhone's HEIC format which doesn't display in web browsers. All have been converted to standard JPG format and are now displaying correctly.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Birdwatching — All 14 Photos Included</div>
+        <div class="item-desc">The complete birdwatching collection (14 photos) is now part of the gallery.</div>
+      </div>
+    </div>
+
+    <h3>Design & Layout</h3>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Colour Scheme Made Consistent</div>
+        <div class="item-desc">The navigation bar and footer now use the same olive green colour throughout the site — no more mismatched tones between pages.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Footer Green Band Made Thinner</div>
+        <div class="item-desc">The green footer area at the bottom of every page has been slimmed down as requested.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Browser Tab Icon (Favicon) Set</div>
+        <div class="item-desc">The Magpie Cottage logo now appears as the small icon in the browser tab when visitors open the website.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: More Changes + Pending -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Magpie Cottage — Update Report</span>
+      <span class="page-num">Page 3</span>
+    </div>
+
+    <h3>Text & Content</h3>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Guest Testimonial — Divya Jindal</div>
+        <div class="item-desc">The quote has been rephrased for clarity and the quotation marks have been fixed. It now reads: <em>"A wonderful house — very comfortable, neat, and clean. The caretaker and the cook both took exceptional care of us throughout our stay."</em></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Contact Details — Text Wrapping Fixed</div>
+        <div class="item-desc">On The Cottage page, the "Reservations: Siddharth Ahuja" text was splitting across lines on mobile. This has been restructured so names and phone numbers stay together on the same line.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Experiences Section Positioning</div>
+        <div class="item-desc">On the homepage, the Experiences section now appears after the Cottage section in the correct order: Cottage → Rooms → Experiences → Our Story.</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 40px;">Awaiting Your Input</h2>
+    <p class="section-sub">These items need your decision before we can proceed</p>
+
+    <div class="item">
+      <div class="status-icon status-pending">?</div>
+      <div class="item-content">
+        <div class="item-title">Logo Size</div>
+        <div class="item-desc">You mentioned the logo appears "way too large" and you'd like only the bird icon at a smaller size. Currently, the logo shows both the bird illustration and the "Magpie Cottage" text below it. Would you like us to:</div>
+        <div class="item-desc" style="margin-top: 8px; padding-left: 16px;">
+          <strong>Option A:</strong> Keep the full logo but make it smaller<br>
+          <strong>Option B:</strong> Use only the bird illustration (without the text) at a very small size<br>
+          <strong>Option C:</strong> Something else — please describe
+        </div>
+        <span class="item-tag tag-pending">YOUR INPUT NEEDED</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-pending">?</div>
+      <div class="item-content">
+        <div class="item-title">Homepage "Built With Nature" Photo</div>
+        <div class="item-desc">You flagged a specific photo on the homepage as being a screenshot. The current image is an aerial drone shot of the property. Could you let us know which photo you'd like replaced, and if you have a preferred replacement image?</div>
+        <span class="item-tag tag-pending">YOUR INPUT NEEDED</span>
+      </div>
+    </div>
+
+    <div class="pending-note">
+      <strong>Next step:</strong> Once you share your preferences on the two items above, we'll implement them right away. No other changes are outstanding — everything else from your feedback has been completed.
+    </div>
+  </div>
+
+  <!-- PAGE 4: Mobile Testing -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Magpie Cottage — Update Report</span>
+      <span class="page-num">Page 4</span>
+    </div>
+
+    <h2>Quality Assurance</h2>
+    <p class="section-sub">The website has been tested across devices to ensure everything works correctly</p>
+
+    <div class="summary-box">
+      <div class="summary-grid">
+        <div>
+          <div class="summary-num">6</div>
+          <div class="summary-label">Pages Tested</div>
+        </div>
+        <div>
+          <div class="summary-num">0</div>
+          <div class="summary-label">Broken Images</div>
+        </div>
+        <div>
+          <div class="summary-num">0</div>
+          <div class="summary-label">Layout Issues</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Desktop Testing</h3>
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">All Pages Verified</div>
+        <div class="item-desc">Homepage, The Cottage, Experiences, Our Story, Gallery, and Contact pages have all been visually checked on desktop screens. All images load correctly, navigation works, and the colour scheme is consistent.</div>
+      </div>
+    </div>
+
+    <h3>Mobile Testing (iPhone)</h3>
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Mobile Layout Verified</div>
+        <div class="item-desc">All pages have been tested at iPhone dimensions (390×844 pixels). No content is cut off, no text overflows the screen, and all buttons are easy to tap.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Contact Details Display Correctly</div>
+        <div class="item-desc">The reservations contact information on The Cottage page displays neatly on mobile without awkward line breaks.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="status-icon status-done">✓</div>
+      <div class="item-content">
+        <div class="item-title">Photo Galleries Work on Mobile</div>
+        <div class="item-desc">All new photo galleries (Nature Walks, Lansdowne, Safari) display correctly and can be scrolled through on mobile devices.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border); text-align: center;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--forest); margin-bottom: 8px;">Thank you for your continued feedback.</p>
+      <p style="font-size: 12px; color: var(--text-mid);">Please review the website at your convenience and let us know your thoughts on the pending items.</p>
+      <div style="margin-top: 30px;">
+        <p style="font-size: 11px; color: var(--text-mid); letter-spacing: 0.08em;">apr.studios</p>
+        <p style="font-size: 10px; color: #aaa; margin-top: 4px;">10th July 2026</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

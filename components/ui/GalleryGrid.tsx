@@ -24,7 +24,7 @@ export function GalleryGrid({ title, images }: GalleryGridProps) {
       <div className={`grid gap-4 w-full ${
         images.length === 1 ? 'grid-cols-1' :
         images.length === 2 ? 'grid-cols-2' :
-        'grid-cols-2 sm:grid-cols-2 lg:grid-cols-2'
+        'grid-cols-2'
       }`}>
         {images.map((img, idx) => {
           const imageClass = images.length === 1 

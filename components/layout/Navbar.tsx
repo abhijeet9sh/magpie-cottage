@@ -11,16 +11,6 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { name: "Home", href: "/" },
   {
-    name: "Our Story",
-    href: "/our-story",
-    dropdown: [
-      { name: "About Us", href: "/our-story" },
-      { name: "Our Values", href: "/our-story#values" },
-      { name: "The Legacy", href: "/our-story#legacy" },
-      { name: "Your Host", href: "/our-story#host" },
-    ],
-  },
-  {
     name: "The Cottage",
     href: "/the-cottage",
     dropdown: [
@@ -37,6 +27,16 @@ const navLinks = [
       { name: "Safari", href: "/experiences#safari" },
       { name: "Birdwatching", href: "/experiences#birdwatching" },
       { name: "Dining", href: "/experiences#dining" },
+    ],
+  },
+  {
+    name: "Our Story",
+    href: "/our-story",
+    dropdown: [
+      { name: "About Us", href: "/our-story" },
+      { name: "Our Values", href: "/our-story#values" },
+      { name: "The Legacy", href: "/our-story#legacy" },
+      { name: "Your Host", href: "/our-story#host" },
     ],
   },
   { name: "Gallery", href: "/gallery" },
@@ -149,10 +149,10 @@ export function Navbar() {
           Width: 112px, full height, semi-transparent black
       ════════════════════════════════════════════════════════ */}
       <nav
-        className={`hidden lg:flex flex-col fixed top-0 left-0 h-full z-50 transition-transform duration-500 ease-in-out backdrop-blur-xl ${
+        className={`hidden lg:flex flex-col fixed top-0 left-0 h-full z-50 transition-transform duration-500 ease-in-out backdrop-blur-xl bg-forest/95 ${
           hideNav ? "-translate-x-full" : "translate-x-0"
         }`}
-        style={{ width: "120px", background: "rgba(0,0,0,0.65)" }}
+        style={{ width: "120px" }}
       >
         {/* Nav links + Logo — centered together */}
         <div className="flex-1 flex flex-col justify-center">
@@ -197,10 +197,9 @@ export function Navbar() {
           MOBILE — thin top bar + slide-out drawer
       ════════════════════════════════════════════════════════ */}
       <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-[90px] z-[60] flex items-center justify-between px-5 backdrop-blur-xl border-b border-white/5 transition-transform duration-500 ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-[90px] z-[60] flex items-center justify-between px-5 backdrop-blur-xl border-b border-white/5 transition-transform duration-500 bg-forest/90 ${
           hideNav ? "-translate-y-full" : "translate-y-0"
         }`}
-        style={{ background: "rgba(0,0,0,0.70)" }}
       >
         <Link href="/" className="flex items-center">
           <Image
@@ -239,8 +238,8 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-              className="lg:hidden fixed top-0 left-0 h-[100dvh] z-[70] flex flex-col py-8 overflow-y-auto pb-8"
-              style={{ width: "200px", background: "rgba(0,0,0,0.95)" }}
+              className="lg:hidden fixed top-0 left-0 h-[100dvh] z-[70] flex flex-col py-8 overflow-y-auto pb-8 bg-forest"
+              style={{ width: "200px" }}
             >
               {/* Mobile header / Logo */}
               <div className="flex items-center justify-between px-5 mb-10">

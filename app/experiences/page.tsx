@@ -25,9 +25,21 @@ const activities = [
       </div>
     ),
     tips: ["Best from Nov to May", "Book 2 days in advance", "Bring binoculars"],
-    images: [
-      "/images/experiences/safari.jpg",
-      "/images/experiences/halduparao.jpg"
+    featuredImages: [
+      "/images/experiences/safari/Picture15.jpg",
+      "/images/experiences/safari/Picture16.jpg",
+    ],
+    galleryImages: [
+      "/images/experiences/safari/01.jpg",
+      "/images/experiences/safari/safari_gate.jpg",
+      "/images/experiences/wildlife/Picture1.jpg",
+      "/images/experiences/wildlife/Picture2.jpg",
+      "/images/experiences/wildlife/Picture3.jpg",
+      "/images/experiences/wildlife/Picture4.jpg",
+      "/images/experiences/wildlife/Picture5.jpg",
+      "/images/experiences/wildlife/Picture7.jpg",
+      "/images/experiences/wildlife/Picture8.jpg",
+      "/images/experiences/wildlife/Picture9.jpg"
     ]
   },
   {
@@ -35,10 +47,13 @@ const activities = [
     title: "Riverside Life",
     desc: "Spend your afternoons by the Palain river. Swim in the natural pools, set up a picnic on the banks, or simply read a book to the sound of flowing water.",
     tips: ["Safe for swimming", "Picnic baskets available", "Perfect at golden hour"],
-    images: [
+    featuredImages: [
       "/images/experiences/river.jpg",
+    ],
+    galleryImages: [
       "/images/experiences/riverside/DJI_0552.jpg",
-      "/images/experiences/riverside/DJI_0557.jpg"
+      "/images/experiences/riverside/DJI_0557.jpg",
+      "/images/experiences/riverside/IMG_2773.jpg"
     ]
   },
   {
@@ -46,41 +61,51 @@ const activities = [
     title: "Birdwatching",
     desc: (
       <div className="space-y-4">
-        <p>Magpie Cottage is a birder's paradise, home to over 250 species ranging from Himalayan endemics to migratory waterfowl. Upon request an experienced expert can accompany guests on a Birdwatching trail.</p>
+        <p>Magpie Cottage is a birder&apos;s paradise, home to over 250 species ranging from Himalayan endemics to migratory waterfowl. Upon request an experienced expert can accompany guests on a Birdwatching trail.</p>
         <p>The diverse elevation gradients make it perfect for spotting vibrant songbirds, raptors, and pheasants in their natural habitats.</p>
         <p className="hidden md:block">Top species to look out for by habitat and season are as below.</p>
         
         <div className="hidden md:block space-y-4">
-          <h4 className="font-bold text-sm text-forest pt-2">Common & Year-Round Residents</h4>
+          <h4 className="font-bold text-sm text-forest pt-2">Common &amp; Year-Round Residents</h4>
           <ul className="list-disc pl-5 space-y-1">
-            <li><strong>Pheasants & Partridges:</strong> Kalij Pheasant, Cheer Pheasant, and Chukar Partridge.</li>
-            <li><strong>Flycatchers & Robins:</strong> Blue Whistling-Thrush, Verditer Flycatcher, and Gray-headed Canary-Flycatcher.</li>
+            <li><strong>Pheasants &amp; Partridges:</strong> Kalij Pheasant, Cheer Pheasant, and Chukar Partridge.</li>
+            <li><strong>Flycatchers &amp; Robins:</strong> Blue Whistling-Thrush, Verditer Flycatcher, and Gray-headed Canary-Flycatcher.</li>
             <li><strong>Others:</strong> Gray Treepie, Large-billed Crow, and the White-throated Laughingthrush.</li>
           </ul>
 
           <h4 className="font-bold text-sm text-forest pt-2">Summer Visitors (Mar - Aug)</h4>
           <ul className="list-disc pl-5 space-y-1">
             <li><strong>Vibrant Birds:</strong> Blue-capped Rock-Thrush, Rosy Minivet, and Indian Paradise-Flycatcher.</li>
-            <li><strong>Raptors & Birds of Prey:</strong></li>
-            <li><strong>Eagles & Kites:</strong> Black Eagle, Steppe Eagle, and Crested Serpent-Eagle.</li>
+            <li><strong>Raptors &amp; Birds of Prey:</strong></li>
+            <li><strong>Eagles &amp; Kites:</strong> Black Eagle, Steppe Eagle, and Crested Serpent-Eagle.</li>
             <li><strong>Vultures:</strong> Himalayan Griffon.</li>
           </ul>
 
           <h4 className="font-bold text-sm text-forest pt-2">Migratory Waterfowl (Wintering, Near River)</h4>
           <ul className="list-disc pl-5 space-y-1">
-            <li><strong>Ducks & Mergansers:</strong> Brahminy Shelduck, Mallard, and Goosander.</li>
+            <li><strong>Ducks &amp; Mergansers:</strong> Brahminy Shelduck, Mallard, and Goosander.</li>
           </ul>
         </div>
       </div>
     ),
     tips: ["Early morning is best", "Local guide available", "Over 250 species"],
-    images: [
-      "/images/experiences/birds.jpg",
+    featuredImages: [
       "/images/experiences/birdwatch/Picture2.jpg",
+      "/images/experiences/birdwatch/Picture13.jpg",
+      "/images/experiences/birdwatch/Picture1.jpg",
       "/images/experiences/birdwatch/Picture3.jpg",
+    ],
+    galleryImages: [
       "/images/experiences/birdwatch/Picture4.jpg",
       "/images/experiences/birdwatch/Picture5.jpg",
-      "/images/experiences/birdwatch/Picture6.jpg"
+      "/images/experiences/birdwatch/Picture6.jpg",
+      "/images/experiences/birdwatch/Picture7.jpg",
+      "/images/experiences/birdwatch/Picture8.jpg",
+      "/images/experiences/birdwatch/Picture9.jpg",
+      "/images/experiences/birdwatch/Picture10.jpg",
+      "/images/experiences/birdwatch/Picture11.jpg",
+      "/images/experiences/birdwatch/Picture12.jpg",
+      "/images/experiences/birdwatch/Picture14.jpg"
     ]
   },
   {
@@ -88,7 +113,13 @@ const activities = [
     title: "Nature Walks",
     desc: "Take guided or independent walks through the dense pine and oak forests surrounding the property. Discover hidden waterfalls and panoramic valley views.",
     tips: ["Wear sturdy shoes", "Carry water", "Follow marked trails"],
-    images: ["/images/experiences/nature-walk.jpg"]
+    featuredImages: ["/images/experiences/nature-walks/elephant1.jpg"],
+    galleryImages: [
+      "/images/experiences/nature-walks/deer.jpg",
+      "/images/experiences/nature-walks/tiger.jpg",
+      "/images/experiences/nature-walks/elephant2.jpg",
+      "/images/experiences/wildlife/Picture6.jpg"
+    ]
   },
   {
     id: "stargazing",
@@ -100,9 +131,11 @@ const activities = [
       </div>
     ),
     tips: ["Clear skies in winter", "Wood provided", "Acoustic music welcome"],
-    images: [
+    featuredImages: [
       "/images/experiences/bonfire.jpg",
       "/images/experiences/bonfire/IMG_2851.jpg",
+    ],
+    galleryImages: [
       "/images/experiences/bonfire/IMG_2855.jpg",
       "/images/experiences/bonfire/IMG_4605.jpg",
       "/images/experiences/bonfire/IMG_4606.jpg",
@@ -119,9 +152,11 @@ const activities = [
       </div>
     ),
     tips: ["Warm clothing", "Photography", "Quiet reflection"],
-    images: [
+    featuredImages: [
       "/images/experiences/magpie-night/IMG_5189.jpg",
       "/images/experiences/magpie-night/IMG_5194.jpg",
+    ],
+    galleryImages: [
       "/images/experiences/magpie-night/IMG_5200.jpg",
       "/images/experiences/magpie-night/IMG_5202.jpg",
       "/images/experiences/magpie-night/IMG_5602.jpg",
@@ -147,7 +182,13 @@ const activities = [
       </div>
     ),
     tips: ["48 km away", "Historical sites", "Local cafes"],
-    images: ["/images/gallery/exterior/img_9.jpg"]
+    featuredImages: ["/images/gallery/exterior/img_9.jpg"],
+    galleryImages: [
+      "/images/experiences/lansdowne/st-johns-church.jpg",
+      "/images/experiences/lansdowne/darwan-singh-museum.jpg",
+      "/images/experiences/lansdowne/garhwal-war-memorial.jpg",
+      "/images/experiences/lansdowne/st-marys-church.jpg"
+    ]
   }
 ];
 
@@ -158,6 +199,35 @@ const diningImages = [
   "/images/gallery/dining-area/img_4.jpg",
   "/images/gallery/dining-area/img_5.jpg",
 ];
+
+/* ── Text + Tips + CTA block (reused for every activity) ── */
+function ActivityTextBlock({ exp }: { exp: typeof activities[number] }) {
+  return (
+    <div>
+      <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
+      <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
+      
+      <div className="mb-10 bg-sage-light/20 border border-sage-border/30 rounded-2xl p-6">
+        <span className="text-xs tracking-widest text-sage-dark font-body mb-4 block uppercase font-semibold">Good to Know</span>
+        <div className="flex flex-wrap gap-2">
+          {exp.tips.map(tip => (
+            <span key={tip} className="px-4 py-2 bg-white text-text-dark rounded-full text-xs font-body shadow-sm border border-sage-border/10">
+              {tip}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <Link 
+        href="/contact" 
+        className="inline-flex items-center gap-2 group text-forest font-medium text-lg hover:text-sage-dark transition-colors focus-visible:ring-2 focus-visible:ring-forest rounded-lg p-1 outline-none"
+      >
+        Enquire about this 
+        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+      </Link>
+    </div>
+  );
+}
 
 export default function Experiences() {
   return (
@@ -194,83 +264,56 @@ export default function Experiences() {
 
           <div className="space-y-20 md:space-y-32">
             {activities.map((exp, i) => {
-              if (exp.id === "birdwatching") {
-                return (
-                  <div key={exp.id} id={exp.id} className="scroll-mt-24 space-y-8">
-                    <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-start">
-                      <div className={`flex flex-col gap-4 order-2 ${i % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                        <GalleryGrid title={exp.title} images={exp.images.slice(0, 2)} />
-                      </div>
+              const isEven = i % 2 === 0;
+              const hasSingleImage = exp.featuredImages.length === 1;
+              const hasGallery = exp.galleryImages.length > 0;
 
-                      <div className={`sticky top-32 order-1 ${i % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                        <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
-                        <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
-                        
-                        <div className="mb-10 bg-sage-light/20 border border-sage-border/30 rounded-2xl p-6">
-                          <span className="text-xs tracking-widest text-sage-dark font-body mb-4 block uppercase font-semibold">Good to Know</span>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.tips.map(tip => (
-                              <span key={tip} className="px-4 py-2 bg-white text-text-dark rounded-full text-xs font-body shadow-sm border border-sage-border/10">
-                                {tip}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
+              return (
+                <div key={exp.id} id={exp.id} className="scroll-mt-24 space-y-10">
+                  {/* Main content: text + featured images side-by-side */}
+                  <AnimatedSection className={`grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 ${hasSingleImage ? 'items-center' : 'items-start'}`}>
+                    
+                    {/* Image column */}
+                    <div className={`flex flex-col gap-4 order-2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                      {hasSingleImage ? (
+                        /* Single image: constrained portrait aspect ratio to prevent oversized images */
+                        <GalleryGrid 
+                          title={exp.title} 
+                          images={exp.featuredImages}
+                        />
+                      ) : (
+                        /* Multiple featured images: 2-col grid */
+                        <GalleryGrid 
+                          title={exp.title} 
+                          images={exp.featuredImages}
+                        />
+                      )}
+                    </div>
 
-                        <Link 
-                          href="/contact" 
-                          className="inline-flex items-center gap-2 group text-forest font-medium text-lg hover:text-sage-dark transition-colors focus-visible:ring-2 focus-visible:ring-forest rounded-lg p-1 outline-none"
-                        >
-                          Enquire about this 
-                          <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
-                        </Link>
-                      </div>
-                    </AnimatedSection>
+                    {/* Text column */}
+                    <div className={`order-1 ${isEven ? 'lg:order-2' : 'lg:order-1'} ${!hasSingleImage ? 'sticky top-32' : ''}`}>
+                      <ActivityTextBlock exp={exp} />
+                    </div>
+                  </AnimatedSection>
 
+                  {/* Overflow gallery below (masonry for many images, grid row for few) */}
+                  {hasGallery && (
                     <AnimatedSection>
                       <SimpleGallery 
                         title={exp.title} 
-                        images={exp.images.slice(2)} 
-                        containerClassName="columns-2 sm:columns-3 md:columns-4 lg:columns-6 gap-3"
-                        masonry={true}
+                        images={exp.galleryImages}
+                        containerClassName={
+                          exp.galleryImages.length <= 2
+                            ? "grid grid-cols-2 gap-3"
+                            : exp.galleryImages.length <= 4
+                            ? "grid grid-cols-2 md:grid-cols-4 gap-3"
+                            : "columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3"
+                        }
+                        masonry={exp.galleryImages.length > 4}
                       />
                     </AnimatedSection>
-                  </div>
-                );
-              }
-
-              return (
-                <AnimatedSection key={exp.id} id={exp.id} className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-start">
-                  
-                  <div className={`flex flex-col gap-4 order-2 ${i % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                    {/* Grid layout for images with Lightbox support */}
-                    <GalleryGrid title={exp.title} images={exp.images} />
-                  </div>
-
-                  <div className={`sticky top-32 order-1 ${i % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                    <h2 className="font-display text-4xl md:text-5xl font-light italic mb-6 text-text-dark">{exp.title}</h2>
-                    <div className="font-body text-text-mid leading-relaxed mb-8">{exp.desc}</div>
-                    
-                    <div className="mb-10 bg-sage-light/20 border border-sage-border/30 rounded-2xl p-6">
-                      <span className="text-xs tracking-widest text-sage-dark font-body mb-4 block uppercase font-semibold">Good to Know</span>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tips.map(tip => (
-                          <span key={tip} className="px-4 py-2 bg-white text-text-dark rounded-full text-xs font-body shadow-sm border border-sage-border/10">
-                            {tip}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <Link 
-                      href="/contact" 
-                      className="inline-flex items-center gap-2 group text-forest font-medium text-lg hover:text-sage-dark transition-colors focus-visible:ring-2 focus-visible:ring-forest rounded-lg p-1 outline-none"
-                    >
-                      Enquire about this 
-                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
-                    </Link>
-                  </div>
-                </AnimatedSection>
+                  )}
+                </div>
               );
             })}
           </div>

@@ -18,11 +18,11 @@ const StarIcon = ({ className = "" }: { className?: string }) => (
 const quotes = [
   {
     text: "“One of the most beautiful places to stay if you are looking for a really peaceful getaway from the hustle of city life. The property is very well maintained and caretakers are amazing. Very hospitable and warm. Do try their local delicacies. They make it well. Over all one the of the most amazing summer getaways we’ve had so far in India. Will surely go back again. Cheers to Malini for maintaining such a beautiful place in its natural form and thank you Siddharth for the seamless coordination.. …Loved your place Malini! Very tastefully done up and well maintained….”",
-    author: "AASHIMA KHANNA",
+    author: "GEETIKA SETHI",
     source: "Guest"
   },
   {
-    text: "“It is a wonderful house, very comfortable. Neat and clean. The Caretaker and the Cook, both took very good care of the guests”",
+    text: "\"A wonderful house — very comfortable, neat, and clean. The caretaker and the cook both took exceptional care of us throughout our stay.\"",
     author: "DIVYA JINDAL",
     source: "Guest"
   },

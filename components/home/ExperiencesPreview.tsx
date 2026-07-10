@@ -10,7 +10,7 @@ const experiences = [
   {
     title: "Nature Walks",
     label: "NATURE WALKS",
-    image: "/images/experiences/nature-walk.jpg",
+    image: "/images/experiences/nature-walks/elephant1.jpg",
     href: "/experiences#nature-walks"
   },
   {
@@ -32,9 +32,9 @@ export function ExperiencesPreview() {
     <section className="py-16 md:py-24 px-6 md:px-12 bg-cream text-text-dark w-full">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-left mb-8 md:mb-16" animation="clipReveal">
-          <span className="text-xs tracking-widest text-text-light font-body mb-4 block">The Cottage</span>
+          <span className="text-xs tracking-widest text-text-light font-body mb-4 block uppercase">Experiences</span>
           <h2 className="font-display text-3xl md:text-5xl font-light italic leading-tight text-text-dark">
-            Built With Nature
+            Discover The Wild
           </h2>
         </AnimatedSection>
 

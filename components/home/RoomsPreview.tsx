@@ -74,6 +74,31 @@ export function RoomsPreview() {
             </motion.div>
           ))}
         </motion.div>
+
+        <AnimatedSection className="mt-16 md:mt-24 pt-12 border-t border-stone-200" animation="fadeUp">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <h3 className="font-display text-2xl font-medium text-text-dark mb-2">Amenities & House Rules</h3>
+              <p className="font-body text-text-mid max-w-lg">
+                Discover the comforts we offer and our guidelines for a peaceful stay.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                href="/the-cottage#amenities" 
+                className="px-6 py-3 border border-sage text-forest rounded-full hover:bg-sage hover:text-white transition-all duration-300 font-body text-sm font-medium"
+              >
+                View Amenities
+              </Link>
+              <Link 
+                href="/the-cottage#rules" 
+                className="px-6 py-3 border border-stone-300 text-text-mid rounded-full hover:border-forest hover:text-forest transition-all duration-300 font-body text-sm font-medium"
+              >
+                House Rules
+              </Link>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
