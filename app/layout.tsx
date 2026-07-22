@@ -5,7 +5,6 @@ import { LenisProvider } from "@/components/providers/LenisProvider";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CallButton } from "@/components/ui/CallButton";
 import { SplashScreen } from "@/components/ui/SplashScreen";
-import { TrialPopup } from "@/components/ui/TrialPopup";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -42,7 +41,6 @@ export default function RootLayout({
             {children}
             <WhatsAppButton />
             <CallButton />
-            <TrialPopup />
           </div>
         </LenisProvider>
       </body>
