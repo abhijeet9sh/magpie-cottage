@@ -92,31 +92,33 @@ export function HeroSection() {
           style={{ opacity }}
         >
           {/* Combined hero title — Stillness In the Wild */}
-          <motion.div
-            variants={splitTextContainer}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap justify-center items-baseline gap-x-3 md:gap-x-4"
-            style={{ perspective: 600 }}
-          >
-            {/* Stillness In The Wild - Uniform and Elegant */}
-            {["Stillness", "In", "The", "Wild"].map((word, i) => (
-              <motion.span
-                key={`${word}-${i}`}
-                variants={splitTextWord}
-                className="inline-block"
-                style={{ transformOrigin: "bottom" }}
-                custom={i}
-              >
-                <span 
-                  className="font-display text-3xl md:text-4xl lg:text-5xl text-cream font-light italic tracking-tight leading-[0.9]"
-                  style={{ display: "contents" }}
+          <h1 className="w-full flex justify-center">
+            <motion.div
+              variants={splitTextContainer}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-wrap justify-center items-baseline gap-x-3 md:gap-x-4"
+              style={{ perspective: 600 }}
+            >
+              {/* Stillness In The Wild - Uniform and Elegant */}
+              {["Stillness", "In", "The", "Wild"].map((word, i) => (
+                <motion.span
+                  key={`${word}-${i}`}
+                  variants={splitTextWord}
+                  className="inline-block"
+                  style={{ transformOrigin: "bottom" }}
+                  custom={i}
                 >
-                  {word}
-                </span>
-              </motion.span>
-            ))}
-          </motion.div>
+                  <span 
+                    className="font-display text-3xl md:text-4xl lg:text-5xl text-cream font-light italic tracking-tight leading-[0.9]"
+                    style={{ display: "contents" }}
+                  >
+                    {word}
+                  </span>
+                </motion.span>
+              ))}
+            </motion.div>
+          </h1>
         </motion.div>
 
         {/* Booking widget - Kept solid (no scroll opacity) */}

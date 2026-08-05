@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:3005';
 // We'll save screenshots directly into the artifacts directory
 const ARTIFACTS_DIR = 'C:\\Users\\abhij\\.gemini\\antigravity-ide\\brain\\04dbcbac-36b1-423d-bc68-7897e236b8e9\\.tempmediaStorage';
 

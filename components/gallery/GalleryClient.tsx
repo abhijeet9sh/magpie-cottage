@@ -6,6 +6,25 @@ import { ImageLightbox } from "@/components/ui/ImageLightbox";
 
 const galleryCategories = [
   {
+    "id": "sightings-inside",
+    "title": "Sightings Inside Cottage",
+    "amenities": "Authentic wildlife recorded on property · Wild Elephants · Kalij Pheasants",
+    "images": [
+      {
+        "src": "/images/sightings/roof-spotlight-elephant.jpg",
+        "alt": "Spotting Wild Elephants from Rooftop Terrace at Night"
+      },
+      {
+        "src": "/images/sightings/elephant-night-spotlight.jpg",
+        "alt": "Wild Elephant beside Cottage Boundary"
+      },
+      {
+        "src": "/images/sightings/kalij-pheasant-fence.jpg",
+        "alt": "Himalayan Kalij Pheasant inside Bamboo Fence"
+      }
+    ]
+  },
+  {
     "id": "living-room",
     "title": "Living Room",
     "amenities": "Spacious seating · Natural light · Forest views",

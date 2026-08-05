@@ -22,8 +22,30 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Magpie Cottage | A Jungle Retreat in Lansdowne",
+  title: "Magpie Cottage | The Jungle Retreat in Lansdowne",
   description: "Your jungle retreat, six hours from Delhi. A private three-bedroom villa nestled on the edge of a tiger reserve in Lansdowne.",
+  openGraph: {
+    title: "Magpie Cottage | The Jungle Retreat in Lansdowne",
+    description: "Your jungle retreat, six hours from Delhi. A private three-bedroom villa nestled on the edge of a tiger reserve in Lansdowne.",
+    url: "https://magpiecottage.com",
+    siteName: "Magpie Cottage",
+    images: [
+      {
+        url: "/logo-new.png",
+        width: 1200,
+        height: 630,
+        alt: "Magpie Cottage - The Jungle Retreat",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Magpie Cottage | The Jungle Retreat in Lansdowne",
+    description: "Your jungle retreat, six hours from Delhi. A private three-bedroom villa nestled on the edge of a tiger reserve in Lansdowne.",
+    images: ["/logo-new.png"],
+  },
 };
 
 export default function RootLayout({
