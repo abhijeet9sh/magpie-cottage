@@ -57,21 +57,14 @@ const sightingItems: SightingItem[] = [
     tag: "Video · Rooftop Watch",
   },
   {
-    id: "sighting-6",
-    type: "video",
-    title: "Night Forest Soundscape & Movement",
-    subtitle: "Authentic footage capturing forest calls and wildlife activity surrounding the cottage",
-    src: "/videos/sightings/sighting-video-3.mp4",
-    tag: "Video · Night Wilderness",
-  },
-  {
     id: "sighting-7",
     type: "video",
-    title: "Morning Garden Visitor",
-    subtitle: "Wild Himalayan fauna visiting the cottage grounds during quiet morning hours",
+    title: "Forest Guards patrolling Magpie Cottage at night",
+    subtitle: "Forest Guards on night mission preventing wild elephants from entering Magpie Cottage.",
     src: "/videos/sightings/sighting-video-4.mp4",
-    tag: "Video · Garden Wildlife",
+    tag: "Video · Night Patrol",
   },
+
 ];
 
 export function SightingsSection() {
@@ -83,58 +76,55 @@ export function SightingsSection() {
   );
 
   return (
-    <section className="py-20 md:py-28 px-6 md:px-12 bg-stone-900 text-stone-100 w-full relative overflow-hidden">
+    <section className="py-20 md:py-28 px-6 md:px-12 bg-stone-50 text-stone-900 w-full relative overflow-hidden">
       {/* Subtle background gradient glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-forest/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sage/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-forest/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sage/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <AnimatedSection className="text-left mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/30 border border-sage/30 text-sage text-[11px] uppercase tracking-widest font-body mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 border border-forest/20 text-forest text-[11px] uppercase tracking-widest font-body mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Recorded On Property</span>
           </div>
-          <h2 className="font-display text-3xl md:text-5xl font-light italic leading-tight text-stone-100 mb-4">
-            Sightings Inside Magpie Cottage
+          <h2 className="font-display text-3xl md:text-5xl font-light italic leading-tight text-stone-900 mb-4">
+            Wildlife Sightings at Magpie Cottage
           </h2>
-          <p className="font-body text-stone-400 max-w-2xl text-base md:text-lg leading-relaxed">
-            Nestled directly on the edge of the Kalagarh Tiger Reserve, wild elephants, rare Himalayan Kalij pheasants, and nocturnal fauna are regularly sighted right from our cottage lawns, bamboo fences, and rooftop terraces.
+          <p className="font-body text-stone-600 max-w-2xl text-base md:text-lg leading-relaxed">
+            At Magpie Cottage, the wilderness begins at your doorstep. Set on the edge of the Kalagarh Tiger Reserve, the cottage offers an extraordinary opportunity to encounter wildlife in its natural habitat. Elephants, Himalayan Kalij pheasants and nocturnal creatures have been sighted from the lawns, along the bamboo fences and even from the rooftop terraces—a quiet reminder that at Magpie Cottage, there is no real boundary between the forest and the place you stay.
           </p>
 
           {/* Filter Buttons */}
           <div className="flex items-center gap-3 mt-8">
             <button
               onClick={() => setActiveFilter("all")}
-              className={`px-4 py-2 rounded-full text-xs font-body tracking-wider transition-all duration-300 ${
-                activeFilter === "all"
-                  ? "bg-sage text-stone-900 font-semibold shadow-lg shadow-sage/20"
-                  : "bg-stone-800/80 text-stone-300 hover:bg-stone-800 border border-stone-700/50"
-              }`}
+              className={`px-4 py-2 rounded-full text-xs font-body tracking-wider transition-all duration-300 ${activeFilter === "all"
+                  ? "bg-forest text-white font-semibold shadow-lg shadow-forest/20"
+                  : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
+                }`}
             >
               All Sightings ({sightingItems.length})
             </button>
             <button
               onClick={() => setActiveFilter("image")}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-body tracking-wider transition-all duration-300 ${
-                activeFilter === "image"
-                  ? "bg-sage text-stone-900 font-semibold shadow-lg shadow-sage/20"
-                  : "bg-stone-800/80 text-stone-300 hover:bg-stone-800 border border-stone-700/50"
-              }`}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-body tracking-wider transition-all duration-300 ${activeFilter === "image"
+                  ? "bg-forest text-white font-semibold shadow-lg shadow-forest/20"
+                  : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
+                }`}
             >
               <Camera className="w-3.5 h-3.5" />
-              Photos (3)
+              Photos ({sightingItems.filter((i) => i.type === "image").length})
             </button>
             <button
               onClick={() => setActiveFilter("video")}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-body tracking-wider transition-all duration-300 ${
-                activeFilter === "video"
-                  ? "bg-sage text-stone-900 font-semibold shadow-lg shadow-sage/20"
-                  : "bg-stone-800/80 text-stone-300 hover:bg-stone-800 border border-stone-700/50"
-              }`}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-body tracking-wider transition-all duration-300 ${activeFilter === "video"
+                  ? "bg-forest text-white font-semibold shadow-lg shadow-forest/20"
+                  : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
+                }`}
             >
               <Video className="w-3.5 h-3.5" />
-              Videos (4)
+              Videos ({sightingItems.filter((i) => i.type === "video").length})
             </button>
           </div>
         </AnimatedSection>
@@ -154,7 +144,7 @@ export function SightingsSection() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 onClick={() => setSelectedItem(item)}
-                className="group relative rounded-2xl overflow-hidden bg-stone-800/60 border border-stone-700/40 hover:border-sage/50 transition-all duration-500 cursor-pointer shadow-xl"
+                className="group relative rounded-2xl overflow-hidden bg-white border border-stone-200 hover:border-forest/30 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-xl"
               >
                 {/* Media Container */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-900">
@@ -175,7 +165,7 @@ export function SightingsSection() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onMouseEnter={(e) => {
                         const v = e.target as HTMLVideoElement;
-                        v.play().catch(() => {});
+                        v.play().catch(() => { });
                       }}
                       onMouseLeave={(e) => {
                         const v = e.target as HTMLVideoElement;
@@ -211,10 +201,10 @@ export function SightingsSection() {
 
                 {/* Content Details */}
                 <div className="p-5">
-                  <h3 className="font-display text-xl font-medium text-stone-100 mb-1 group-hover:text-sage transition-colors">
+                  <h3 className="font-display text-xl font-medium text-stone-900 mb-1 group-hover:text-forest transition-colors">
                     {item.title}
                   </h3>
-                  <p className="font-body text-xs text-stone-400 line-clamp-2 leading-relaxed">
+                  <p className="font-body text-xs text-stone-600 line-clamp-2 leading-relaxed">
                     {item.subtitle}
                   </p>
                 </div>

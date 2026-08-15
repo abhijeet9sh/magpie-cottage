@@ -8,6 +8,7 @@ import { ArrowDown } from "lucide-react";
 import { splitTextContainer, splitTextWord } from "@/lib/animations";
 
 const heroSlides = [
+  "/images/slides/drone-hero.jpg",
   "/images/slides/slide-1.jpg",
   "/images/slides/slide-2.jpg",
   "/images/slides/slide-3.jpg",
