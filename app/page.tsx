@@ -6,7 +6,6 @@ import { StoryTeaser } from "@/components/home/StoryTeaser";
 import { ExperiencesPreview } from "@/components/home/ExperiencesPreview";
 import { RoomsPreview } from "@/components/home/RoomsPreview";
 import { PhotoSlideshow } from "@/components/home/PhotoSlideshow";
-import { SightingsSection } from "@/components/home/SightingsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { MapSection } from "@/components/home/MapSection";
 import { InstagramFeed } from "@/components/home/InstagramFeed";
@@ -22,7 +21,6 @@ export default function Home() {
       <AboutCottage />
       <RoomsPreview />
       <ExperiencesPreview />
-      <SightingsSection />
       <StoryTeaser />
       <PhotoSlideshow />
       <TestimonialsSection />
@@ -35,3 +33,4 @@ export default function Home() {
     </main>
   );
 }
+

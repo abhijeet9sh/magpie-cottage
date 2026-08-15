@@ -6,6 +6,7 @@ import { GalleryGrid, SimpleGallery } from "@/components/ui/GalleryGrid";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { SightingsSection } from "@/components/home/SightingsSection";
 
 export const metadata = {
   title: "Experiences | Magpie Cottage",
@@ -238,11 +239,11 @@ export default function Experiences() {
         imageSrc="/images/real/outdoor.jpg"
       />
 
-      <div className="pt-12 pb-24 md:pt-16 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto space-y-32">
+      <div className="pt-12 pb-24 md:pt-16 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto space-y-24 md:space-y-32">
 
         {/* === ACTIVITIES SECTION === */}
         <div id="activities" className="scroll-mt-24">
-          <AnimatedSection className="text-left mb-16" animation="clipReveal">
+          <AnimatedSection className="text-left mb-12 md:mb-16" animation="fadeUp">
             <span className="text-xs tracking-widest text-text-light font-body mb-4 block">Things To Do</span>
             <h2 className="font-display text-4xl md:text-5xl font-light italic text-text-dark">Activities</h2>
             <div className="font-body text-text-mid mt-8 space-y-6">
@@ -318,6 +319,11 @@ export default function Experiences() {
             })}
           </div>
         </div>
+      </div>
+
+      {/* === WILDLIFE SIGHTINGS SECTION === */}
+      <div id="wildlife-sightings" className="scroll-mt-24">
+        <SightingsSection />
       </div>
 
       {/* === DINING SECTION === */}

@@ -6,16 +6,19 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 <!-- BEGIN:antigravity-awesome-skills -->
 # Antigravity Awesome Skills
-The library of 1,400+ skills is installed globally and locally in this project. 
 
-## How to use:
+The library of 1,400+ skills is installed globally and locally in this project.
+
+## How to use
+
 - **Invoke a skill**: Use `@skill-name` (e.g., `@brainstorming`, `@frontend-design`) in your prompt.
 - **Reference**: Full catalog is at `./skills` (project-local) and `C:\Users\abhij\.gemini\antigravity\skills` (global).
 <!-- END:antigravity-awesome-skills -->
 
 ## Production Details & Endpoints
-- **Official Production Domain**: https://magpiecottage.com
-- **Vercel Production Deployment**: https://magpie-cottage.vercel.app
+
+- **Official Production Domain**: <https://magpiecottage.com>
+- **Vercel Production Deployment**: <https://magpie-cottage.vercel.app>
 - **GitHub Remotes**:
-  - `origin`: https://github.com/abhijeet9sh/magpie-cottage.git
-  - `prod`: https://github.com/abhijeet9sh/magpie-cottage-prod.git
+  - `origin`: <https://github.com/abhijeet9sh/magpie-cottage.git>
+  - `prod`: <https://github.com/abhijeet9sh/magpie-cottage-prod.git>

@@ -26,6 +26,7 @@ const navLinks = [
       { name: "All Activities", href: "/experiences#activities" },
       { name: "Safari", href: "/experiences#safari" },
       { name: "Birdwatching", href: "/experiences#birdwatching" },
+      { name: "Wildlife Sightings", href: "/experiences#wildlife-sightings" },
       { name: "Dining", href: "/experiences#dining" },
     ],
   },

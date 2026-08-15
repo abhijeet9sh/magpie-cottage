@@ -20,7 +20,7 @@ const sightingItems: SightingItem[] = [
     id: "sighting-1",
     type: "image",
     title: "Spotting Wild Elephants at Night",
-    subtitle: "Host Malini observing a wild elephant from the cottage rooftop terrace under a spotlight",
+    subtitle: "Caretaker observing a wild elephant from the cottage rooftop terrace using a spotlight",
     src: "/images/sightings/roof-spotlight-elephant.jpg",
     tag: "Night Encounter · Wild Elephant",
   },

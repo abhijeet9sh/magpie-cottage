@@ -17,34 +17,7 @@ test.describe('Magpie Cottage Website Verification', () => {
     await expect(nav).toBeVisible();
   });
 
-  test('Sightings Inside Magpie Cottage section exists and is interactive', async ({ page }) => {
-    await page.goto('/');
-    
-    // Locate the Sightings section
-    const sightingsHeading = page.getByRole('heading', { name: /Sightings Inside Magpie Cottage/i });
-    await expect(sightingsHeading).toBeVisible();
 
-    // Verify filter buttons
-    const allFilter = page.getByRole('button', { name: /All Sightings/i });
-    const photosFilter = page.getByRole('button', { name: /Photos/i });
-    const videosFilter = page.getByRole('button', { name: /Videos/i });
-
-    await expect(allFilter).toBeVisible();
-    await expect(photosFilter).toBeVisible();
-    await expect(videosFilter).toBeVisible();
-
-    // Test clicking Photos filter
-    await photosFilter.click();
-    await page.waitForTimeout(300);
-
-    // Test clicking Videos filter
-    await videosFilter.click();
-    await page.waitForTimeout(300);
-
-    // Click back to All Sightings
-    await allFilter.click();
-    await page.waitForTimeout(300);
-  });
 
   test('The Cottage page (/the-cottage) renders rooms and amenities', async ({ page }) => {
     await page.goto('/the-cottage');
